@@ -2026,6 +2026,10 @@ class Commands(object):
         self.create=create()
         self.utils=utils()
 
+def start():
+    fire.Fire(Commands())
+
+
 
 if __name__ == '__main__':
 
