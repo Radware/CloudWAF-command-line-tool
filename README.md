@@ -110,22 +110,22 @@ Any "get" command can be used to retrieve an object that can be stored and edite
 The "yaml files" folder contains yaml files that are usable to deploy a certificate specified in the certificate.yaml file along with a newapp.yaml file that specifies where to deploy the app.
 In order to get the regions code for the available regions that you can deploy in, you can use the following command:
 
-newapp.yaml file content:
-    applicationName: My application
-    mainDomain: www.test.com
-    protocol: BOTH
-    region: CANADA_1
-    originServers:
-    - address: 2.2.2.2
-      addressType: IP
-    - address: 3.3.3.3
-      addressType: IP
-    generalInfo:
-      ownerName: Christian Shink
-      ownerEmail: christian.shink@test.com
-      externalID: '123445'
-      description: test
-    fingerprint: 87FE361698CB3F47683245984DDAF08E334818D3
+    newapp.yaml file content:
+        applicationName: My application
+        mainDomain: www.test.com
+        protocol: BOTH
+        region: CANADA_1
+        originServers:
+        - address: 2.2.2.2
+          addressType: IP
+        - address: 3.3.3.3
+          addressType: IP
+        generalInfo:
+          ownerName: Christian Shink
+          ownerEmail: christian.shink@test.com
+          externalID: '123445'
+          description: test
+        fingerprint: 87FE361698CB3F47683245984DDAF08E334818D3
 
 Please note that the "fingerprint" field here can be calculated using the following command:
 python cwafctl.py utils get_certificate_fingerprint < ./"yaml files"/certificate.yaml
