@@ -8,6 +8,7 @@ import time
 import settings
 import yaml
 import sys
+from OpenSSL.crypto import load_certificate, FILETYPE_PEM
 
 
 class CloudWAFAPI(object):
@@ -1446,6 +1447,7 @@ class get(object):
         return yaml.dump(events)
 
 
+
     def certificates(self):
         """Gets the list of certificates deployed in CWAF in YAML format"""
         self.cwaf.login()
@@ -1984,6 +1986,33 @@ class get(object):
         self.cwaf.logout()
         return
 
+class utils(object):
+
+    def get_certificate_fingerprint(self):
+        '''Returns a local certificate sha1 fingerprint for a cert.yaml file passed to stdin'''
+        certs = yaml.load(sys.stdin, Loader=yaml.FullLoader)
+        cert = load_certificate(FILETYPE_PEM, certs["certificate"])
+        sha1_fingerprint = cert.digest("sha1")
+        return sha1_fingerprint.decode("utf-8").replace(':','')
+
+
+    def generate_yaml_cert_file(self,publicKeyFilePath,privateKeyFilePath,certChainFilePath="",passphase=""):
+        cert={'cert':'','chain':'','key':'','passphase':passphase}
+
+        publicKeyFile=open(publicKeyFilePath,'r')
+        publicKey=publicKeyFile.read()
+        cert['cert'] = publicKey
+
+        privateKeyFile=open(privateKeyFilePath,'r')
+        privateKey=privateKeyFile.read()
+        cert['key']=privateKey
+
+        if certChainFilePath != "":
+            certChainFile = open(certChainFilePath, 'r')
+            certChain = certChainFile.read()
+            cert['chain'] = certChain
+
+        yaml.dump(cert)
 
 
 
@@ -1995,7 +2024,7 @@ class Commands(object):
         self.set=set()
         self.delete=delete()
         self.create=create()
-
+        self.utils=utils()
 
 
 if __name__ == '__main__':
