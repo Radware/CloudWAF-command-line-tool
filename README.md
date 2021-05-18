@@ -105,7 +105,7 @@ Any "get" command can be used to retrieve an object that can be stored and edite
     **python cwafctl.py set application_generalinfo "HacmeBank" < generalInfo.yaml
 
 
-##Deploying a new application using cwafctl
+## Deploying a new application using cwafctl
 
 The "yaml files" folder contains yaml files that are usable to deploy a certificate specified in the certificate.yaml file along with a newapp.yaml file that specifies where to deploy the app.
 In order to get the regions code for the available regions that you can deploy in, you can use the following command:
