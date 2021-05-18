@@ -1,18 +1,19 @@
 # cwafctl
 
-cwafctl is a commandline utility that allows to manage cloud waf objects from the client. It allows to perform several actions from the cli, such as retrieving objects such as certificates, application configuration, etc. In addition, it allows to update and modify existing protections within a given cloud waf account. The first step before using cwafctl is to update the file settings.py to include api credentials that must be created in your Radware Cloud WAF account prior to using this tool.
+**cwafctl** is a commandline utility that allows to manage cloud waf objects from the client. It allows to perform several actions from the cli, such as retrieving objects such as certificates, application configuration, etc. In addition, it allows to update and modify existing protections within a given cloud waf account. The first step before using cwafctl is to update the file settings.py to include api credentials that must be created in your Radware Cloud WAF account prior to using this tool.
 
-cwafctl works with yaml, it allows you to retrieve information in yaml format, that you can save to a file, modify and later on re-use to update the object. The yaml objects used by cwafctl are mapped directly to the JSON format supported by Cloud WAF for API calls.
+**cwafctl** works with yaml, it allows you to retrieve information in yaml format, that you can save to a file, modify and later on re-use to update the object. The yaml objects used by cwafctl are mapped directly to the JSON format supported by Cloud WAF for API calls.
 
-cwafctl requires python 3.8 to run and was tested using windows 10.
+**cwafctl** requires python 3.8 to run and was tested using windows 10.
 
 
 # How to use
-cwafctl basically implements the 3  commands below:
+cwafctl basically implements the commands below:
  * **get** :    Allows to retrieve a configuration
- * **create**:  Allows to deploy new configurations (ex.:new applicaition,certificate,etc.)
+ * **create**:  Allows to deploy new configurations (ex.:new application,certificate,etc.)
  * **delete**:  Allows to delete an object
  * **set**:     Allows to modify an existing configuration
+ * **utils**:   Misc utilities
 
 ## Retrieving objects using the "get" command
 In order to list applications currently onboarded on your cloud waf account and dump it to a yaml file:
@@ -129,19 +130,23 @@ newapp.yaml file content:
           description: test
         fingerprint: 87FE361698CB3F47683245984DDAF08E334818D3
 
-Please note that the "fingerprint" field here can be calculated using the following command:
-python cwafctl.py utils get_certificate_fingerprint < ./"yaml files"/certificate.yaml
 
-Please note that the available region codes can be obtained from cloud waf using the following commands:
+Please note that the "fingerprint" field here can be calculated using the following command:<br>
+    **python cwafctl.py utils get_certificate_fingerprint < ./"yaml files"/certificate.yaml**
+
+Please note that the available region codes can be obtained from cloud waf using the following commands:<br>
 **python cwafctl.py get available_regions**
+
 CLI output:
-    python cwafctl.py get available_regions
+
     - CANADA_1
     - US_EAST_1
     - US_CENTRAL_1
 
 
 cert.yaml file content:
+
+
         certificate: |-
          -----BEGIN CERTIFICATE-----
          MIICzDCCAbSgAwIBAgIJAOg5uU72jLpRMA0GCSqGSIb3DQEBBQUAMBcxFTATBgNV
@@ -191,12 +196,12 @@ cert.yaml file content:
          -----END RSA PRIVATE KEY-----
         passphrase: test
 
-Please note that the "certificate.yaml" file can either be created manually or be generated using the following command:
-python cwafctl.py utils generate_yaml_cert_file certificate.pem key.pem certchain.pem test
-where certificate.pem is the file containing the public key
-where key.pem is the file containing the private key
-where certchain.pem is the file containing the certificate chain
-where test is the passphrase that was used to encrypt the certificate
+Please note that the "certificate.yaml" file can either be created manually or be generated using the following command:<br><br>
+**python cwafctl.py utils generate_yaml_cert_file certificate.pem key.pem certchain.pem test**<br><br>
+    where certificate.pem is the file containing the public key<br>
+    where key.pem is the file containing the private key<br>
+    where certchain.pem is the file containing the certificate chain<br>
+    where test is the passphrase that was used to encrypt the certificate<br>
 
 **To deploy the certificate:**
 
