@@ -1,0 +1,3 @@
+customHeaderName: X-Forwarded-For
+sourceIpHeaderName: null
+

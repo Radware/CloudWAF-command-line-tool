@@ -1,0 +1,10 @@
+cipherSuiteName: Compatible
+securityProtocolSet:
+  ssl30: false
+  tls10: false
+  tls11: true
+  tls12: true
+  tls13: false
+useDefaultCipherSuite: false
+useDefaultProtocolSet: false
+

@@ -1,0 +1,620 @@
+advancedRules:
+  deliveryRules: []
+  index: 100
+  redirectRules: []
+  responseDeliveryRules: []
+  rulesLimit: 3
+  securityRules: []
+advancedRulesEnabled: true
+advancedRulesReportingEnabled: true
+alconAccessLogConfiguration:
+  enabled: false
+  format: $remote_addr - $remote_user [$time_local] \"$request\" $status $body_bytes_sent
+    \"$http_referrer\" \"$http_user_agent\" \"$gzip_ratio\"
+alconMetric: ROUND_ROBIN
+alconPopConfigurationContexts:
+- disabled: false
+  popName: ASH
+- disabled: false
+  popName: CHI
+antibotEnabled: true
+apiProtection:
+  basePaths: []
+  endpoints: []
+  hostname:
+    hostname: ''
+    useDefault: false
+  status: DISABLE
+apiProtectionEnabled: true
+applicationSecuritySettings:
+  cipherSuite:
+    ciphers:
+    - ALL
+    - '!NULL'
+    - '!aNULL'
+    - '!EXPORT'
+    - '!RSA'
+    - '!RC4'
+    - '!DES'
+    - '!3DES'
+    - '!DSS'
+    - '!SRP'
+    - '!PSK'
+    - '!SSLv2'
+    - '@STRENGTH'
+    defaultSet: false
+    name: Compatible
+    systemSet: true
+  securityProtocolSet:
+    defaultSet: false
+    ssl30: false
+    tls10: true
+    tls11: true
+    tls12: true
+    tls13: false
+  useDefaultCipherSuite: false
+  useDefaultProtocolSet: false
+attackersFeed:
+  attackersFeedMode: DISABLE
+  excludedIps: []
+attackersFeedEnabled: false
+awBypassEnabled: false
+azureDdosEnabled: false
+bigFileConfiguration:
+  enabled: true
+  fileSize: 1048576
+certificate:
+  applications: null
+  certificateChain: CN=botmgr.online;CN=Let's Encrypt Authority X3,O=Let's Encrypt,C=US;CN=DST
+    Root CA X3,O=Digital Signature Trust Co.
+  certificateType: REGULAR
+  creationDate: 1575175053279
+  email: null
+  fingerprint: 90455D19D2FA655FDCB030C3F7FD2D90D1F88A3C
+  issuer: CN=Let's Encrypt Authority X3,O=Let's Encrypt,C=US
+  keySize: '4096'
+  protectedDomains: botmgr.online;botmgr.online;www.botmgr.online
+  synchronized: true
+  validFrom: 1575171143000
+  validTo: 1582947143000
+  whiteLabelConfiguration: null
+compressionEnabled: true
+creationDate: 1557753570459
+customDeployment: false
+ddosSslApplicationSettings:
+  ddosSslBgpCommunity: null
+  ddosSslEnabled: false
+  ddosSslIp: null
+deploymentStatus: PROTECTING
+featureStates:
+  AccessControlList: true
+  AccessRules: true
+  Protections: true
+featuresData:
+  ddosFeatureData:
+    dpPolicyName: null
+    dpipeAssetId: null
+  wafFeatureData:
+    accessControlList:
+      accessControlListItems: []
+      defaultOperation: PERMIT
+    accessRules:
+      accessRules: []
+    blockPage:
+      url: null
+    dns:
+      dnsRecords:
+      - type: A
+        value: 50.31.132.150
+      - type: CNAME
+        value: 13e6a064d9bd43bb8ebcb6dfb6395833.v1.radwarecloud.net
+    ipRange:
+    - 50.31.132.150
+    mainDomain:
+      mainDomain: www.botmgr.online
+    operationMode:
+      failoverMode: null
+      loadBalanceMode:
+        loadBalanceMetric: ROUND_ROBIN
+        serverAddresses:
+        - address: 185.201.11.198
+          addressType: IP
+      mode: LOAD_BALANCE
+    protectionConfiguration:
+      allowedFileExtensionProtection:
+        allowList:
+          allowListItems:
+          - acceptable: true
+            method: GET
+            uri: '*.docx'
+          - acceptable: true
+            method: GET
+            uri: '*.docx'
+          - acceptable: true
+            method: GET
+            uri: '*.gif'
+          - acceptable: true
+            method: GET
+            uri: '*.gif'
+          - acceptable: true
+            method: GET
+            uri: '*.shtml'
+          - acceptable: true
+            method: GET
+            uri: '*.shtml'
+          - acceptable: true
+            method: GET
+            uri: '*.xsl'
+          - acceptable: true
+            method: GET
+            uri: '*.xsl'
+          - acceptable: true
+            method: GET
+            uri: '*.ashx'
+          - acceptable: true
+            method: GET
+            uri: '*.ashx'
+          - acceptable: true
+            method: GET
+            uri: /
+          - acceptable: true
+            method: GET
+            uri: /
+          - acceptable: true
+            method: GET
+            uri: '*.htm'
+          - acceptable: true
+            method: GET
+            uri: '*.jpg'
+          - acceptable: true
+            method: GET
+            uri: '*.htm'
+          - acceptable: true
+            method: GET
+            uri: '*.jpg'
+          - acceptable: true
+            method: GET
+            uri: '*.wmv'
+          - acceptable: true
+            method: GET
+            uri: '*.wmv'
+          - acceptable: true
+            method: GET
+            uri: '*.js'
+          - acceptable: true
+            method: GET
+            uri: '*.js'
+          - acceptable: true
+            method: GET
+            uri: '*.jsp'
+          - acceptable: true
+            method: POST
+            uri: '*.jsp'
+          - acceptable: true
+            method: GET
+            uri: '*.jsp'
+          - acceptable: true
+            method: POST
+            uri: '*.jsp'
+          - acceptable: true
+            method: GET
+            uri: '*.xlsx'
+          - acceptable: true
+            method: GET
+            uri: '*.xlsx'
+          - acceptable: true
+            method: GET
+            uri: '*.ttf'
+          - acceptable: true
+            method: GET
+            uri: '*.ttf'
+          - acceptable: true
+            method: GET
+            uri: '*.svg'
+          - acceptable: true
+            method: GET
+            uri: '*.svg'
+          - acceptable: true
+            method: GET
+            uri: '*.aspx'
+          - acceptable: true
+            method: POST
+            uri: '*.aspx'
+          - acceptable: true
+            method: GET
+            uri: '*.aspx'
+          - acceptable: true
+            method: POST
+            uri: '*.aspx'
+          - acceptable: true
+            method: GET
+            uri: '*.jpeg'
+          - acceptable: true
+            method: GET
+            uri: '*.mp4'
+          - acceptable: true
+            method: GET
+            uri: '*.jpeg'
+          - acceptable: true
+            method: GET
+            uri: '*.mp4'
+          - acceptable: true
+            method: GET
+            uri: '*.flv'
+          - acceptable: true
+            method: GET
+            uri: '*.mp3'
+          - acceptable: true
+            method: GET
+            uri: '*.flv'
+          - acceptable: true
+            method: GET
+            uri: '*.mp3'
+          - acceptable: true
+            method: GET
+            uri: '*.ppt'
+          - acceptable: true
+            method: GET
+            uri: '*.ppt'
+          - acceptable: true
+            method: GET
+            uri: '*.pdf'
+          - acceptable: true
+            method: GET
+            uri: '*.pdf'
+          - acceptable: true
+            method: GET
+            uri: '*.xls'
+          - acceptable: true
+            method: GET
+            uri: '*.xls'
+          - acceptable: true
+            method: GET
+            uri: '*.csv'
+          - acceptable: true
+            method: GET
+            uri: '*.csv'
+          - acceptable: true
+            method: GET
+            uri: '*.bmp'
+          - acceptable: true
+            method: GET
+            uri: '*.bmp'
+          - acceptable: true
+            method: GET
+            uri: '*.css'
+          - acceptable: true
+            method: GET
+            uri: '*.css'
+          - acceptable: true
+            method: GET
+            uri: '*.swf'
+          - acceptable: true
+            method: GET
+            uri: '*.swf'
+          - acceptable: true
+            method: GET
+            uri: '*.tif'
+          - acceptable: true
+            method: GET
+            uri: '*.tif'
+          - acceptable: true
+            method: GET
+            uri: '*.axd'
+          - acceptable: true
+            method: GET
+            uri: '*.axd'
+          - acceptable: true
+            method: GET
+            uri: '*.php'
+          - acceptable: true
+            method: POST
+            uri: '*.php'
+          - acceptable: true
+            method: GET
+            uri: '*.php'
+          - acceptable: true
+            method: POST
+            uri: '*.php'
+          - acceptable: true
+            method: GET
+            uri: '*.no-extension'
+          - acceptable: true
+            method: POST
+            uri: '*.no-extension'
+          - acceptable: true
+            method: GET
+            uri: '*.no-extension'
+          - acceptable: true
+            method: POST
+            uri: '*.no-extension'
+          - acceptable: true
+            method: GET
+            uri: '*.eot'
+          - acceptable: true
+            method: GET
+            uri: '*.eot'
+          - acceptable: true
+            method: GET
+            uri: '*.pptx'
+          - acceptable: true
+            method: GET
+            uri: '*.pptx'
+          - acceptable: true
+            method: GET
+            uri: '*.ico'
+          - acceptable: true
+            method: GET
+            uri: '*.json'
+          - acceptable: true
+            method: POST
+            uri: '*.json'
+          - acceptable: true
+            method: GET
+            uri: '*.ico'
+          - acceptable: true
+            method: GET
+            uri: '*.json'
+          - acceptable: true
+            method: POST
+            uri: '*.json'
+          - acceptable: true
+            method: GET
+            uri: '*.zip'
+          - acceptable: true
+            method: GET
+            uri: '*.zip'
+          - acceptable: true
+            method: GET
+            uri: '*.png'
+          - acceptable: true
+            method: GET
+            uri: '*.png'
+          - acceptable: true
+            method: GET
+            uri: '*.woff'
+          - acceptable: true
+            method: GET
+            uri: '*.woff'
+          - acceptable: true
+            method: GET
+            uri: '*.do'
+          - acceptable: true
+            method: GET
+            uri: '*.do'
+          - acceptable: true
+            method: GET
+            uri: '*.asp'
+          - acceptable: true
+            method: POST
+            uri: '*.asp'
+          - acceptable: true
+            method: GET
+            uri: '*.asp'
+          - acceptable: true
+            method: POST
+            uri: '*.asp'
+          - acceptable: true
+            method: GET
+            uri: '*.xml'
+          - acceptable: true
+            method: POST
+            uri: '*.xml'
+          - acceptable: true
+            method: GET
+            uri: '*.xml'
+          - acceptable: true
+            method: POST
+            uri: '*.xml'
+          - acceptable: true
+            method: GET
+            uri: '*.doc'
+          - acceptable: true
+            method: GET
+            uri: '*.doc'
+          - acceptable: true
+            method: GET
+            uri: '*.html'
+          - acceptable: true
+            method: GET
+            uri: '*.html'
+        protectionStatus: ACTIVE
+      antibotProtection:
+        badBotResponse:
+          advanced_javascript_validation_failure: ALLOW
+          bot_attacking_from_public_cloud: ALLOW
+          emulator_tools: ALLOW
+          known_bad_bot_signatures: ALLOW
+          low_and_slow_attack: ALLOW
+          malicious_browser_behaviour: ALLOW
+          malicious_intent_detected: ALLOW
+          misbehaving_legitimate_bots: ALLOW
+          misbehaving_users: ALLOW
+          programmatic_session_behavior: ALLOW
+          reputational_intelligence: ALLOW
+          scripted_bots: ALLOW
+        customCaptchaPage: "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://captcha.perfdrive.com/captcha-public/css/shieldsquare_styles.min.css\"\
+          >\n        <div class=\"container\">\n               <div class=\"row\"\
+          >\n                    <div class=\"col-1\">\n                         <img\
+          \ src=\"<?php echo ASSETS; ?>images/ss_captcha.png\" alt=\"Captcha Page\"\
+          >\n                    </div>\n                    <div class=\"col-2\"\
+          >\n                         <h1>We apologize for the inconvenience...</h1>\n\
+          \                         <p>...but your activity and behavior on this site\
+          \ made us think that you are a bot.</p>\n                         <p><b>Note:</b>\
+          \ A number of things could be going on here.</p>\n                     \
+          \    <ol>\n                              <li>If you are attempting to access\
+          \ this site using an anonymous Private/Proxy network, please disable that\
+          \ and try accessing site again.</li>\n                              <li>Due\
+          \ to previously detected malicious behavior which originated from the network\
+          \ you're using, please request unblock to site.</li>\n                 \
+          \        </ol>\n                    </div>\n               </div>\n    \
+          \           <div class=\"row\">\n                    <center> <b>Incident\
+          \ ID: #incident_id#</b> </center>\n                    <br>\n          \
+          \          <div>\n                    <center>\n                       \
+          \  <p><b> Please solve this CAPTCHA to request unblock to the website </b></p>\n\
+          \                    </center>\n                    </div>\n           \
+          \         <br>\n                    <div class=\"captcha-mid\">        \
+          \                                     </div>\n               </div>\n  \
+          \        </div>\n"
+        enable: true
+        legitimateBotResponse:
+          aggregator_action: ALLOW
+          backlink_action: ALLOW
+          monitoring_action: ALLOW
+          partner_action: ALLOW
+          social_site_action: ALLOW
+        protectionStatus: PASSIVE
+        whitelistedIpList: []
+      databaseProtection:
+        databaseProtectionList:
+          databaseProtectionItems:
+          - discardAllRules: false
+            page: All Pages
+            parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+            regex: true
+            ruleIds:
+            - FSPA01
+            - ATPANP
+            - FSPA02
+          - discardAllRules: false
+            page: All Pages
+            parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+            regex: true
+            ruleIds:
+            - FSPA01
+            - ATPANP
+            - FSPA02
+        protectionStatus: ACTIVE
+      ddosProtection:
+        protectionStatus: ACTIVE
+      httpProtocolComplianceProtection:
+        protectionStatus: ACTIVE
+      ipReputationProtection:
+        protectionStatus: DISABLE
+      knownAttackTypesProtection:
+        protectionStatus: ACTIVE
+      vulnerabilityProtection:
+        protectionStatus: ACTIVE
+        vulnerabilityList:
+          vulnerabilityItems:
+          - details: There was an attempt to retrieve Unix sensitive files.
+            pattern: egrep
+            ruleId: '9688'
+          - details: Attempt to access a sensitive location
+            pattern: /libs/
+            ruleId: '9359'
+          - details: Attempt to access administrative location
+            pattern: /test/
+            ruleId: '9295'
+          - details: PHPMailer Remote Code Execution CVE-2016-10033
+            pattern: N/A
+            ruleId: '10468'
+          - details: Four subsequent opening parentheses, this may be an attempt to
+              execute code on the server.
+            pattern: N/A
+            ruleId: '6904'
+          - details: 'Fuzzer: HTTP GET Request Invalid URI (Encoded)'
+            pattern: +++++++
+            ruleId: '9229'
+          - details: An attempt to reach a known vulnerability testing directory.
+            pattern: /vulnerabilities
+            ruleId: '9594'
+    protocol:
+      httpProtocol:
+        backEndPort: 80
+        frontEndPort: 80
+        hostName: null
+        interval: 30
+        responseCode: null
+        successCriteria: TCP
+        uri: null
+      httpsProtocol:
+        backEndPort: 443
+        fingerprint: 90455D19D2FA655FDCB030C3F7FD2D90D1F88A3C
+        frontEndPort: 443
+        hostName: null
+        interval: 30
+        responseCode: null
+        successCriteria: TCP
+        uri: null
+      protocolType: Both
+      redirectStatusCode: 302
+    region: US_EAST_1
+    securityPolicy:
+      protectionMode: IMMEDIATE
+      technology: I_DONT_KNOW
+    sourceIpHeader: null
+frontend: alcon
+generalInfo:
+  description: null
+  externalID: null
+  ownerEmail: null
+  ownerName: null
+geoBlocking:
+  countries: []
+  excludedIps: []
+  geoBlockingMode: DISABLE
+geoBlockingEnabled: true
+geoBlockingPolicy: null
+hstsAge: 31536000
+hstsEnabled: false
+http2Enabled: true
+id: 13e6a064-d9bd-43bb-8ebc-b6dfb6395833
+internalConfiguration:
+  ddosInternalConfiguration: null
+  wafInternalConfiguration:
+    tunnelConfiguration:
+      tunnels:
+      - US_Region_PoCs_botmgr_HTTP
+      - US_Region_PoCs_botmgr_HTTPS
+ipPersistencySettings:
+  ipPersistencyEnabled: false
+ipServiceLevel: null
+ipSourceAffinitySettings:
+  ipAffinityEnabled: false
+ipv6Enabled: false
+isCustomDeployment: false
+monitoringStatus: NOT_MONITORING
+mux: true
+name: botmgr
+ntlmEnabled: false
+originLatencyEnabled: true
+rateLimit:
+  rateLimitExcludes: []
+  rateLimitMode: DISABLE
+  rateLimitRules: []
+  rateLimitSiteWide:
+    blockingPeriod: 1
+    durationType: MIN
+    enable: false
+    threshold: 500
+rateLimitEnabled: false
+rateLimitMaxRules: 5
+readOnly: false
+showArecord: true
+showCnameRecord: true
+showOrigins: true
+tunableParameters:
+  tunableHttpParameters:
+    clientBodyBufferSize: 4k
+    clientBodyTimeout: 10s
+    clientHeaderBufferSize: 1k
+    clientHeaderTimeout: 10s
+    clientMaxBodySize: '0'
+    largeClientHeaderBuffer:
+      number: 4
+      size: 8k
+    proxyConnectTimeout: 60s
+    proxyReadTimeout: 600s
+    proxySendTimeout: 60s
+    tunableHttpUpstreamParameters:
+      keepAlive: 128
+      keepAliveRequests: 100
+      keepAliveTimeout: 600s
+  tunableStreamParameters:
+    preReadBufferSize: 16k
+    preReadTimeout: 30s
+    proxyProtocolTimeout: 30s
+workflowName: US_Region_PoCs.botmgr
+xrdwripAllowed: false
+

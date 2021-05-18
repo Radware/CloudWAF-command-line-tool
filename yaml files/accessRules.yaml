@@ -1,0 +1,12 @@
+accessControlListItems:
+- description: Malicious IP,
+  ip: 2.2.2.1
+  operation: BLOCK
+- description: test
+  ip: 3.3.3.4
+  operation: BLOCK
+- description: test2
+  ip: 4.4.4.5
+  operation: BLOCK
+defaultOperation: PERMIT
+

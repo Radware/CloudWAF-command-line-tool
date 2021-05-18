@@ -1,0 +1,152 @@
+- applications: null
+  certificateChain: CN=*.seing.net;CN=Sectigo RSA Domain Validation Secure Server
+    CA,O=Sectigo Limited,L=Salford,ST=Greater Manchester,C=GB;CN=USERTrust RSA Certification
+    Authority,O=The USERTRUST Network,L=Jersey City,ST=New Jersey,C=US;CN=AddTrust
+    External CA Root,OU=AddTrust External TTP Network,O=AddTrust AB,C=SE
+  certificateType: REGULAR
+  creationDate: 2020-02-26T18:05:14.684+0000
+  email: null
+  fingerprint: F33F4F1CF99508F4281D7275ACF61217E3FD8E8D
+  issuer: CN=Sectigo RSA Domain Validation Secure Server CA,O=Sectigo Limited,L=Salford,ST=Greater
+    Manchester,C=GB
+  keySize: '2048'
+  protectedDomains: '*.seing.net;*.seing.net;seing.net'
+  synchronized: true
+  validFrom: 2020-02-14T00:00:00.000+0000
+  validTo: 2022-02-13T23:59:59.000+0000
+  whiteLabelConfiguration: null
+- applications:
+  - applicationConfiguration: null
+    applicationName: botmgr
+    applicationUUID: 13e6a064-d9bd-43bb-8ebc-b6dfb6395833
+  certificateChain: CN=botmgr.online;CN=Let's Encrypt Authority X3,O=Let's Encrypt,C=US;CN=DST
+    Root CA X3,O=Digital Signature Trust Co.
+  certificateType: REGULAR
+  creationDate: 2019-12-01T04:37:33.279+0000
+  email: null
+  fingerprint: 90455D19D2FA655FDCB030C3F7FD2D90D1F88A3C
+  issuer: CN=Let's Encrypt Authority X3,O=Let's Encrypt,C=US
+  keySize: '4096'
+  protectedDomains: botmgr.online;botmgr.online;www.botmgr.online
+  synchronized: true
+  validFrom: 2019-12-01T03:32:23.000+0000
+  validTo: 2020-02-29T03:32:23.000+0000
+  whiteLabelConfiguration: null
+- applications: null
+  certificateChain: ''
+  certificateType: SELF_SIGNED
+  creationDate: 2018-08-25T21:06:14.557+0000
+  email: null
+  fingerprint: 1BB47902B5F5855B404792399BD84309FA977B7F
+  issuer: CN=ssl-ca,1.2.840.113549.1.9.1=#1613706965726f2e66757240676d61696c2e636f6d,O=DaHome,L=Chicago,ST=IL,C=US
+  keySize: '2048'
+  protectedDomains: hacme-secure.maxfur.net;hacme-secure.maxfur.net
+  synchronized: true
+  validFrom: 2018-08-25T20:59:13.000+0000
+  validTo: 2028-08-22T20:59:13.000+0000
+  whiteLabelConfiguration: null
+- applications: null
+  certificateChain: ''
+  certificateType: SELF_SIGNED
+  creationDate: 2020-04-01T17:10:44.158+0000
+  email: null
+  fingerprint: 235E54C8C69E58014A96E0BBB6D3CED22B2F64ED
+  issuer: ST=YES,C=CA,CN=www.nrd.ca
+  keySize: '2048'
+  protectedDomains: www.nrd.ca
+  synchronized: true
+  validFrom: 2020-04-01T17:09:37.000+0000
+  validTo: 2021-04-01T17:09:37.000+0000
+  whiteLabelConfiguration: null
+- applications: null
+  certificateChain: ''
+  certificateType: SELF_SIGNED
+  creationDate: 2020-03-10T17:11:17.680+0000
+  email: null
+  fingerprint: 72FCA45D91A1228450A0B2D0394F484F9DD5F54A
+  issuer: ST=QC,C=CA,CN=www.jeancoutu.com
+  keySize: '2048'
+  protectedDomains: www.jeancoutu.com
+  synchronized: true
+  validFrom: 2020-03-10T17:10:50.000+0000
+  validTo: 2021-03-10T17:10:50.000+0000
+  whiteLabelConfiguration: null
+- applications: null
+  certificateChain: ''
+  certificateType: SELF_SIGNED
+  creationDate: 2019-05-20T03:27:04.772+0000
+  email: null
+  fingerprint: B7A340373696C8D1789AFF13F3DED8176C278AED
+  issuer: 1.2.840.113549.1.9.1=#1612736261636368757340676d61696c2e636f6d,CN=*.bacchus.ws,OU=Testing,O=Radware
+    BotManager Testing,L=Orlando,ST=Florida,C=US
+  keySize: '2048'
+  protectedDomains: '*.bacchus.ws'
+  synchronized: true
+  validFrom: 2019-05-20T03:22:37.000+0000
+  validTo: 2029-05-17T03:22:37.000+0000
+  whiteLabelConfiguration: null
+- applications:
+  - applicationConfiguration: null
+    applicationName: radwarelabs.ca
+    applicationUUID: 3ec2e44f-2392-4e2c-8d9c-ef849f782090
+  - applicationConfiguration: null
+    applicationName: test-radwarelabs.ca
+    applicationUUID: fbb1a01a-1693-4f6c-b393-9b2465bf9427
+  certificateChain: ''
+  certificateType: SELF_SIGNED
+  creationDate: 2018-03-21T13:41:28.042+0000
+  email: null
+  fingerprint: B4D0984C074F2C60593793DAEA6ABF460625B507
+  issuer: OU=SE Canada,O=Radware,L=MTL,ST=QC,C=CA,CN=*.radwarelabs.ca
+  keySize: '2048'
+  protectedDomains: '*.radwarelabs.ca'
+  synchronized: true
+  validFrom: 2018-01-15T19:15:19.000+0000
+  validTo: 2019-01-15T19:15:19.000+0000
+  whiteLabelConfiguration: null
+- applications: null
+  certificateChain: ''
+  certificateType: SELF_SIGNED
+  creationDate: 2021-01-11T16:32:36.592+0000
+  email: null
+  fingerprint: 7F85E66E4C2A6D462072C5A05FA2B335841AD6BF
+  issuer: ST=YES,C=CA,CN=www.test.com
+  keySize: '4096'
+  protectedDomains: www.test.com
+  synchronized: true
+  validFrom: 2021-01-11T16:30:17.000+0000
+  validTo: 2022-01-11T16:30:17.000+0000
+  whiteLabelConfiguration: null
+- applications:
+  - applicationConfiguration: null
+    applicationName: Toronto-HacmeBank
+    applicationUUID: b1e6111b-598e-49f8-92dc-59bac3b73d87
+  - applicationConfiguration: null
+    applicationName: HacmeBank
+    applicationUUID: 7c1457fc-9324-4d53-bdba-31d8d8a3fa91
+  certificateChain: ''
+  certificateType: SELF_SIGNED
+  creationDate: 2019-12-19T21:07:44.732+0000
+  email: null
+  fingerprint: 3512407708978D5F780362B6F7835015447A5DF0
+  issuer: ST=YES,C=CA,CN=*.radwarelabs.ca
+  keySize: '2048'
+  protectedDomains: '*.radwarelabs.ca'
+  synchronized: true
+  validFrom: 2019-08-31T23:07:53.000+0000
+  validTo: 2020-08-30T23:07:53.000+0000
+  whiteLabelConfiguration: null
+- applications: null
+  certificateChain: ''
+  certificateType: SELF_SIGNED
+  creationDate: 2021-04-05T23:53:33.109+0000
+  email: null
+  fingerprint: 65A303E33B4699A72D749AA2FCF3D32CE1FEA967
+  issuer: CN=lawrence-root,OU=SE,O=Radware,L=SF,ST=CA,C=US
+  keySize: '2048'
+  protectedDomains: lawrence.com;lawrence.com
+  synchronized: true
+  validFrom: 2020-08-02T22:37:33.000+0000
+  validTo: 2022-08-02T22:37:33.000+0000
+  whiteLabelConfiguration: null
+

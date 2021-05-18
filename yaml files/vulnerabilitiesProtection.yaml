@@ -1,0 +1,60 @@
+protectionStatus: ACTIVE
+vulnerabilityList:
+  vulnerabilityItems:
+  - details: N/A
+    pattern: N/A
+    ruleId: '7585'
+  - details: Attempt to access a sensitive location
+    pattern: /libs/
+    ruleId: '9359'
+  - details: Attempt to access administrative location
+    pattern: /db/
+    ruleId: '9291'
+  - details: N/A
+    pattern: N/A
+    ruleId: '7582'
+  - details: 'Fuzzer: HTTP GET Request Invalid URI (Encoded)'
+    pattern: +++++++
+    ruleId: '9229'
+  - details: N/A
+    pattern: N/A
+    ruleId: '7585'
+  - details: N/A
+    pattern: N/A
+    ruleId: '7583'
+  - details: N/A
+    pattern: N/A
+    ruleId: '7583'
+  - details: Blocking of Cross Site Scripting (XSS).
+    pattern: <script
+    ruleId: '7123'
+  - details: Four subsequent opening parentheses, this may be an attempt to execute
+      code on the server.
+    pattern: N/A
+    ruleId: '6904'
+  - details: There was an attempt to retrieve Unix sensitive files.
+    pattern: egrep
+    ruleId: '9688'
+  - details: There was an attempt to retrieve Unix sensitive files.
+    pattern: egrep
+    ruleId: '9688'
+  - details: 'Fuzzer: HTTP GET Request Invalid URI (Encoded)'
+    pattern: +++++++
+    ruleId: '9229'
+  - details: Attempt to access administrative location
+    pattern: /test/
+    ruleId: '9295'
+  - details: Attempt to access administrative location
+    pattern: /test/
+    ruleId: '9295'
+  - details: N/A
+    pattern: N/A
+    ruleId: '7582'
+  - details: Four subsequent opening parentheses, this may be an attempt to execute
+      code on the server.
+    pattern: N/A
+    ruleId: '6904'
+  - details: Attempt to access a sensitive location
+    pattern: /libs/
+    ruleId: '9359'
+

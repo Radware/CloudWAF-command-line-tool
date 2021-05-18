@@ -1,0 +1,10 @@
+failoverMode: null
+loadBalanceMode:
+  loadBalanceMetric: ROUND_ROBIN
+  serverAddresses:
+  - address: 66.212.227.133
+    addressType: IP
+  - address: 66.212.227.134
+    addressType: IP    
+mode: LOAD_BALANCE
+

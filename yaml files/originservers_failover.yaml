@@ -1,0 +1,10 @@
+failoverMode:
+  primaryAddress:
+    address: 66.212.227.133
+    addressType: IP
+  secondaryAddress:
+    address: 66.212.227.135
+    addressType: IP
+loadBalanceMode: null
+mode: FAILOVER
+

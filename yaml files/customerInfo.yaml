@@ -1,0 +1,3238 @@
+accountDetails:
+  companyName: US Region PoCs
+  contactDetails:
+    email: shaheed.bacchus@radware.com
+    firstName: Shaheed
+    lastName: Bacchus
+    phone: '14074603571'
+    timezone: America/New_York
+  type: DEMO
+accountStatus: null
+allowNonHttps: true
+authenticationMethod: SINGLE_FACTOR
+availableDomains: []
+availableProtectionMode: IMMEDIATE
+availableRegions:
+- CANADA_1
+- US_EAST_1
+- US_CENTRAL_1
+contracts:
+- allowedAssetsAmount: 9
+  antibotContract:
+    assetAmount: 0
+    enable: false
+    status: null
+    transactions: 0
+  applications:
+  - advancedRules:
+      deliveryRules: []
+      index: 102
+      redirectRules:
+      - action:
+          redirectCode: 302
+          redirectUrl: securitypage.radwarelab.ca
+          type: REDIRECT
+        description: test
+        enabled: true
+        id: 101
+        lastChanged: 1608640603639
+        name: test
+        order: 0
+        trigger:
+          conditions:
+          - conditionType: HEADER
+            headerName: user-agent
+            headerValue: curl
+            operator: CONTAINS
+          operator: AND
+      - action:
+          redirectCode: 302
+          redirectUrl: test.com
+          type: REDIRECT
+        description: test
+        enabled: true
+        id: 102
+        lastChanged: 1608640603639
+        name: test2
+        order: 0
+        trigger:
+          conditions:
+          - conditionType: HEADER
+            headerName: user-agent
+            headerValue: curl
+            operator: CONTAINS
+          operator: AND
+      responseDeliveryRules: []
+      rulesLimit: 3
+      securityRules: []
+    advancedRulesEnabled: true
+    advancedRulesReportingEnabled: false
+    alconAccessLogConfiguration:
+      enabled: false
+      format: $remote_addr - $remote_user [$time_local] \"$request\" $status $body_bytes_sent
+        \"$http_referrer\" \"$http_user_agent\" \"$gzip_ratio\"
+    alconMetric: ROUND_ROBIN
+    alconPopConfigurationContexts:
+    - disabled: false
+      popName: ASH
+    - disabled: false
+      popName: CHI
+    antibotEnabled: false
+    apiProtection:
+      basePaths: []
+      endpoints: []
+      hostname:
+        hostname: ''
+        useDefault: false
+      status: DISABLE
+    apiProtectionEnabled: false
+    applicationSecuritySettings:
+      cipherSuite:
+        ciphers:
+        - ALL
+        - '!NULL'
+        - '!aNULL'
+        - '!EXPORT'
+        - '!RSA'
+        - '!RC4'
+        - '!DES'
+        - '!3DES'
+        - '!DSS'
+        - '!SRP'
+        - '!PSK'
+        - '!SSLv2'
+        - '@STRENGTH'
+        defaultSet: true
+        name: Compatible
+        systemSet: true
+      securityProtocolSet:
+        defaultSet: true
+        ssl30: true
+        tls10: true
+        tls11: true
+        tls12: true
+        tls13: false
+      useDefaultCipherSuite: true
+      useDefaultProtocolSet: true
+    attackersFeed:
+      attackersFeedMode: ACTIVE
+      excludedIps:
+      - description: Glenn Johnson IP
+        ip: 24.53.244.217
+    attackersFeedEnabled: true
+    awBypassEnabled: false
+    azureDdosEnabled: false
+    bigFileConfiguration:
+      enabled: true
+      fileSize: 1048576
+    certificate:
+      applications: null
+      certificateChain: ''
+      certificateType: SELF_SIGNED
+      creationDate: 1521639688042
+      email: null
+      fingerprint: B4D0984C074F2C60593793DAEA6ABF460625B507
+      issuer: OU=SE Canada,O=Radware,L=MTL,ST=QC,C=CA,CN=*.radwarelabs.ca
+      keySize: '2048'
+      protectedDomains: '*.radwarelabs.ca'
+      synchronized: true
+      validFrom: 1516043719000
+      validTo: 1547579719000
+      whiteLabelConfiguration: null
+    compressionEnabled: true
+    creationDate: 1557165943042
+    customDeployment: false
+    ddosSslApplicationSettings:
+      ddosSslBgpCommunity: null
+      ddosSslEnabled: false
+      ddosSslIp: null
+    deploymentStatus: PROTECTING
+    featureStates:
+      AccessControlList: true
+      AccessRules: true
+      Protections: true
+    featuresData:
+      ddosFeatureData:
+        dpPolicyName: null
+        dpipeAssetId: null
+      wafFeatureData:
+        accessControlList:
+          accessControlListItems:
+          - description: Created from SecureX
+            ip: 62.73.169.41
+            operation: BLOCK
+          defaultOperation: PERMIT
+        accessRules:
+          accessRules: []
+        blockPage:
+          url: null
+        dns:
+          dnsRecords:
+          - type: A
+            value: 50.31.132.137
+          - type: CNAME
+            value: 3ec2e44f23924e2c8d9cef849f782090.v1.radwarecloud.net
+        ipRange:
+        - 50.31.132.137
+        mainDomain:
+          mainDomain: radwarelabs.ca
+        operationMode:
+          failoverMode: null
+          loadBalanceMode:
+            loadBalanceMetric: ROUND_ROBIN
+            serverAddresses:
+            - address: 66.212.227.133
+              addressType: IP
+          mode: LOAD_BALANCE
+        protectionConfiguration:
+          allowedFileExtensionProtection:
+            allowList:
+              allowListItems:
+              - acceptable: true
+                method: GET
+                uri: '*.no-extension'
+              - acceptable: true
+                method: POST
+                uri: '*.no-extension'
+              - acceptable: true
+                method: GET
+                uri: '*.png'
+              - acceptable: true
+                method: GET
+                uri: '*.js'
+              - acceptable: true
+                method: GET
+                uri: '*.css'
+              - acceptable: true
+                method: GET
+                uri: '*.jpg'
+              - acceptable: true
+                method: GET
+                uri: '*.gif'
+              - acceptable: true
+                method: GET
+                uri: '*.aspx'
+              - acceptable: true
+                method: POST
+                uri: '*.aspx'
+              - acceptable: true
+                method: GET
+                uri: '*.html'
+              - acceptable: true
+                method: GET
+                uri: '*.pdf'
+              - acceptable: true
+                method: GET
+                uri: '*.ico'
+              - acceptable: true
+                method: GET
+                uri: '*.htm'
+              - acceptable: true
+                method: GET
+                uri: '*.xml'
+              - acceptable: true
+                method: POST
+                uri: '*.xml'
+              - acceptable: true
+                method: GET
+                uri: '*.woff'
+              - acceptable: true
+                method: GET
+                uri: '*.ashx'
+              - acceptable: true
+                method: GET
+                uri: '*.swf'
+              - acceptable: true
+                method: GET
+                uri: '*.asp'
+              - acceptable: true
+                method: POST
+                uri: '*.asp'
+              - acceptable: true
+                method: GET
+                uri: '*.ttf'
+              - acceptable: true
+                method: GET
+                uri: '*.eot'
+              - acceptable: true
+                method: GET
+                uri: '*.axd'
+              - acceptable: true
+                method: GET
+                uri: '*.svg'
+              - acceptable: true
+                method: GET
+                uri: '*.json'
+              - acceptable: true
+                method: POST
+                uri: '*.json'
+              - acceptable: true
+                method: GET
+                uri: '*.mp3'
+              - acceptable: true
+                method: GET
+                uri: '*.zip'
+              - acceptable: true
+                method: GET
+                uri: '*.jpeg'
+              - acceptable: true
+                method: GET
+                uri: '*.xls'
+              - acceptable: true
+                method: GET
+                uri: '*.docx'
+              - acceptable: true
+                method: GET
+                uri: '*.xlsx'
+              - acceptable: true
+                method: GET
+                uri: '*.doc'
+              - acceptable: true
+                method: GET
+                uri: '*.csv'
+              - acceptable: true
+                method: GET
+                uri: '*.mp4'
+              - acceptable: true
+                method: GET
+                uri: '*.pptx'
+              - acceptable: true
+                method: GET
+                uri: '*.tif'
+              - acceptable: true
+                method: GET
+                uri: '*.xsl'
+              - acceptable: true
+                method: GET
+                uri: '*.shtml'
+              - acceptable: true
+                method: GET
+                uri: '*.ppt'
+              - acceptable: true
+                method: GET
+                uri: '*.flv'
+              - acceptable: true
+                method: GET
+                uri: '*.wmv'
+              - acceptable: true
+                method: GET
+                uri: '*.bmp'
+            protectionStatus: ACTIVE
+          antibotProtection:
+            badBotResponse: null
+            customCaptchaPage: null
+            enable: false
+            legitimateBotResponse: null
+            protectionStatus: DISABLE
+            whitelistedIpList: []
+          databaseProtection:
+            databaseProtectionList:
+              databaseProtectionItems:
+              - discardAllRules: false
+                page: All Pages
+                parameter: props
+                regex: false
+                ruleIds:
+                - FZENG2
+              - discardAllRules: false
+                page: All Pages
+                parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+                regex: true
+                ruleIds:
+                - FSPA01
+                - ATPANP
+                - FSPA02
+            protectionStatus: ACTIVE
+          ddosProtection:
+            protectionStatus: ACTIVE
+          httpProtocolComplianceProtection:
+            protectionStatus: ACTIVE
+          ipReputationProtection:
+            protectionStatus: DISABLE
+          knownAttackTypesProtection:
+            protectionStatus: ACTIVE
+          vulnerabilityProtection:
+            protectionStatus: ACTIVE
+            vulnerabilityList:
+              vulnerabilityItems:
+              - details: PHPMailer Remote Code Execution CVE-2016-10033
+                pattern: N/A
+                ruleId: '10468'
+              - details: There was an attempt to retrieve Unix sensitive files.
+                pattern: egrep
+                ruleId: '9688'
+              - details: Attempt to access a sensitive location
+                pattern: /config/
+                ruleId: '9331'
+              - details: Attempt to access administrative location
+                pattern: /test/
+                ruleId: '9295'
+              - details: Nmap scanner activity has been detected
+                pattern: Nmap Scripting Engine
+                ruleId: '10064'
+              - details: Four subsequent opening parentheses, this may be an attempt
+                  to execute code on the server.
+                pattern: N/A
+                ruleId: '6904'
+              - details: 'Fuzzer: HTTP GET Request Invalid URI (Encoded)'
+                pattern: +++++++
+                ruleId: '9229'
+              - details: Attempt to access a sensitive location
+                pattern: /libs/
+                ruleId: '9359'
+        protocol:
+          httpProtocol: null
+          httpsProtocol:
+            backEndPort: 443
+            fingerprint: B4D0984C074F2C60593793DAEA6ABF460625B507
+            frontEndPort: 443
+            hostName: null
+            interval: 30
+            responseCode: null
+            successCriteria: TCP
+            uri: null
+          protocolType: Redirect
+          redirectStatusCode: 302
+        region: US_EAST_1
+        securityPolicy:
+          protectionMode: IMMEDIATE
+          technology: ASP_NET
+        sourceIpHeader: null
+    frontend: alcon
+    generalInfo:
+      description: Some "dummy" user...
+      externalID: null
+      ownerEmail: ted.bignell@radware.com
+      ownerName: Ted Bignell
+    geoBlocking:
+      countries: []
+      excludedIps: []
+      geoBlockingMode: DISABLE
+    geoBlockingEnabled: true
+    geoBlockingPolicy: null
+    hstsAge: 31536000
+    hstsEnabled: false
+    http2Enabled: true
+    id: 3ec2e44f-2392-4e2c-8d9c-ef849f782090
+    internalConfiguration:
+      ddosInternalConfiguration: null
+      wafInternalConfiguration:
+        tunnelConfiguration:
+          tunnels:
+          - US_Region_PoCs_radwarelabs_ca_HTTP
+          - US_Region_PoCs_radwarelabs_ca_HTTPS
+    ipPersistencySettings:
+      ipPersistencyEnabled: false
+    ipServiceLevel: null
+    ipSourceAffinitySettings:
+      ipAffinityEnabled: false
+    ipv6Enabled: false
+    isCustomDeployment: false
+    monitoringStatus: NOT_MONITORING
+    mux: true
+    name: radwarelabs.ca
+    ntlmEnabled: false
+    originLatencyEnabled: false
+    rateLimit:
+      rateLimitExcludes: []
+      rateLimitMode: DISABLE
+      rateLimitRules: []
+      rateLimitSiteWide:
+        blockingPeriod: 1
+        durationType: MIN
+        enable: false
+        threshold: 500
+    rateLimitEnabled: false
+    rateLimitMaxRules: 5
+    readOnly: false
+    showArecord: true
+    showCnameRecord: true
+    showOrigins: true
+    tunableParameters:
+      tunableHttpParameters:
+        clientBodyBufferSize: 4k
+        clientBodyTimeout: 10s
+        clientHeaderBufferSize: 1k
+        clientHeaderTimeout: 10s
+        clientMaxBodySize: '0'
+        largeClientHeaderBuffer:
+          number: 4
+          size: 8k
+        proxyConnectTimeout: 600s
+        proxyReadTimeout: 60s
+        proxySendTimeout: 60s
+        tunableHttpUpstreamParameters:
+          keepAlive: 128
+          keepAliveRequests: 100
+          keepAliveTimeout: 600s
+      tunableStreamParameters:
+        preReadBufferSize: 16k
+        preReadTimeout: 30s
+        proxyProtocolTimeout: 30s
+    workflowName: US_Region_PoCs.radwarelabs_ca
+    xrdwripAllowed: false
+  - advancedRules:
+      deliveryRules: []
+      index: 100
+      redirectRules: []
+      responseDeliveryRules: []
+      rulesLimit: 3
+      securityRules: []
+    advancedRulesEnabled: false
+    advancedRulesReportingEnabled: false
+    alconAccessLogConfiguration:
+      enabled: false
+      format: $remote_addr - $remote_user [$time_local] \"$request\" $status $body_bytes_sent
+        \"$http_referrer\" \"$http_user_agent\" \"$gzip_ratio\"
+    alconMetric: ROUND_ROBIN
+    alconPopConfigurationContexts:
+    - disabled: false
+      popName: ASH
+    - disabled: false
+      popName: CHI
+    antibotEnabled: false
+    apiProtection:
+      basePaths: []
+      endpoints: []
+      hostname:
+        hostname: ''
+        useDefault: false
+      status: DISABLE
+    apiProtectionEnabled: false
+    applicationSecuritySettings:
+      cipherSuite:
+        ciphers:
+        - ALL
+        - '!NULL'
+        - '!aNULL'
+        - '!EXPORT'
+        - '!RSA'
+        - '!RC4'
+        - '!DES'
+        - '!3DES'
+        - '!DSS'
+        - '!SRP'
+        - '!PSK'
+        - '!SSLv2'
+        - '@STRENGTH'
+        defaultSet: true
+        name: Compatible
+        systemSet: true
+      securityProtocolSet:
+        defaultSet: true
+        ssl30: true
+        tls10: true
+        tls11: true
+        tls12: true
+        tls13: false
+      useDefaultCipherSuite: true
+      useDefaultProtocolSet: true
+    attackersFeed:
+      attackersFeedMode: DISABLE
+      excludedIps: []
+    attackersFeedEnabled: false
+    awBypassEnabled: false
+    azureDdosEnabled: false
+    bigFileConfiguration:
+      enabled: false
+      fileSize: 1048576
+    certificate: null
+    compressionEnabled: true
+    creationDate: 1598545097301
+    customDeployment: false
+    ddosSslApplicationSettings:
+      ddosSslBgpCommunity: null
+      ddosSslEnabled: false
+      ddosSslIp: null
+    deploymentStatus: PROTECTING
+    featureStates:
+      AccessControlList: true
+      AccessRules: true
+      Protections: true
+    featuresData:
+      ddosFeatureData:
+        dpPolicyName: null
+        dpipeAssetId: null
+      wafFeatureData:
+        accessControlList:
+          accessControlListItems: []
+          defaultOperation: PERMIT
+        accessRules:
+          accessRules: []
+        blockPage:
+          url: null
+        dns:
+          dnsRecords:
+          - type: CNAME
+            value: db3718bcde9440c19adf300a41069e44.v1.radwarecloud.net
+          - type: A
+            value: 66.22.0.101
+        ipRange:
+        - 66.22.0.101
+        mainDomain:
+          mainDomain: rsamazon.ddns.net
+        operationMode:
+          failoverMode: null
+          loadBalanceMode:
+            loadBalanceMetric: ROUND_ROBIN
+            serverAddresses:
+            - address: 73.29.203.95
+              addressType: IP
+          mode: LOAD_BALANCE
+        protectionConfiguration:
+          allowedFileExtensionProtection:
+            allowList:
+              allowListItems:
+              - acceptable: true
+                method: GET
+                uri: '*.no-extension'
+              - acceptable: true
+                method: POST
+                uri: '*.no-extension'
+              - acceptable: true
+                method: GET
+                uri: '*.png'
+              - acceptable: true
+                method: GET
+                uri: '*.js'
+              - acceptable: true
+                method: GET
+                uri: '*.css'
+              - acceptable: true
+                method: GET
+                uri: '*.jpg'
+              - acceptable: true
+                method: GET
+                uri: '*.gif'
+              - acceptable: true
+                method: GET
+                uri: '*.aspx'
+              - acceptable: true
+                method: POST
+                uri: '*.aspx'
+              - acceptable: true
+                method: GET
+                uri: '*.html'
+              - acceptable: true
+                method: GET
+                uri: '*.pdf'
+              - acceptable: true
+                method: GET
+                uri: '*.ico'
+              - acceptable: true
+                method: GET
+                uri: '*.htm'
+              - acceptable: true
+                method: GET
+                uri: '*.php'
+              - acceptable: true
+                method: POST
+                uri: '*.php'
+              - acceptable: true
+                method: GET
+                uri: '*.xml'
+              - acceptable: true
+                method: POST
+                uri: '*.xml'
+              - acceptable: true
+                method: GET
+                uri: '*.woff'
+              - acceptable: true
+                method: GET
+                uri: '*.ashx'
+              - acceptable: true
+                method: GET
+                uri: '*.swf'
+              - acceptable: true
+                method: GET
+                uri: '*.asp'
+              - acceptable: true
+                method: POST
+                uri: '*.asp'
+              - acceptable: true
+                method: GET
+                uri: '*.ttf'
+              - acceptable: true
+                method: GET
+                uri: '*.eot'
+              - acceptable: true
+                method: GET
+                uri: '*.axd'
+              - acceptable: true
+                method: GET
+                uri: '*.svg'
+              - acceptable: true
+                method: GET
+                uri: '*.jsp'
+              - acceptable: true
+                method: POST
+                uri: '*.jsp'
+              - acceptable: true
+                method: GET
+                uri: '*.json'
+              - acceptable: true
+                method: POST
+                uri: '*.json'
+              - acceptable: true
+                method: GET
+                uri: '*.mp3'
+              - acceptable: true
+                method: GET
+                uri: '*.zip'
+              - acceptable: true
+                method: GET
+                uri: '*.jpeg'
+              - acceptable: true
+                method: GET
+                uri: '*.do'
+              - acceptable: true
+                method: GET
+                uri: '*.xls'
+              - acceptable: true
+                method: GET
+                uri: '*.docx'
+              - acceptable: true
+                method: GET
+                uri: '*.xlsx'
+              - acceptable: true
+                method: GET
+                uri: '*.doc'
+              - acceptable: true
+                method: GET
+                uri: '*.csv'
+              - acceptable: true
+                method: GET
+                uri: '*.mp4'
+              - acceptable: true
+                method: GET
+                uri: '*.pptx'
+              - acceptable: true
+                method: GET
+                uri: '*.tif'
+              - acceptable: true
+                method: GET
+                uri: '*.xsl'
+              - acceptable: true
+                method: GET
+                uri: '*.shtml'
+              - acceptable: true
+                method: GET
+                uri: '*.ppt'
+              - acceptable: true
+                method: GET
+                uri: '*.flv'
+              - acceptable: true
+                method: GET
+                uri: '*.wmv'
+              - acceptable: true
+                method: GET
+                uri: '*.bmp'
+            protectionStatus: ACTIVE
+          antibotProtection:
+            badBotResponse: null
+            customCaptchaPage: null
+            enable: false
+            legitimateBotResponse: null
+            protectionStatus: DISABLE
+            whitelistedIpList: []
+          databaseProtection:
+            databaseProtectionList:
+              databaseProtectionItems:
+              - discardAllRules: false
+                page: All Pages
+                parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+                regex: true
+                ruleIds:
+                - FSPA01
+                - ATPANP
+                - FSPA02
+            protectionStatus: ACTIVE
+          ddosProtection:
+            protectionStatus: ACTIVE
+          httpProtocolComplianceProtection:
+            protectionStatus: ACTIVE
+          ipReputationProtection:
+            protectionStatus: ACTIVE
+          knownAttackTypesProtection:
+            protectionStatus: ACTIVE
+          vulnerabilityProtection:
+            protectionStatus: ACTIVE
+            vulnerabilityList:
+              vulnerabilityItems: []
+        protocol:
+          httpProtocol:
+            backEndPort: 80
+            frontEndPort: 80
+            hostName: null
+            interval: 30
+            responseCode: null
+            successCriteria: TCP
+            uri: null
+          httpsProtocol: null
+          protocolType: HTTP
+          redirectStatusCode: 302
+        region: US_EAST_1
+        securityPolicy:
+          protectionMode: IMMEDIATE
+          technology: I_DONT_KNOW
+        sourceIpHeader: null
+    frontend: alcon
+    generalInfo:
+      description: ''
+      externalID: '53672'
+      ownerEmail: rajeev.shrestha@radware.com
+      ownerName: Rajeev Shrestha
+    geoBlocking:
+      countries: []
+      excludedIps: []
+      geoBlockingMode: DISABLE
+    geoBlockingEnabled: true
+    geoBlockingPolicy: null
+    hstsAge: 31536000
+    hstsEnabled: false
+    http2Enabled: true
+    id: db3718bc-de94-40c1-9adf-300a41069e44
+    internalConfiguration:
+      ddosInternalConfiguration: null
+      wafInternalConfiguration:
+        tunnelConfiguration:
+          tunnels:
+          - US_Region_PoCs_rs_hackazon_HTTP
+          - US_Region_PoCs_rs_hackazon_HTTPS
+    ipPersistencySettings:
+      ipPersistencyEnabled: false
+    ipServiceLevel: null
+    ipSourceAffinitySettings:
+      ipAffinityEnabled: false
+    ipv6Enabled: false
+    isCustomDeployment: false
+    monitoringStatus: MONITORING_AND_ALERT
+    mux: true
+    name: rs_hackazon
+    ntlmEnabled: false
+    originLatencyEnabled: false
+    rateLimit:
+      rateLimitExcludes: []
+      rateLimitMode: DISABLE
+      rateLimitRules: []
+      rateLimitSiteWide:
+        blockingPeriod: 1
+        durationType: MIN
+        enable: false
+        threshold: 500
+    rateLimitEnabled: false
+    rateLimitMaxRules: 5
+    readOnly: false
+    showArecord: false
+    showCnameRecord: true
+    showOrigins: true
+    tunableParameters:
+      tunableHttpParameters:
+        clientBodyBufferSize: 4k
+        clientBodyTimeout: 10s
+        clientHeaderBufferSize: 1k
+        clientHeaderTimeout: 10s
+        clientMaxBodySize: '0'
+        largeClientHeaderBuffer:
+          number: 4
+          size: 8k
+        proxyConnectTimeout: 600s
+        proxyReadTimeout: 60s
+        proxySendTimeout: 60s
+        tunableHttpUpstreamParameters:
+          keepAlive: 128
+          keepAliveRequests: 100
+          keepAliveTimeout: 600s
+      tunableStreamParameters:
+        preReadBufferSize: 16k
+        preReadTimeout: 30s
+        proxyProtocolTimeout: 30s
+    workflowName: US_Region_PoCs.rs_hackazon
+    xrdwripAllowed: false
+  - advancedRules:
+      deliveryRules: []
+      index: 100
+      redirectRules: []
+      responseDeliveryRules: []
+      rulesLimit: 3
+      securityRules: []
+    advancedRulesEnabled: false
+    advancedRulesReportingEnabled: false
+    alconAccessLogConfiguration:
+      enabled: false
+      format: $remote_addr - $remote_user [$time_local] \"$request\" $status $body_bytes_sent
+        \"$http_referrer\" \"$http_user_agent\" \"$gzip_ratio\"
+    alconMetric: ROUND_ROBIN
+    alconPopConfigurationContexts:
+    - disabled: false
+      popName: ASH
+    - disabled: false
+      popName: CHI
+    antibotEnabled: false
+    apiProtection:
+      basePaths: []
+      endpoints: []
+      hostname:
+        hostname: ''
+        useDefault: false
+      status: DISABLE
+    apiProtectionEnabled: false
+    applicationSecuritySettings:
+      cipherSuite:
+        ciphers:
+        - ALL
+        - '!NULL'
+        - '!aNULL'
+        - '!EXPORT'
+        - '!RSA'
+        - '!RC4'
+        - '!DES'
+        - '!3DES'
+        - '!DSS'
+        - '!SRP'
+        - '!PSK'
+        - '!SSLv2'
+        - '@STRENGTH'
+        defaultSet: true
+        name: Compatible
+        systemSet: true
+      securityProtocolSet:
+        defaultSet: true
+        ssl30: true
+        tls10: true
+        tls11: true
+        tls12: true
+        tls13: false
+      useDefaultCipherSuite: true
+      useDefaultProtocolSet: true
+    attackersFeed:
+      attackersFeedMode: DISABLE
+      excludedIps: []
+    attackersFeedEnabled: false
+    awBypassEnabled: false
+    azureDdosEnabled: false
+    bigFileConfiguration:
+      enabled: false
+      fileSize: 1048576
+    certificate:
+      applications: null
+      certificateChain: ''
+      certificateType: SELF_SIGNED
+      creationDate: 1521639688042
+      email: null
+      fingerprint: B4D0984C074F2C60593793DAEA6ABF460625B507
+      issuer: OU=SE Canada,O=Radware,L=MTL,ST=QC,C=CA,CN=*.radwarelabs.ca
+      keySize: '2048'
+      protectedDomains: '*.radwarelabs.ca'
+      synchronized: true
+      validFrom: 1516043719000
+      validTo: 1547579719000
+      whiteLabelConfiguration: null
+    compressionEnabled: true
+    creationDate: 1596741939251
+    customDeployment: false
+    ddosSslApplicationSettings:
+      ddosSslBgpCommunity: null
+      ddosSslEnabled: false
+      ddosSslIp: null
+    deploymentStatus: PROTECTING
+    featureStates:
+      AccessControlList: true
+      AccessRules: true
+      Protections: true
+    featuresData:
+      ddosFeatureData:
+        dpPolicyName: null
+        dpipeAssetId: null
+      wafFeatureData:
+        accessControlList:
+          accessControlListItems: []
+          defaultOperation: PERMIT
+        accessRules:
+          accessRules: []
+        blockPage:
+          url: null
+        dns:
+          dnsRecords:
+          - type: CNAME
+            value: fbb1a01a16934f6cb3939b2465bf9427.v1.radwarecloud.net
+          - type: A
+            value: 66.22.0.231
+        ipRange:
+        - 66.22.0.231
+        mainDomain:
+          mainDomain: new-radwarelabs.ca
+        operationMode:
+          failoverMode: null
+          loadBalanceMode:
+            loadBalanceMetric: ROUND_ROBIN
+            serverAddresses:
+            - address: 66.212.227.133
+              addressType: IP
+          mode: LOAD_BALANCE
+        protectionConfiguration:
+          allowedFileExtensionProtection:
+            allowList:
+              allowListItems:
+              - acceptable: true
+                method: GET
+                uri: '*.no-extension'
+              - acceptable: true
+                method: POST
+                uri: '*.no-extension'
+              - acceptable: true
+                method: GET
+                uri: '*.png'
+              - acceptable: true
+                method: GET
+                uri: '*.js'
+              - acceptable: true
+                method: GET
+                uri: '*.css'
+              - acceptable: true
+                method: GET
+                uri: '*.jpg'
+              - acceptable: true
+                method: GET
+                uri: '*.gif'
+              - acceptable: true
+                method: GET
+                uri: '*.aspx'
+              - acceptable: true
+                method: POST
+                uri: '*.aspx'
+              - acceptable: true
+                method: GET
+                uri: '*.html'
+              - acceptable: true
+                method: GET
+                uri: '*.pdf'
+              - acceptable: true
+                method: GET
+                uri: '*.ico'
+              - acceptable: true
+                method: GET
+                uri: '*.htm'
+              - acceptable: true
+                method: GET
+                uri: '*.xml'
+              - acceptable: true
+                method: POST
+                uri: '*.xml'
+              - acceptable: true
+                method: GET
+                uri: '*.woff'
+              - acceptable: true
+                method: GET
+                uri: '*.ashx'
+              - acceptable: true
+                method: GET
+                uri: '*.swf'
+              - acceptable: true
+                method: GET
+                uri: '*.asp'
+              - acceptable: true
+                method: POST
+                uri: '*.asp'
+              - acceptable: true
+                method: GET
+                uri: '*.ttf'
+              - acceptable: true
+                method: GET
+                uri: '*.eot'
+              - acceptable: true
+                method: GET
+                uri: '*.axd'
+              - acceptable: true
+                method: GET
+                uri: '*.svg'
+              - acceptable: true
+                method: GET
+                uri: '*.json'
+              - acceptable: true
+                method: POST
+                uri: '*.json'
+              - acceptable: true
+                method: GET
+                uri: '*.mp3'
+              - acceptable: true
+                method: GET
+                uri: '*.zip'
+              - acceptable: true
+                method: GET
+                uri: '*.jpeg'
+              - acceptable: true
+                method: GET
+                uri: '*.xls'
+              - acceptable: true
+                method: GET
+                uri: '*.docx'
+              - acceptable: true
+                method: GET
+                uri: '*.xlsx'
+              - acceptable: true
+                method: GET
+                uri: '*.doc'
+              - acceptable: true
+                method: GET
+                uri: '*.csv'
+              - acceptable: true
+                method: GET
+                uri: '*.mp4'
+              - acceptable: true
+                method: GET
+                uri: '*.pptx'
+              - acceptable: true
+                method: GET
+                uri: '*.tif'
+              - acceptable: true
+                method: GET
+                uri: '*.xsl'
+              - acceptable: true
+                method: GET
+                uri: '*.shtml'
+              - acceptable: true
+                method: GET
+                uri: '*.ppt'
+              - acceptable: true
+                method: GET
+                uri: '*.flv'
+              - acceptable: true
+                method: GET
+                uri: '*.wmv'
+              - acceptable: true
+                method: GET
+                uri: '*.bmp'
+            protectionStatus: ACTIVE
+          antibotProtection:
+            badBotResponse: null
+            customCaptchaPage: null
+            enable: false
+            legitimateBotResponse: null
+            protectionStatus: DISABLE
+            whitelistedIpList: []
+          databaseProtection:
+            databaseProtectionList:
+              databaseProtectionItems:
+              - discardAllRules: false
+                page: All Pages
+                parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+                regex: true
+                ruleIds:
+                - FSPA01
+                - ATPANP
+                - FSPA02
+              - discardAllRules: false
+                page: All Pages
+                parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+                regex: true
+                ruleIds:
+                - FSPA01
+                - ATPANP
+                - FSPA02
+            protectionStatus: ACTIVE
+          ddosProtection:
+            protectionStatus: ACTIVE
+          httpProtocolComplianceProtection:
+            protectionStatus: ACTIVE
+          ipReputationProtection:
+            protectionStatus: DISABLE
+          knownAttackTypesProtection:
+            protectionStatus: ACTIVE
+          vulnerabilityProtection:
+            protectionStatus: ACTIVE
+            vulnerabilityList:
+              vulnerabilityItems: []
+        protocol:
+          httpProtocol:
+            backEndPort: 80
+            frontEndPort: 80
+            hostName: null
+            interval: 30
+            responseCode: null
+            successCriteria: TCP
+            uri: null
+          httpsProtocol:
+            backEndPort: 443
+            fingerprint: B4D0984C074F2C60593793DAEA6ABF460625B507
+            frontEndPort: 443
+            hostName: null
+            interval: 30
+            responseCode: null
+            successCriteria: TCP
+            uri: null
+          protocolType: Both
+          redirectStatusCode: 302
+        region: US_EAST_1
+        securityPolicy:
+          protectionMode: IMMEDIATE
+          technology: ASP_NET
+        sourceIpHeader: null
+    frontend: alcon
+    generalInfo:
+      description: ''
+      externalID: ''
+      ownerEmail: ''
+      ownerName: ''
+    geoBlocking:
+      countries: []
+      excludedIps: []
+      geoBlockingMode: DISABLE
+    geoBlockingEnabled: false
+    geoBlockingPolicy: null
+    hstsAge: 31536000
+    hstsEnabled: false
+    http2Enabled: true
+    id: fbb1a01a-1693-4f6c-b393-9b2465bf9427
+    internalConfiguration:
+      ddosInternalConfiguration: null
+      wafInternalConfiguration:
+        tunnelConfiguration:
+          tunnels:
+          - US_Region_PoCs_test_radwarelabs_ca_HTTP
+          - US_Region_PoCs_test_radwarelabs_ca_HTTPS
+    ipPersistencySettings:
+      ipPersistencyEnabled: false
+    ipServiceLevel: null
+    ipSourceAffinitySettings:
+      ipAffinityEnabled: false
+    ipv6Enabled: false
+    isCustomDeployment: false
+    monitoringStatus: MONITORING_AND_ALERT
+    mux: false
+    name: test-radwarelabs.ca
+    ntlmEnabled: false
+    originLatencyEnabled: false
+    rateLimit:
+      rateLimitExcludes: []
+      rateLimitMode: DISABLE
+      rateLimitRules: []
+      rateLimitSiteWide:
+        blockingPeriod: 1
+        durationType: MIN
+        enable: false
+        threshold: 500
+    rateLimitEnabled: false
+    rateLimitMaxRules: 5
+    readOnly: false
+    showArecord: false
+    showCnameRecord: true
+    showOrigins: true
+    tunableParameters:
+      tunableHttpParameters:
+        clientBodyBufferSize: 4k
+        clientBodyTimeout: 10s
+        clientHeaderBufferSize: 1k
+        clientHeaderTimeout: 10s
+        clientMaxBodySize: '0'
+        largeClientHeaderBuffer:
+          number: 4
+          size: 8k
+        proxyConnectTimeout: 600s
+        proxyReadTimeout: 60s
+        proxySendTimeout: 60s
+        tunableHttpUpstreamParameters:
+          keepAlive: 128
+          keepAliveRequests: 100
+          keepAliveTimeout: 600s
+      tunableStreamParameters:
+        preReadBufferSize: 16k
+        preReadTimeout: 30s
+        proxyProtocolTimeout: 30s
+    workflowName: US_Region_PoCs.test_radwarelabs_ca
+    xrdwripAllowed: false
+  - advancedRules:
+      deliveryRules: []
+      index: 100
+      redirectRules: []
+      responseDeliveryRules: []
+      rulesLimit: 3
+      securityRules: []
+    advancedRulesEnabled: true
+    advancedRulesReportingEnabled: false
+    alconAccessLogConfiguration:
+      enabled: false
+      format: $x_rdwr_ip_value - $remote_user [$time_local] $server_addr $server_port
+        "$http_host" "$request" $status $body_bytes_sent "$http_referrer" "$http_user_agent"
+    alconMetric: ROUND_ROBIN
+    alconPopConfigurationContexts:
+    - disabled: false
+      popName: ASH
+    - disabled: false
+      popName: CHI
+    antibotEnabled: false
+    apiProtection:
+      basePaths: []
+      endpoints: []
+      hostname:
+        hostname: ''
+        useDefault: true
+      status: DISABLE
+    apiProtectionEnabled: false
+    applicationSecuritySettings:
+      cipherSuite:
+        ciphers:
+        - ALL
+        - '!NULL'
+        - '!aNULL'
+        - '!EXPORT'
+        - '!RSA'
+        - '!RC4'
+        - '!DES'
+        - '!3DES'
+        - '!DSS'
+        - '!SRP'
+        - '!PSK'
+        - '!SSLv2'
+        - '@STRENGTH'
+        defaultSet: true
+        name: Compatible
+        systemSet: true
+      securityProtocolSet:
+        defaultSet: true
+        ssl30: true
+        tls10: true
+        tls11: true
+        tls12: true
+        tls13: false
+      useDefaultCipherSuite: true
+      useDefaultProtocolSet: true
+    attackersFeed:
+      attackersFeedMode: DISABLE
+      excludedIps: []
+    attackersFeedEnabled: false
+    awBypassEnabled: false
+    azureDdosEnabled: false
+    bigFileConfiguration:
+      enabled: false
+      fileSize: 1048576
+    certificate: null
+    compressionEnabled: true
+    creationDate: 1617758940383
+    customDeployment: false
+    ddosSslApplicationSettings:
+      ddosSslBgpCommunity: null
+      ddosSslEnabled: false
+      ddosSslIp: null
+    deploymentStatus: PROTECTING
+    featureStates:
+      AccessControlList: true
+      AccessRules: true
+      Protections: true
+    featuresData:
+      ddosFeatureData:
+        dpPolicyName: null
+        dpipeAssetId: null
+      wafFeatureData:
+        accessControlList:
+          accessControlListItems:
+          - description: Created from SecureX
+            ip: 52.54.231.14
+            operation: BLOCK
+          defaultOperation: PERMIT
+        accessRules:
+          accessRules: []
+        blockPage:
+          url: null
+        dns:
+          dnsRecords:
+          - type: A
+            value: 66.225.237.201
+          - type: CNAME
+            value: 9d8213f6580f406c9bda618ef9b3896d.v1.radwarecloud.net
+        ipRange:
+        - 66.225.237.201
+        mainDomain:
+          mainDomain: juice-shop.herokuapp.com
+        operationMode:
+          failoverMode: null
+          loadBalanceMode:
+            loadBalanceMetric: ROUND_ROBIN
+            serverAddresses:
+            - address: 54.72.45.84
+              addressType: IP
+          mode: LOAD_BALANCE
+        protectionConfiguration:
+          allowedFileExtensionProtection:
+            allowList:
+              allowListItems:
+              - acceptable: true
+                method: GET
+                uri: '*.png'
+              - acceptable: true
+                method: GET
+                uri: '*.js'
+              - acceptable: true
+                method: GET
+                uri: '*.css'
+              - acceptable: true
+                method: GET
+                uri: '*.jpg'
+              - acceptable: true
+                method: GET
+                uri: '*.gif'
+              - acceptable: true
+                method: GET
+                uri: '*.html'
+              - acceptable: true
+                method: GET
+                uri: '*.pdf'
+              - acceptable: true
+                method: GET
+                uri: '*.ico'
+              - acceptable: true
+                method: GET
+                uri: '*.htm'
+              - acceptable: true
+                method: GET
+                uri: '*.xml'
+              - acceptable: true
+                method: POST
+                uri: '*.xml'
+              - acceptable: true
+                method: GET
+                uri: '*.woff'
+              - acceptable: true
+                method: GET
+                uri: '*.swf'
+              - acceptable: true
+                method: GET
+                uri: '*.ttf'
+              - acceptable: true
+                method: GET
+                uri: '*.eot'
+              - acceptable: true
+                method: GET
+                uri: '*.svg'
+              - acceptable: true
+                method: GET
+                uri: '*.json'
+              - acceptable: true
+                method: POST
+                uri: '*.json'
+              - acceptable: true
+                method: GET
+                uri: '*.mp3'
+              - acceptable: true
+                method: GET
+                uri: '*.zip'
+              - acceptable: true
+                method: GET
+                uri: '*.jpeg'
+              - acceptable: true
+                method: GET
+                uri: '*.xls'
+              - acceptable: true
+                method: GET
+                uri: '*.docx'
+              - acceptable: true
+                method: GET
+                uri: '*.xlsx'
+              - acceptable: true
+                method: GET
+                uri: '*.doc'
+              - acceptable: true
+                method: GET
+                uri: '*.csv'
+              - acceptable: true
+                method: GET
+                uri: '*.mp4'
+              - acceptable: true
+                method: GET
+                uri: '*.pptx'
+              - acceptable: true
+                method: GET
+                uri: '*.tif'
+              - acceptable: true
+                method: GET
+                uri: '*.xsl'
+              - acceptable: true
+                method: GET
+                uri: '*.shtml'
+              - acceptable: true
+                method: GET
+                uri: '*.ppt'
+              - acceptable: true
+                method: GET
+                uri: '*.flv'
+              - acceptable: true
+                method: GET
+                uri: '*.wmv'
+              - acceptable: true
+                method: GET
+                uri: '*.bmp'
+            protectionStatus: PASSIVE
+          antibotProtection:
+            badBotResponse: null
+            customCaptchaPage: null
+            enable: false
+            legitimateBotResponse: null
+            protectionStatus: DISABLE
+            whitelistedIpList: []
+          databaseProtection:
+            databaseProtectionList:
+              databaseProtectionItems: []
+            protectionStatus: PASSIVE
+          ddosProtection:
+            protectionStatus: ACTIVE
+          httpProtocolComplianceProtection:
+            protectionStatus: ACTIVE
+          ipReputationProtection:
+            protectionStatus: DISABLE
+          knownAttackTypesProtection:
+            protectionStatus: PASSIVE
+          vulnerabilityProtection:
+            protectionStatus: PASSIVE
+            vulnerabilityList:
+              vulnerabilityItems: []
+        protocol:
+          httpProtocol:
+            backEndPort: 80
+            frontEndPort: 80
+            hostName: null
+            interval: 30
+            responseCode: null
+            successCriteria: TCP
+            uri: null
+          httpsProtocol: null
+          protocolType: HTTP
+          redirectStatusCode: 302
+        region: US_EAST_1
+        securityPolicy:
+          protectionMode: IMMEDIATE
+          technology: BASIC
+        sourceIpHeader: null
+    frontend: alcon
+    generalInfo:
+      description: Juice Shop Description
+      externalID: null
+      ownerEmail: owner@owner.com
+      ownerName: Juice Shop Owner
+    geoBlocking:
+      countries: []
+      excludedIps: []
+      geoBlockingMode: DISABLE
+    geoBlockingEnabled: true
+    geoBlockingPolicy: null
+    hstsAge: 31536000
+    hstsEnabled: false
+    http2Enabled: true
+    id: 9d8213f6-580f-406c-9bda-618ef9b3896d
+    internalConfiguration:
+      ddosInternalConfiguration: null
+      wafInternalConfiguration:
+        tunnelConfiguration:
+          tunnels:
+          - US_Region_PoCs_Juice_Shop_HTTP
+          - US_Region_PoCs_Juice_Shop_HTTPS
+    ipPersistencySettings:
+      ipPersistencyEnabled: false
+    ipServiceLevel: default
+    ipSourceAffinitySettings:
+      ipAffinityEnabled: false
+    ipv6Enabled: false
+    isCustomDeployment: false
+    monitoringStatus: MONITORING_AND_ALERT
+    mux: true
+    name: Juice Shop
+    ntlmEnabled: false
+    originLatencyEnabled: false
+    rateLimit:
+      rateLimitExcludes: []
+      rateLimitMode: DISABLE
+      rateLimitRules: []
+      rateLimitSiteWide:
+        blockingPeriod: 1
+        durationType: MIN
+        enable: false
+        threshold: 500
+    rateLimitEnabled: false
+    rateLimitMaxRules: 5
+    readOnly: false
+    showArecord: false
+    showCnameRecord: true
+    showOrigins: true
+    tunableParameters:
+      tunableHttpParameters:
+        clientBodyBufferSize: 4k
+        clientBodyTimeout: 10s
+        clientHeaderBufferSize: 1k
+        clientHeaderTimeout: 10s
+        clientMaxBodySize: '0'
+        largeClientHeaderBuffer:
+          number: 4
+          size: 8k
+        proxyConnectTimeout: 600s
+        proxyReadTimeout: 60s
+        proxySendTimeout: 60s
+        tunableHttpUpstreamParameters:
+          keepAlive: 128
+          keepAliveRequests: 100
+          keepAliveTimeout: 600s
+      tunableStreamParameters:
+        preReadBufferSize: 16k
+        preReadTimeout: 30s
+        proxyProtocolTimeout: 30s
+    workflowName: US_Region_PoCs.Juice_Shop
+    xrdwripAllowed: false
+  - advancedRules:
+      deliveryRules: []
+      index: 100
+      redirectRules: []
+      responseDeliveryRules: []
+      rulesLimit: 3
+      securityRules: []
+    advancedRulesEnabled: true
+    advancedRulesReportingEnabled: true
+    alconAccessLogConfiguration:
+      enabled: false
+      format: $remote_addr - $remote_user [$time_local] \"$request\" $status $body_bytes_sent
+        \"$http_referrer\" \"$http_user_agent\" \"$gzip_ratio\"
+    alconMetric: ROUND_ROBIN
+    alconPopConfigurationContexts:
+    - disabled: false
+      popName: ASH
+    - disabled: false
+      popName: CHI
+    antibotEnabled: true
+    apiProtection:
+      basePaths: []
+      endpoints: []
+      hostname:
+        hostname: ''
+        useDefault: false
+      status: DISABLE
+    apiProtectionEnabled: true
+    applicationSecuritySettings:
+      cipherSuite:
+        ciphers:
+        - ALL
+        - '!NULL'
+        - '!aNULL'
+        - '!EXPORT'
+        - '!RSA'
+        - '!RC4'
+        - '!DES'
+        - '!3DES'
+        - '!DSS'
+        - '!SRP'
+        - '!PSK'
+        - '!SSLv2'
+        - '@STRENGTH'
+        defaultSet: false
+        name: Compatible
+        systemSet: true
+      securityProtocolSet:
+        defaultSet: false
+        ssl30: false
+        tls10: true
+        tls11: true
+        tls12: true
+        tls13: false
+      useDefaultCipherSuite: false
+      useDefaultProtocolSet: false
+    attackersFeed:
+      attackersFeedMode: DISABLE
+      excludedIps: []
+    attackersFeedEnabled: false
+    awBypassEnabled: false
+    azureDdosEnabled: false
+    bigFileConfiguration:
+      enabled: true
+      fileSize: 1048576
+    certificate:
+      applications: null
+      certificateChain: CN=botmgr.online;CN=Let's Encrypt Authority X3,O=Let's Encrypt,C=US;CN=DST
+        Root CA X3,O=Digital Signature Trust Co.
+      certificateType: REGULAR
+      creationDate: 1575175053279
+      email: null
+      fingerprint: 90455D19D2FA655FDCB030C3F7FD2D90D1F88A3C
+      issuer: CN=Let's Encrypt Authority X3,O=Let's Encrypt,C=US
+      keySize: '4096'
+      protectedDomains: botmgr.online;botmgr.online;www.botmgr.online
+      synchronized: true
+      validFrom: 1575171143000
+      validTo: 1582947143000
+      whiteLabelConfiguration: null
+    compressionEnabled: true
+    creationDate: 1557753570459
+    customDeployment: false
+    ddosSslApplicationSettings:
+      ddosSslBgpCommunity: null
+      ddosSslEnabled: false
+      ddosSslIp: null
+    deploymentStatus: PROTECTING
+    featureStates:
+      AccessControlList: true
+      AccessRules: true
+      Protections: true
+    featuresData:
+      ddosFeatureData:
+        dpPolicyName: null
+        dpipeAssetId: null
+      wafFeatureData:
+        accessControlList:
+          accessControlListItems: []
+          defaultOperation: PERMIT
+        accessRules:
+          accessRules: []
+        blockPage:
+          url: null
+        dns:
+          dnsRecords:
+          - type: A
+            value: 50.31.132.150
+          - type: CNAME
+            value: 13e6a064d9bd43bb8ebcb6dfb6395833.v1.radwarecloud.net
+        ipRange:
+        - 50.31.132.150
+        mainDomain:
+          mainDomain: www.botmgr.online
+        operationMode:
+          failoverMode: null
+          loadBalanceMode:
+            loadBalanceMetric: ROUND_ROBIN
+            serverAddresses:
+            - address: 185.201.11.198
+              addressType: IP
+          mode: LOAD_BALANCE
+        protectionConfiguration:
+          allowedFileExtensionProtection:
+            allowList:
+              allowListItems:
+              - acceptable: true
+                method: GET
+                uri: '*.docx'
+              - acceptable: true
+                method: GET
+                uri: '*.docx'
+              - acceptable: true
+                method: GET
+                uri: '*.gif'
+              - acceptable: true
+                method: GET
+                uri: '*.gif'
+              - acceptable: true
+                method: GET
+                uri: '*.shtml'
+              - acceptable: true
+                method: GET
+                uri: '*.shtml'
+              - acceptable: true
+                method: GET
+                uri: '*.xsl'
+              - acceptable: true
+                method: GET
+                uri: '*.xsl'
+              - acceptable: true
+                method: GET
+                uri: '*.ashx'
+              - acceptable: true
+                method: GET
+                uri: '*.ashx'
+              - acceptable: true
+                method: GET
+                uri: /
+              - acceptable: true
+                method: GET
+                uri: /
+              - acceptable: true
+                method: GET
+                uri: '*.htm'
+              - acceptable: true
+                method: GET
+                uri: '*.jpg'
+              - acceptable: true
+                method: GET
+                uri: '*.htm'
+              - acceptable: true
+                method: GET
+                uri: '*.jpg'
+              - acceptable: true
+                method: GET
+                uri: '*.wmv'
+              - acceptable: true
+                method: GET
+                uri: '*.wmv'
+              - acceptable: true
+                method: GET
+                uri: '*.js'
+              - acceptable: true
+                method: GET
+                uri: '*.js'
+              - acceptable: true
+                method: GET
+                uri: '*.jsp'
+              - acceptable: true
+                method: POST
+                uri: '*.jsp'
+              - acceptable: true
+                method: GET
+                uri: '*.jsp'
+              - acceptable: true
+                method: POST
+                uri: '*.jsp'
+              - acceptable: true
+                method: GET
+                uri: '*.xlsx'
+              - acceptable: true
+                method: GET
+                uri: '*.xlsx'
+              - acceptable: true
+                method: GET
+                uri: '*.ttf'
+              - acceptable: true
+                method: GET
+                uri: '*.ttf'
+              - acceptable: true
+                method: GET
+                uri: '*.svg'
+              - acceptable: true
+                method: GET
+                uri: '*.svg'
+              - acceptable: true
+                method: GET
+                uri: '*.aspx'
+              - acceptable: true
+                method: POST
+                uri: '*.aspx'
+              - acceptable: true
+                method: GET
+                uri: '*.aspx'
+              - acceptable: true
+                method: POST
+                uri: '*.aspx'
+              - acceptable: true
+                method: GET
+                uri: '*.jpeg'
+              - acceptable: true
+                method: GET
+                uri: '*.mp4'
+              - acceptable: true
+                method: GET
+                uri: '*.jpeg'
+              - acceptable: true
+                method: GET
+                uri: '*.mp4'
+              - acceptable: true
+                method: GET
+                uri: '*.flv'
+              - acceptable: true
+                method: GET
+                uri: '*.mp3'
+              - acceptable: true
+                method: GET
+                uri: '*.flv'
+              - acceptable: true
+                method: GET
+                uri: '*.mp3'
+              - acceptable: true
+                method: GET
+                uri: '*.ppt'
+              - acceptable: true
+                method: GET
+                uri: '*.ppt'
+              - acceptable: true
+                method: GET
+                uri: '*.pdf'
+              - acceptable: true
+                method: GET
+                uri: '*.pdf'
+              - acceptable: true
+                method: GET
+                uri: '*.xls'
+              - acceptable: true
+                method: GET
+                uri: '*.xls'
+              - acceptable: true
+                method: GET
+                uri: '*.csv'
+              - acceptable: true
+                method: GET
+                uri: '*.csv'
+              - acceptable: true
+                method: GET
+                uri: '*.bmp'
+              - acceptable: true
+                method: GET
+                uri: '*.bmp'
+              - acceptable: true
+                method: GET
+                uri: '*.css'
+              - acceptable: true
+                method: GET
+                uri: '*.css'
+              - acceptable: true
+                method: GET
+                uri: '*.swf'
+              - acceptable: true
+                method: GET
+                uri: '*.swf'
+              - acceptable: true
+                method: GET
+                uri: '*.tif'
+              - acceptable: true
+                method: GET
+                uri: '*.tif'
+              - acceptable: true
+                method: GET
+                uri: '*.axd'
+              - acceptable: true
+                method: GET
+                uri: '*.axd'
+              - acceptable: true
+                method: GET
+                uri: '*.php'
+              - acceptable: true
+                method: POST
+                uri: '*.php'
+              - acceptable: true
+                method: GET
+                uri: '*.php'
+              - acceptable: true
+                method: POST
+                uri: '*.php'
+              - acceptable: true
+                method: GET
+                uri: '*.no-extension'
+              - acceptable: true
+                method: POST
+                uri: '*.no-extension'
+              - acceptable: true
+                method: GET
+                uri: '*.no-extension'
+              - acceptable: true
+                method: POST
+                uri: '*.no-extension'
+              - acceptable: true
+                method: GET
+                uri: '*.eot'
+              - acceptable: true
+                method: GET
+                uri: '*.eot'
+              - acceptable: true
+                method: GET
+                uri: '*.pptx'
+              - acceptable: true
+                method: GET
+                uri: '*.pptx'
+              - acceptable: true
+                method: GET
+                uri: '*.ico'
+              - acceptable: true
+                method: GET
+                uri: '*.json'
+              - acceptable: true
+                method: POST
+                uri: '*.json'
+              - acceptable: true
+                method: GET
+                uri: '*.ico'
+              - acceptable: true
+                method: GET
+                uri: '*.json'
+              - acceptable: true
+                method: POST
+                uri: '*.json'
+              - acceptable: true
+                method: GET
+                uri: '*.zip'
+              - acceptable: true
+                method: GET
+                uri: '*.zip'
+              - acceptable: true
+                method: GET
+                uri: '*.png'
+              - acceptable: true
+                method: GET
+                uri: '*.png'
+              - acceptable: true
+                method: GET
+                uri: '*.woff'
+              - acceptable: true
+                method: GET
+                uri: '*.woff'
+              - acceptable: true
+                method: GET
+                uri: '*.do'
+              - acceptable: true
+                method: GET
+                uri: '*.do'
+              - acceptable: true
+                method: GET
+                uri: '*.asp'
+              - acceptable: true
+                method: POST
+                uri: '*.asp'
+              - acceptable: true
+                method: GET
+                uri: '*.asp'
+              - acceptable: true
+                method: POST
+                uri: '*.asp'
+              - acceptable: true
+                method: GET
+                uri: '*.xml'
+              - acceptable: true
+                method: POST
+                uri: '*.xml'
+              - acceptable: true
+                method: GET
+                uri: '*.xml'
+              - acceptable: true
+                method: POST
+                uri: '*.xml'
+              - acceptable: true
+                method: GET
+                uri: '*.doc'
+              - acceptable: true
+                method: GET
+                uri: '*.doc'
+              - acceptable: true
+                method: GET
+                uri: '*.html'
+              - acceptable: true
+                method: GET
+                uri: '*.html'
+            protectionStatus: ACTIVE
+          antibotProtection:
+            badBotResponse:
+              advanced_javascript_validation_failure: ALLOW
+              bot_attacking_from_public_cloud: ALLOW
+              emulator_tools: ALLOW
+              known_bad_bot_signatures: ALLOW
+              low_and_slow_attack: ALLOW
+              malicious_browser_behaviour: ALLOW
+              malicious_intent_detected: ALLOW
+              misbehaving_legitimate_bots: ALLOW
+              misbehaving_users: ALLOW
+              programmatic_session_behavior: ALLOW
+              reputational_intelligence: ALLOW
+              scripted_bots: ALLOW
+            customCaptchaPage: "<link rel=\"stylesheet\" type=\"text/css\" href=\"\
+              http://captcha.perfdrive.com/captcha-public/css/shieldsquare_styles.min.css\"\
+              >\n        <div class=\"container\">\n               <div class=\"row\"\
+              >\n                    <div class=\"col-1\">\n                     \
+              \    <img src=\"<?php echo ASSETS; ?>images/ss_captcha.png\" alt=\"\
+              Captcha Page\">\n                    </div>\n                    <div\
+              \ class=\"col-2\">\n                         <h1>We apologize for the\
+              \ inconvenience...</h1>\n                         <p>...but your activity\
+              \ and behavior on this site made us think that you are a bot.</p>\n\
+              \                         <p><b>Note:</b> A number of things could be\
+              \ going on here.</p>\n                         <ol>\n              \
+              \                <li>If you are attempting to access this site using\
+              \ an anonymous Private/Proxy network, please disable that and try accessing\
+              \ site again.</li>\n                              <li>Due to previously\
+              \ detected malicious behavior which originated from the network you're\
+              \ using, please request unblock to site.</li>\n                    \
+              \     </ol>\n                    </div>\n               </div>\n   \
+              \            <div class=\"row\">\n                    <center> <b>Incident\
+              \ ID: #incident_id#</b> </center>\n                    <br>\n      \
+              \              <div>\n                    <center>\n               \
+              \          <p><b> Please solve this CAPTCHA to request unblock to the\
+              \ website </b></p>\n                    </center>\n                \
+              \    </div>\n                    <br>\n                    <div class=\"\
+              captcha-mid\">                                             </div>\n\
+              \               </div>\n          </div>\n"
+            enable: true
+            legitimateBotResponse:
+              aggregator_action: ALLOW
+              backlink_action: ALLOW
+              monitoring_action: ALLOW
+              partner_action: ALLOW
+              social_site_action: ALLOW
+            protectionStatus: PASSIVE
+            whitelistedIpList: []
+          databaseProtection:
+            databaseProtectionList:
+              databaseProtectionItems:
+              - discardAllRules: false
+                page: All Pages
+                parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+                regex: true
+                ruleIds:
+                - FSPA01
+                - ATPANP
+                - FSPA02
+              - discardAllRules: false
+                page: All Pages
+                parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+                regex: true
+                ruleIds:
+                - FSPA01
+                - ATPANP
+                - FSPA02
+            protectionStatus: ACTIVE
+          ddosProtection:
+            protectionStatus: ACTIVE
+          httpProtocolComplianceProtection:
+            protectionStatus: ACTIVE
+          ipReputationProtection:
+            protectionStatus: DISABLE
+          knownAttackTypesProtection:
+            protectionStatus: ACTIVE
+          vulnerabilityProtection:
+            protectionStatus: ACTIVE
+            vulnerabilityList:
+              vulnerabilityItems:
+              - details: There was an attempt to retrieve Unix sensitive files.
+                pattern: egrep
+                ruleId: '9688'
+              - details: Attempt to access a sensitive location
+                pattern: /libs/
+                ruleId: '9359'
+              - details: Attempt to access administrative location
+                pattern: /test/
+                ruleId: '9295'
+              - details: PHPMailer Remote Code Execution CVE-2016-10033
+                pattern: N/A
+                ruleId: '10468'
+              - details: Four subsequent opening parentheses, this may be an attempt
+                  to execute code on the server.
+                pattern: N/A
+                ruleId: '6904'
+              - details: 'Fuzzer: HTTP GET Request Invalid URI (Encoded)'
+                pattern: +++++++
+                ruleId: '9229'
+              - details: An attempt to reach a known vulnerability testing directory.
+                pattern: /vulnerabilities
+                ruleId: '9594'
+        protocol:
+          httpProtocol:
+            backEndPort: 80
+            frontEndPort: 80
+            hostName: null
+            interval: 30
+            responseCode: null
+            successCriteria: TCP
+            uri: null
+          httpsProtocol:
+            backEndPort: 443
+            fingerprint: 90455D19D2FA655FDCB030C3F7FD2D90D1F88A3C
+            frontEndPort: 443
+            hostName: null
+            interval: 30
+            responseCode: null
+            successCriteria: TCP
+            uri: null
+          protocolType: Both
+          redirectStatusCode: 302
+        region: US_EAST_1
+        securityPolicy:
+          protectionMode: IMMEDIATE
+          technology: I_DONT_KNOW
+        sourceIpHeader: null
+    frontend: alcon
+    generalInfo:
+      description: null
+      externalID: null
+      ownerEmail: null
+      ownerName: null
+    geoBlocking:
+      countries: []
+      excludedIps: []
+      geoBlockingMode: DISABLE
+    geoBlockingEnabled: true
+    geoBlockingPolicy: null
+    hstsAge: 31536000
+    hstsEnabled: false
+    http2Enabled: true
+    id: 13e6a064-d9bd-43bb-8ebc-b6dfb6395833
+    internalConfiguration:
+      ddosInternalConfiguration: null
+      wafInternalConfiguration:
+        tunnelConfiguration:
+          tunnels:
+          - US_Region_PoCs_botmgr_HTTP
+          - US_Region_PoCs_botmgr_HTTPS
+    ipPersistencySettings:
+      ipPersistencyEnabled: false
+    ipServiceLevel: null
+    ipSourceAffinitySettings:
+      ipAffinityEnabled: false
+    ipv6Enabled: false
+    isCustomDeployment: false
+    monitoringStatus: NOT_MONITORING
+    mux: true
+    name: botmgr
+    ntlmEnabled: false
+    originLatencyEnabled: true
+    rateLimit:
+      rateLimitExcludes: []
+      rateLimitMode: DISABLE
+      rateLimitRules: []
+      rateLimitSiteWide:
+        blockingPeriod: 1
+        durationType: MIN
+        enable: false
+        threshold: 500
+    rateLimitEnabled: false
+    rateLimitMaxRules: 5
+    readOnly: false
+    showArecord: true
+    showCnameRecord: true
+    showOrigins: true
+    tunableParameters:
+      tunableHttpParameters:
+        clientBodyBufferSize: 4k
+        clientBodyTimeout: 10s
+        clientHeaderBufferSize: 1k
+        clientHeaderTimeout: 10s
+        clientMaxBodySize: '0'
+        largeClientHeaderBuffer:
+          number: 4
+          size: 8k
+        proxyConnectTimeout: 600s
+        proxyReadTimeout: 60s
+        proxySendTimeout: 60s
+        tunableHttpUpstreamParameters:
+          keepAlive: 128
+          keepAliveRequests: 100
+          keepAliveTimeout: 600s
+      tunableStreamParameters:
+        preReadBufferSize: 16k
+        preReadTimeout: 30s
+        proxyProtocolTimeout: 30s
+    workflowName: US_Region_PoCs.botmgr
+    xrdwripAllowed: false
+  - advancedRules:
+      deliveryRules: []
+      index: 100
+      redirectRules: []
+      responseDeliveryRules: []
+      rulesLimit: 3
+      securityRules: []
+    advancedRulesEnabled: false
+    advancedRulesReportingEnabled: false
+    alconAccessLogConfiguration:
+      enabled: false
+      format: $remote_addr - $remote_user [$time_local] \"$request\" $status $body_bytes_sent
+        \"$http_referrer\" \"$http_user_agent\" \"$gzip_ratio\"
+    alconMetric: ROUND_ROBIN
+    alconPopConfigurationContexts:
+    - disabled: false
+      popName: ASH
+    - disabled: false
+      popName: CHI
+    antibotEnabled: false
+    apiProtection:
+      basePaths: []
+      endpoints: []
+      hostname:
+        hostname: ''
+        useDefault: false
+      status: DISABLE
+    apiProtectionEnabled: false
+    applicationSecuritySettings:
+      cipherSuite:
+        ciphers:
+        - ALL
+        - '!NULL'
+        - '!aNULL'
+        - '!EXPORT'
+        - '!RSA'
+        - '!RC4'
+        - '!DES'
+        - '!3DES'
+        - '!DSS'
+        - '!SRP'
+        - '!PSK'
+        - '!SSLv2'
+        - '@STRENGTH'
+        defaultSet: false
+        name: Compatible
+        systemSet: true
+      securityProtocolSet:
+        defaultSet: false
+        ssl30: false
+        tls10: false
+        tls11: true
+        tls12: true
+        tls13: false
+      useDefaultCipherSuite: false
+      useDefaultProtocolSet: false
+    attackersFeed:
+      attackersFeedMode: DISABLE
+      excludedIps: []
+    attackersFeedEnabled: false
+    awBypassEnabled: false
+    azureDdosEnabled: false
+    bigFileConfiguration:
+      enabled: false
+      fileSize: 1048576
+    certificate:
+      applications: null
+      certificateChain: ''
+      certificateType: SELF_SIGNED
+      creationDate: 1576789664732
+      email: null
+      fingerprint: 3512407708978D5F780362B6F7835015447A5DF0
+      issuer: ST=YES,C=CA,CN=*.radwarelabs.ca
+      keySize: '2048'
+      protectedDomains: '*.radwarelabs.ca'
+      synchronized: true
+      validFrom: 1567292873000
+      validTo: 1598828873000
+      whiteLabelConfiguration: null
+    compressionEnabled: true
+    creationDate: 1521740833216
+    customDeployment: false
+    ddosSslApplicationSettings:
+      ddosSslBgpCommunity: null
+      ddosSslEnabled: false
+      ddosSslIp: null
+    deploymentStatus: PROTECTING
+    featureStates:
+      AccessControlList: true
+      AccessRules: true
+      Protections: true
+    featuresData:
+      ddosFeatureData:
+        dpPolicyName: null
+        dpipeAssetId: null
+      wafFeatureData:
+        accessControlList:
+          accessControlListItems:
+          - description: Malicious IP,
+            ip: 2.2.2.1
+            operation: BLOCK
+          - description: test
+            ip: 3.3.3.4
+            operation: BLOCK
+          - description: test2
+            ip: 4.4.4.5
+            operation: BLOCK
+          defaultOperation: PERMIT
+        accessRules:
+          accessRules: []
+        blockPage:
+          url: null
+        dns:
+          dnsRecords:
+          - type: A
+            value: 94.188.209.79
+          - type: CNAME
+            value: 7c1457fc93244d53bdba31d8d8a3fa91.v1.radwarecloud.net
+        ipRange:
+        - 94.188.209.79
+        mainDomain:
+          mainDomain: hacme.radwarelabs.ca
+        operationMode:
+          failoverMode: null
+          loadBalanceMode:
+            loadBalanceMetric: ROUND_ROBIN
+            serverAddresses:
+            - address: 66.212.227.133
+              addressType: IP
+          mode: LOAD_BALANCE
+        protectionConfiguration:
+          allowedFileExtensionProtection:
+            allowList:
+              allowListItems:
+              - acceptable: true
+                method: GET
+                uri: '*.svg'
+              - acceptable: true
+                method: POST
+                uri: '*.svg'
+              - acceptable: true
+                method: GET
+                uri: '*.png'
+              - acceptable: true
+                method: POST
+                uri: '*.png'
+              - acceptable: true
+                method: GET
+                uri: '*.ttf'
+              - acceptable: true
+                method: POST
+                uri: '*.ttf'
+              - acceptable: true
+                method: GET
+                uri: '*.htm'
+              - acceptable: true
+                method: POST
+                uri: '*.htm'
+              - acceptable: true
+                method: GET
+                uri: '*.jpg'
+              - acceptable: true
+                method: POST
+                uri: '*.jpg'
+              - acceptable: true
+                method: GET
+                uri: '*.zip'
+              - acceptable: true
+                method: POST
+                uri: '*.zip'
+              - acceptable: true
+                method: GET
+                uri: '*.wmv'
+              - acceptable: true
+                method: POST
+                uri: '*.wmv'
+              - acceptable: true
+                method: GET
+                uri: '*.js'
+              - acceptable: true
+                method: POST
+                uri: '*.js'
+              - acceptable: true
+                method: GET
+                uri: '*.html'
+              - acceptable: true
+                method: POST
+                uri: '*.html'
+              - acceptable: true
+                method: GET
+                uri: '*.ppt'
+              - acceptable: true
+                method: POST
+                uri: '*.ppt'
+              - acceptable: true
+                method: GET
+                uri: '*.pdf'
+              - acceptable: true
+                method: POST
+                uri: '*.pdf'
+              - acceptable: true
+                method: GET
+                uri: '*.doc'
+              - acceptable: true
+                method: POST
+                uri: '*.doc'
+              - acceptable: true
+                method: GET
+                uri: '*.no-extension'
+              - acceptable: true
+                method: POST
+                uri: '*.no-extension'
+              - acceptable: true
+                method: GET
+                uri: '*.woff'
+              - acceptable: true
+                method: POST
+                uri: '*.woff'
+              - acceptable: true
+                method: GET
+                uri: '*.xlsx'
+              - acceptable: true
+                method: POST
+                uri: '*.xlsx'
+              - acceptable: true
+                method: GET
+                uri: '*.json'
+              - acceptable: true
+                method: POST
+                uri: '*.json'
+              - acceptable: true
+                method: GET
+                uri: '*.jpeg'
+              - acceptable: true
+                method: POST
+                uri: '*.jpeg'
+              - acceptable: true
+                method: GET
+                uri: '*.mp4'
+              - acceptable: true
+                method: POST
+                uri: '*.mp4'
+              - acceptable: true
+                method: GET
+                uri: '*.flv'
+              - acceptable: true
+                method: POST
+                uri: '*.flv'
+              - acceptable: true
+                method: GET
+                uri: '*.mp3'
+              - acceptable: true
+                method: POST
+                uri: '*.mp3'
+              - acceptable: true
+                method: GET
+                uri: '*.bmp'
+              - acceptable: true
+                method: POST
+                uri: '*.bmp'
+              - acceptable: true
+                method: GET
+                uri: '*.gif'
+              - acceptable: true
+                method: POST
+                uri: '*.gif'
+              - acceptable: true
+                method: GET
+                uri: '*.css'
+              - acceptable: true
+                method: POST
+                uri: '*.css'
+              - acceptable: true
+                method: GET
+                uri: '*.swf'
+              - acceptable: true
+                method: POST
+                uri: '*.swf'
+              - acceptable: true
+                method: GET
+                uri: '*.csv'
+              - acceptable: true
+                method: POST
+                uri: '*.csv'
+              - acceptable: true
+                method: GET
+                uri: '*.docx'
+              - acceptable: true
+                method: POST
+                uri: '*.docx'
+              - acceptable: true
+                method: GET
+                uri: '*.shtml'
+              - acceptable: true
+                method: POST
+                uri: '*.shtml'
+              - acceptable: true
+                method: GET
+                uri: '*.aspx'
+              - acceptable: true
+                method: POST
+                uri: '*.aspx'
+              - acceptable: true
+                method: GET
+                uri: '*.xls'
+              - acceptable: true
+                method: POST
+                uri: '*.xls'
+              - acceptable: true
+                method: GET
+                uri: '*.asp'
+              - acceptable: true
+                method: POST
+                uri: '*.asp'
+              - acceptable: true
+                method: GET
+                uri: '*.ico'
+              - acceptable: true
+                method: POST
+                uri: '*.ico'
+              - acceptable: true
+                method: GET
+                uri: '*.xml'
+              - acceptable: true
+                method: POST
+                uri: '*.xml'
+              - acceptable: true
+                method: GET
+                uri: '*.ashx'
+              - acceptable: true
+                method: POST
+                uri: '*.ashx'
+              - acceptable: true
+                method: GET
+                uri: '*.axd'
+              - acceptable: true
+                method: POST
+                uri: '*.axd'
+              - acceptable: true
+                method: PATCH
+                uri: /
+              - acceptable: true
+                method: GET
+                uri: '*.eot'
+              - acceptable: true
+                method: POST
+                uri: '*.eot'
+              - acceptable: true
+                method: GET
+                uri: '*.tif'
+              - acceptable: true
+                method: POST
+                uri: '*.tif'
+              - acceptable: true
+                method: GET
+                uri: '*.xsl'
+              - acceptable: true
+                method: POST
+                uri: '*.xsl'
+              - acceptable: true
+                method: GET
+                uri: '*.pptx'
+              - acceptable: true
+                method: POST
+                uri: '*.pptx'
+            protectionStatus: ACTIVE
+          antibotProtection:
+            badBotResponse: null
+            customCaptchaPage: null
+            enable: false
+            legitimateBotResponse: null
+            protectionStatus: DISABLE
+            whitelistedIpList: []
+          databaseProtection:
+            databaseProtectionList:
+              databaseProtectionItems:
+              - discardAllRules: false
+                page: All Pages
+                parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+                regex: false
+                ruleIds:
+                - FSPA01
+                - ATPANP
+                - FSPA02
+              - discardAllRules: false
+                page: All Pages
+                parameter: txtUserName
+                regex: false
+                ruleIds:
+                - IDO007
+            protectionStatus: ACTIVE
+          ddosProtection:
+            protectionStatus: ACTIVE
+          httpProtocolComplianceProtection:
+            protectionStatus: ACTIVE
+          ipReputationProtection:
+            protectionStatus: ACTIVE
+          knownAttackTypesProtection:
+            protectionStatus: ACTIVE
+          vulnerabilityProtection:
+            protectionStatus: ACTIVE
+            vulnerabilityList:
+              vulnerabilityItems:
+              - details: N/A
+                pattern: N/A
+                ruleId: '7585'
+              - details: Attempt to access a sensitive location
+                pattern: /libs/
+                ruleId: '9359'
+              - details: Attempt to access administrative location
+                pattern: /db/
+                ruleId: '9291'
+              - details: N/A
+                pattern: N/A
+                ruleId: '7582'
+              - details: 'Fuzzer: HTTP GET Request Invalid URI (Encoded)'
+                pattern: +++++++
+                ruleId: '9229'
+              - details: N/A
+                pattern: N/A
+                ruleId: '7585'
+              - details: N/A
+                pattern: N/A
+                ruleId: '7583'
+              - details: N/A
+                pattern: N/A
+                ruleId: '7583'
+              - details: Blocking of Cross Site Scripting (XSS).
+                pattern: <script
+                ruleId: '7123'
+              - details: Four subsequent opening parentheses, this may be an attempt
+                  to execute code on the server.
+                pattern: N/A
+                ruleId: '6904'
+              - details: There was an attempt to retrieve Unix sensitive files.
+                pattern: egrep
+                ruleId: '9688'
+              - details: There was an attempt to retrieve Unix sensitive files.
+                pattern: egrep
+                ruleId: '9688'
+              - details: 'Fuzzer: HTTP GET Request Invalid URI (Encoded)'
+                pattern: +++++++
+                ruleId: '9229'
+              - details: Attempt to access administrative location
+                pattern: /test/
+                ruleId: '9295'
+              - details: Attempt to access administrative location
+                pattern: /test/
+                ruleId: '9295'
+              - details: N/A
+                pattern: N/A
+                ruleId: '7582'
+              - details: Four subsequent opening parentheses, this may be an attempt
+                  to execute code on the server.
+                pattern: N/A
+                ruleId: '6904'
+              - details: Attempt to access a sensitive location
+                pattern: /libs/
+                ruleId: '9359'
+        protocol:
+          httpProtocol: null
+          httpsProtocol:
+            backEndPort: 8082
+            fingerprint: 3512407708978D5F780362B6F7835015447A5DF0
+            frontEndPort: 443
+            hostName: null
+            interval: 30
+            responseCode: null
+            successCriteria: TCP
+            uri: null
+          protocolType: Redirect
+          redirectStatusCode: 302
+        region: US_EAST_1
+        securityPolicy:
+          protectionMode: IMMEDIATE
+          technology: ASP_NET
+        sourceIpHeader:
+          customHeaderName: X-Forwarded-For
+          sourceIpHeaderName: null
+    frontend: alteon
+    generalInfo:
+      description: null
+      externalID: null
+      ownerEmail: null
+      ownerName: Christian Shink
+    geoBlocking:
+      countries: []
+      excludedIps: []
+      geoBlockingMode: DISABLE
+    geoBlockingEnabled: false
+    geoBlockingPolicy: null
+    hstsAge: 31536000
+    hstsEnabled: false
+    http2Enabled: true
+    id: 7c1457fc-9324-4d53-bdba-31d8d8a3fa91
+    internalConfiguration:
+      ddosInternalConfiguration: null
+      wafInternalConfiguration:
+        tunnelConfiguration:
+          tunnels:
+          - US_Region_PoCs_HacmeBank_HTTP
+          - US_Region_PoCs_HacmeBank_HTTPS
+    ipPersistencySettings:
+      ipPersistencyEnabled: true
+    ipServiceLevel: null
+    ipSourceAffinitySettings:
+      ipAffinityEnabled: false
+    ipv6Enabled: false
+    isCustomDeployment: false
+    monitoringStatus: NOT_MONITORING
+    mux: true
+    name: HacmeBank
+    ntlmEnabled: false
+    originLatencyEnabled: false
+    rateLimit:
+      rateLimitExcludes: []
+      rateLimitMode: DISABLE
+      rateLimitRules: []
+      rateLimitSiteWide:
+        blockingPeriod: 1
+        durationType: MIN
+        enable: false
+        threshold: 500
+    rateLimitEnabled: false
+    rateLimitMaxRules: 5
+    readOnly: false
+    showArecord: true
+    showCnameRecord: true
+    showOrigins: true
+    tunableParameters:
+      tunableHttpParameters:
+        clientBodyBufferSize: 4k
+        clientBodyTimeout: 10s
+        clientHeaderBufferSize: 1k
+        clientHeaderTimeout: 10s
+        clientMaxBodySize: '0'
+        largeClientHeaderBuffer:
+          number: 4
+          size: 8k
+        proxyConnectTimeout: 600s
+        proxyReadTimeout: 60s
+        proxySendTimeout: 60s
+        tunableHttpUpstreamParameters:
+          keepAlive: 128
+          keepAliveRequests: 100
+          keepAliveTimeout: 600s
+      tunableStreamParameters:
+        preReadBufferSize: 16k
+        preReadTimeout: 30s
+        proxyProtocolTimeout: 30s
+    workflowName: US_Region_PoCs.HacmeBank
+    xrdwripAllowed: false
+  - advancedRules:
+      deliveryRules: []
+      index: 100
+      redirectRules: []
+      responseDeliveryRules: []
+      rulesLimit: 3
+      securityRules: []
+    advancedRulesEnabled: false
+    advancedRulesReportingEnabled: false
+    alconAccessLogConfiguration:
+      enabled: false
+      format: $remote_addr - $remote_user [$time_local] \"$request\" $status $body_bytes_sent
+        \"$http_referrer\" \"$http_user_agent\" \"$gzip_ratio\"
+    alconMetric: ROUND_ROBIN
+    alconPopConfigurationContexts:
+    - disabled: false
+      popName: YYZ
+    - disabled: false
+      popName: ASH_YYZ
+    antibotEnabled: false
+    apiProtection:
+      basePaths: []
+      endpoints: []
+      hostname:
+        hostname: ''
+        useDefault: false
+      status: DISABLE
+    apiProtectionEnabled: false
+    applicationSecuritySettings:
+      cipherSuite:
+        ciphers:
+        - ECDHE-RSA-AES256-GCM-SHA384
+        - DHE-RSA-AES256-GCM-SHA384
+        - DHE-RSA-AES128-GCM-SHA256
+        - ECDHE-RSA-AES128-GCM-SHA256
+        defaultSet: false
+        name: High
+        systemSet: true
+      securityProtocolSet:
+        defaultSet: false
+        ssl30: false
+        tls10: false
+        tls11: true
+        tls12: true
+        tls13: false
+      useDefaultCipherSuite: false
+      useDefaultProtocolSet: false
+    attackersFeed:
+      attackersFeedMode: DISABLE
+      excludedIps: []
+    attackersFeedEnabled: false
+    awBypassEnabled: false
+    azureDdosEnabled: false
+    bigFileConfiguration:
+      enabled: false
+      fileSize: 1048576
+    certificate:
+      applications: null
+      certificateChain: ''
+      certificateType: SELF_SIGNED
+      creationDate: 1576789664732
+      email: null
+      fingerprint: 3512407708978D5F780362B6F7835015447A5DF0
+      issuer: ST=YES,C=CA,CN=*.radwarelabs.ca
+      keySize: '2048'
+      protectedDomains: '*.radwarelabs.ca'
+      synchronized: true
+      validFrom: 1567292873000
+      validTo: 1598828873000
+      whiteLabelConfiguration: null
+    compressionEnabled: true
+    creationDate: 1583938759419
+    customDeployment: false
+    ddosSslApplicationSettings:
+      ddosSslBgpCommunity: null
+      ddosSslEnabled: false
+      ddosSslIp: null
+    deploymentStatus: PROTECTING
+    featureStates:
+      AccessControlList: true
+      AccessRules: true
+      Protections: true
+    featuresData:
+      ddosFeatureData:
+        dpPolicyName: null
+        dpipeAssetId: null
+      wafFeatureData:
+        accessControlList:
+          accessControlListItems:
+          - description: Malicious IP
+            ip: 2.2.2.2
+            operation: BLOCK
+          - description: Cisco SecureX test - 12/21/2020 - 3:22
+            ip: 192.168.1.1
+            operation: BLOCK
+          defaultOperation: PERMIT
+        accessRules:
+          accessRules: []
+        blockPage:
+          url: null
+        dns:
+          dnsRecords:
+          - type: A
+            value: 64.202.124.2
+          - type: CNAME
+            value: b1e6111b598e49f892dc59bac3b73d87.v1.radwarecloud.net
+        ipRange:
+        - 64.202.124.2
+        mainDomain:
+          mainDomain: new-hacme.radwarelabs.ca
+        operationMode:
+          failoverMode: null
+          loadBalanceMode:
+            loadBalanceMetric: ROUND_ROBIN
+            serverAddresses:
+            - address: 66.212.227.133
+              addressType: IP
+          mode: LOAD_BALANCE
+        protectionConfiguration:
+          allowedFileExtensionProtection:
+            allowList:
+              allowListItems:
+              - acceptable: true
+                method: GET
+                uri: '*.no-extension'
+              - acceptable: true
+                method: POST
+                uri: '*.no-extension'
+              - acceptable: true
+                method: GET
+                uri: '*.png'
+              - acceptable: true
+                method: GET
+                uri: '*.js'
+              - acceptable: true
+                method: GET
+                uri: '*.css'
+              - acceptable: true
+                method: GET
+                uri: '*.jpg'
+              - acceptable: true
+                method: GET
+                uri: '*.gif'
+              - acceptable: true
+                method: GET
+                uri: '*.aspx'
+              - acceptable: true
+                method: POST
+                uri: '*.aspx'
+              - acceptable: true
+                method: GET
+                uri: '*.html'
+              - acceptable: true
+                method: GET
+                uri: '*.pdf'
+              - acceptable: true
+                method: GET
+                uri: '*.ico'
+              - acceptable: true
+                method: GET
+                uri: '*.htm'
+              - acceptable: true
+                method: GET
+                uri: '*.xml'
+              - acceptable: true
+                method: POST
+                uri: '*.xml'
+              - acceptable: true
+                method: GET
+                uri: '*.woff'
+              - acceptable: true
+                method: GET
+                uri: '*.ashx'
+              - acceptable: true
+                method: GET
+                uri: '*.swf'
+              - acceptable: true
+                method: GET
+                uri: '*.asp'
+              - acceptable: true
+                method: POST
+                uri: '*.asp'
+              - acceptable: true
+                method: GET
+                uri: '*.ttf'
+              - acceptable: true
+                method: GET
+                uri: '*.eot'
+              - acceptable: true
+                method: GET
+                uri: '*.axd'
+              - acceptable: true
+                method: GET
+                uri: '*.svg'
+              - acceptable: true
+                method: GET
+                uri: '*.json'
+              - acceptable: true
+                method: POST
+                uri: '*.json'
+              - acceptable: true
+                method: GET
+                uri: '*.mp3'
+              - acceptable: true
+                method: GET
+                uri: '*.zip'
+              - acceptable: true
+                method: GET
+                uri: '*.jpeg'
+              - acceptable: true
+                method: GET
+                uri: '*.xls'
+              - acceptable: true
+                method: GET
+                uri: '*.docx'
+              - acceptable: true
+                method: GET
+                uri: '*.xlsx'
+              - acceptable: true
+                method: GET
+                uri: '*.doc'
+              - acceptable: true
+                method: GET
+                uri: '*.csv'
+              - acceptable: true
+                method: GET
+                uri: '*.mp4'
+              - acceptable: true
+                method: GET
+                uri: '*.pptx'
+              - acceptable: true
+                method: GET
+                uri: '*.tif'
+              - acceptable: true
+                method: GET
+                uri: '*.xsl'
+              - acceptable: true
+                method: GET
+                uri: '*.shtml'
+              - acceptable: true
+                method: GET
+                uri: '*.ppt'
+              - acceptable: true
+                method: GET
+                uri: '*.flv'
+              - acceptable: true
+                method: GET
+                uri: '*.wmv'
+              - acceptable: true
+                method: GET
+                uri: '*.bmp'
+            protectionStatus: ACTIVE
+          antibotProtection:
+            badBotResponse: null
+            customCaptchaPage: null
+            enable: false
+            legitimateBotResponse: null
+            protectionStatus: DISABLE
+            whitelistedIpList: []
+          databaseProtection:
+            databaseProtectionList:
+              databaseProtectionItems:
+              - discardAllRules: false
+                page: All Pages
+                parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+                regex: true
+                ruleIds:
+                - FSPA01
+                - ATPANP
+                - FSPA02
+            protectionStatus: ACTIVE
+          ddosProtection:
+            protectionStatus: ACTIVE
+          httpProtocolComplianceProtection:
+            protectionStatus: ACTIVE
+          ipReputationProtection:
+            protectionStatus: ACTIVE
+          knownAttackTypesProtection:
+            protectionStatus: ACTIVE
+          vulnerabilityProtection:
+            protectionStatus: ACTIVE
+            vulnerabilityList:
+              vulnerabilityItems: []
+        protocol:
+          httpProtocol: null
+          httpsProtocol:
+            backEndPort: 8082
+            fingerprint: 3512407708978D5F780362B6F7835015447A5DF0
+            frontEndPort: 443
+            hostName: null
+            interval: 30
+            responseCode: null
+            successCriteria: TCP
+            uri: null
+          protocolType: Redirect
+          redirectStatusCode: 302
+        region: CANADA_1
+        securityPolicy:
+          protectionMode: IMMEDIATE
+          technology: ASP_NET
+        sourceIpHeader:
+          customHeaderName: X-Forwarded-For
+          sourceIpHeaderName: null
+    frontend: alcon
+    generalInfo:
+      description: ''
+      externalID: ''
+      ownerEmail: ''
+      ownerName: ''
+    geoBlocking:
+      countries: []
+      excludedIps: []
+      geoBlockingMode: DISABLE
+    geoBlockingEnabled: false
+    geoBlockingPolicy: null
+    hstsAge: 31536000
+    hstsEnabled: false
+    http2Enabled: true
+    id: b1e6111b-598e-49f8-92dc-59bac3b73d87
+    internalConfiguration:
+      ddosInternalConfiguration: null
+      wafInternalConfiguration:
+        tunnelConfiguration:
+          tunnels:
+          - US_Region_PoCs_Toronto_HacmeBank_HTTP
+          - US_Region_PoCs_Toronto_HacmeBank_HTTPS
+    ipPersistencySettings:
+      ipPersistencyEnabled: false
+    ipServiceLevel: null
+    ipSourceAffinitySettings:
+      ipAffinityEnabled: false
+    ipv6Enabled: false
+    isCustomDeployment: false
+    monitoringStatus: NOT_MONITORING
+    mux: true
+    name: Toronto-HacmeBank
+    ntlmEnabled: false
+    originLatencyEnabled: false
+    rateLimit:
+      rateLimitExcludes: []
+      rateLimitMode: DISABLE
+      rateLimitRules: []
+      rateLimitSiteWide:
+        blockingPeriod: 1
+        durationType: MIN
+        enable: false
+        threshold: 500
+    rateLimitEnabled: false
+    rateLimitMaxRules: 5
+    readOnly: false
+    showArecord: true
+    showCnameRecord: true
+    showOrigins: true
+    tunableParameters:
+      tunableHttpParameters:
+        clientBodyBufferSize: 4k
+        clientBodyTimeout: 10s
+        clientHeaderBufferSize: 1k
+        clientHeaderTimeout: 10s
+        clientMaxBodySize: '0'
+        largeClientHeaderBuffer:
+          number: 4
+          size: 8k
+        proxyConnectTimeout: 600s
+        proxyReadTimeout: 60s
+        proxySendTimeout: 60s
+        tunableHttpUpstreamParameters:
+          keepAlive: 128
+          keepAliveRequests: 100
+          keepAliveTimeout: 600s
+      tunableStreamParameters:
+        preReadBufferSize: 16k
+        preReadTimeout: 30s
+        proxyProtocolTimeout: 30s
+    workflowName: US_Region_PoCs.Toronto_HacmeBank
+    xrdwripAllowed: false
+  endDate: 1676671200000
+  ertServiceContract:
+    ertServiceType: ERT_STANDARD
+  features:
+    accessLogFeature:
+      applicableAssetTypes:
+      - APPLICATION
+      data:
+        destination:
+          amazonStorage: null
+          azureStorage: null
+          localStorage: null
+          storageType: LOCAL
+    ddosFeature:
+      applicableAssetTypes:
+      - APPLICATION
+      - NETWORK
+      quota:
+        allowedAttackTrafficMb: 0
+      servicePlan: ADD_ON
+    siemFeature:
+      applicableAssetTypes: []
+      disabled: false
+      featureData:
+        region: US_WEST_2
+        siemEventTypes:
+        - APPWALL_ATTACK
+        - SYSTEM_ATTACK
+    wafFeature:
+      applicableAssetTypes:
+      - APPLICATION
+      quota:
+        legitimateTrafficMb: 100
+      servicePlan: ENTERPRISE
+  id: eeae5aa9-9d6c-4bf7-ad79-9fcd7b264bb1
+  networkAssets: []
+  startDate: 1518991200000
+creationDate: null
+ddosSslAccountSettings:
+  ddosSslBgpCommunity: 65000:200
+  ddosSslEnabled: false
+externalReferences:
+  numericId: null
+features:
+  enableAntiBot: false
+  enableDedicatedEnviroment: false
+  enableHSM: false
+id: 607b9775-a04a-4efa-ba97-228909abc300
+idpName: null
+ipServiceLevel: default
+limitations:
+  usersAmount: 30
+pendingDelete: false
+securityConfiguration:
+  cipherList:
+  - ciphers:
+    - ALL
+    - '!NULL'
+    - '!aNULL'
+    - '!EXPORT'
+    - '!RSA'
+    - '!RC4'
+    - '!DES'
+    - '!3DES'
+    - '!DSS'
+    - '!SRP'
+    - '!PSK'
+    - '!SSLv2'
+    - '@STRENGTH'
+    defaultSet: true
+    name: Compatible
+    systemSet: true
+  - ciphers:
+    - ALL
+    - '!NULL'
+    - '!aNULL'
+    - '!EXPORT'
+    - '!RSA'
+    - '!RC4'
+    - '!DES'
+    - '!3DES'
+    - '!DSS'
+    - '!SRP'
+    - '!PSK'
+    - '!SSLv2'
+    - '@STRENGTH'
+    defaultSet: false
+    name: Balanced
+    systemSet: true
+  - ciphers:
+    - ECDHE-RSA-AES256-GCM-SHA384
+    - DHE-RSA-AES256-GCM-SHA384
+    - DHE-RSA-AES128-GCM-SHA256
+    - ECDHE-RSA-AES128-GCM-SHA256
+    defaultSet: false
+    name: High
+    systemSet: true
+  securityProtocols:
+    defaultSet: false
+    ssl30: true
+    tls10: true
+    tls11: true
+    tls12: true
+    tls13: false
+serviceLevel:
+  alteonServiceLevel: standard
+  appwallServiceLevel: standard
+  networkName: ''
+  serviceLevel: standard
+showArecord: false
+showUALogSummary: false
+

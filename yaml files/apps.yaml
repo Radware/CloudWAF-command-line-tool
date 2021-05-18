@@ -1,0 +1,76 @@
+applications:
+- accountId: 607b9775-a04a-4efa-ba97-228909abc300
+  accountName: US Region PoCs
+  applicationId: 9d8213f6-580f-406c-9bda-618ef9b3896d
+  applicationName: Juice Shop
+  creationDate: 1617758940383
+  customDeployment: false
+  deploymentStatus: PROTECTING
+  frontend: alcon
+  mainDomain: juice-shop.herokuapp.com
+  region: North America (Ashburn)
+- accountId: 607b9775-a04a-4efa-ba97-228909abc300
+  accountName: US Region PoCs
+  applicationId: db3718bc-de94-40c1-9adf-300a41069e44
+  applicationName: rs_hackazon
+  creationDate: 1598545097301
+  customDeployment: false
+  deploymentStatus: PROTECTING
+  frontend: alcon
+  mainDomain: rsamazon.ddns.net
+  region: North America (Ashburn)
+- accountId: 607b9775-a04a-4efa-ba97-228909abc300
+  accountName: US Region PoCs
+  applicationId: fbb1a01a-1693-4f6c-b393-9b2465bf9427
+  applicationName: test-radwarelabs.ca
+  creationDate: 1596741939251
+  customDeployment: false
+  deploymentStatus: PROTECTING
+  frontend: alcon
+  mainDomain: new-radwarelabs.ca
+  region: North America (Ashburn)
+- accountId: 607b9775-a04a-4efa-ba97-228909abc300
+  accountName: US Region PoCs
+  applicationId: b1e6111b-598e-49f8-92dc-59bac3b73d87
+  applicationName: Toronto-HacmeBank
+  creationDate: 1583938759419
+  customDeployment: false
+  deploymentStatus: PROTECTING
+  frontend: alcon
+  mainDomain: new-hacme.radwarelabs.ca
+  region: North America (Toronto)
+- accountId: 607b9775-a04a-4efa-ba97-228909abc300
+  accountName: US Region PoCs
+  applicationId: 13e6a064-d9bd-43bb-8ebc-b6dfb6395833
+  applicationName: botmgr
+  creationDate: 1557753570459
+  customDeployment: false
+  deploymentStatus: PROTECTING
+  frontend: alcon
+  mainDomain: www.botmgr.online
+  region: North America (Ashburn)
+- accountId: 607b9775-a04a-4efa-ba97-228909abc300
+  accountName: US Region PoCs
+  applicationId: 3ec2e44f-2392-4e2c-8d9c-ef849f782090
+  applicationName: radwarelabs.ca
+  creationDate: 1557165943042
+  customDeployment: false
+  deploymentStatus: PROTECTING
+  frontend: alcon
+  mainDomain: radwarelabs.ca
+  region: North America (Ashburn)
+- accountId: 607b9775-a04a-4efa-ba97-228909abc300
+  accountName: US Region PoCs
+  applicationId: 7c1457fc-9324-4d53-bdba-31d8d8a3fa91
+  applicationName: HacmeBank
+  creationDate: 1521740833216
+  customDeployment: false
+  deploymentStatus: PROTECTING
+  frontend: alteon
+  mainDomain: hacme.radwarelabs.ca
+  region: North America (Ashburn)
+numberOfElements: 7
+page: 0
+totalElements: 7
+totalPages: 1
+

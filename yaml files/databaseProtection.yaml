@@ -1,0 +1,11 @@
+databaseProtectionList:
+  databaseProtectionItems:
+  - discardAllRules: false
+    page: All Pages
+    parameter: .*[P|p]assword|.*[P|p]asswrd|.*[P|p]wd
+    regex: false
+    ruleIds:
+    - FSPA01
+    - ATPANP
+protectionStatus: ACTIVE
+

@@ -1,0 +1,235 @@
+allowList:
+  allowListItems:
+  - acceptable: true
+    method: GET
+    uri: '*.svg'
+  - acceptable: true
+    method: POST
+    uri: '*.svg'
+  - acceptable: true
+    method: GET
+    uri: '*.png'
+  - acceptable: true
+    method: POST
+    uri: '*.png'
+  - acceptable: true
+    method: GET
+    uri: '*.ttf'
+  - acceptable: true
+    method: POST
+    uri: '*.ttf'
+  - acceptable: true
+    method: GET
+    uri: '*.htm'
+  - acceptable: true
+    method: POST
+    uri: '*.htm'
+  - acceptable: true
+    method: GET
+    uri: '*.jpg'
+  - acceptable: true
+    method: POST
+    uri: '*.jpg'
+  - acceptable: true
+    method: GET
+    uri: '*.zip'
+  - acceptable: true
+    method: POST
+    uri: '*.zip'
+  - acceptable: true
+    method: GET
+    uri: '*.wmv'
+  - acceptable: true
+    method: POST
+    uri: '*.wmv'
+  - acceptable: true
+    method: GET
+    uri: '*.js'
+  - acceptable: true
+    method: POST
+    uri: '*.js'
+  - acceptable: true
+    method: GET
+    uri: '*.html'
+  - acceptable: true
+    method: POST
+    uri: '*.html'
+  - acceptable: true
+    method: GET
+    uri: '*.ppt'
+  - acceptable: true
+    method: POST
+    uri: '*.ppt'
+  - acceptable: true
+    method: GET
+    uri: '*.pdf'
+  - acceptable: true
+    method: POST
+    uri: '*.pdf'
+  - acceptable: true
+    method: GET
+    uri: '*.doc'
+  - acceptable: true
+    method: POST
+    uri: '*.doc'
+  - acceptable: true
+    method: GET
+    uri: '*.no-extension'
+  - acceptable: true
+    method: POST
+    uri: '*.no-extension'
+  - acceptable: true
+    method: GET
+    uri: '*.woff'
+  - acceptable: true
+    method: POST
+    uri: '*.woff'
+  - acceptable: true
+    method: GET
+    uri: '*.xlsx'
+  - acceptable: true
+    method: POST
+    uri: '*.xlsx'
+  - acceptable: true
+    method: GET
+    uri: '*.json'
+  - acceptable: true
+    method: POST
+    uri: '*.json'
+  - acceptable: true
+    method: GET
+    uri: '*.jpeg'
+  - acceptable: true
+    method: POST
+    uri: '*.jpeg'
+  - acceptable: true
+    method: GET
+    uri: '*.mp4'
+  - acceptable: true
+    method: POST
+    uri: '*.mp4'
+  - acceptable: true
+    method: GET
+    uri: '*.flv'
+  - acceptable: true
+    method: POST
+    uri: '*.flv'
+  - acceptable: true
+    method: GET
+    uri: '*.mp3'
+  - acceptable: true
+    method: POST
+    uri: '*.mp3'
+  - acceptable: true
+    method: GET
+    uri: '*.bmp'
+  - acceptable: true
+    method: POST
+    uri: '*.bmp'
+  - acceptable: true
+    method: GET
+    uri: '*.gif'
+  - acceptable: true
+    method: POST
+    uri: '*.gif'
+  - acceptable: true
+    method: GET
+    uri: '*.css'
+  - acceptable: true
+    method: POST
+    uri: '*.css'
+  - acceptable: true
+    method: GET
+    uri: '*.swf'
+  - acceptable: true
+    method: POST
+    uri: '*.swf'
+  - acceptable: true
+    method: GET
+    uri: '*.csv'
+  - acceptable: true
+    method: POST
+    uri: '*.csv'
+  - acceptable: true
+    method: GET
+    uri: '*.docx'
+  - acceptable: true
+    method: POST
+    uri: '*.docx'
+  - acceptable: true
+    method: GET
+    uri: '*.shtml'
+  - acceptable: true
+    method: POST
+    uri: '*.shtml'
+  - acceptable: true
+    method: GET
+    uri: '*.aspx'
+  - acceptable: true
+    method: POST
+    uri: '*.aspx'
+  - acceptable: true
+    method: GET
+    uri: '*.xls'
+  - acceptable: true
+    method: POST
+    uri: '*.xls'
+  - acceptable: true
+    method: GET
+    uri: '*.asp'
+  - acceptable: true
+    method: POST
+    uri: '*.asp'
+  - acceptable: true
+    method: GET
+    uri: '*.ico'
+  - acceptable: true
+    method: POST
+    uri: '*.ico'
+  - acceptable: true
+    method: GET
+    uri: '*.xml'
+  - acceptable: true
+    method: POST
+    uri: '*.xml'
+  - acceptable: true
+    method: GET
+    uri: '*.ashx'
+  - acceptable: true
+    method: POST
+    uri: '*.ashx'
+  - acceptable: true
+    method: GET
+    uri: '*.axd'
+  - acceptable: true
+    method: POST
+    uri: '*.axd'
+  - acceptable: true
+    method: PATCH
+    uri: /
+  - acceptable: true
+    method: GET
+    uri: '*.eot'
+  - acceptable: true
+    method: POST
+    uri: '*.eot'
+  - acceptable: true
+    method: GET
+    uri: '*.tif'
+  - acceptable: true
+    method: POST
+    uri: '*.tif'
+  - acceptable: true
+    method: GET
+    uri: '*.xsl'
+  - acceptable: true
+    method: POST
+    uri: '*.xsl'
+  - acceptable: true
+    method: GET
+    uri: '*.pptx'
+  - acceptable: true
+    method: POST
+    uri: '*.pptx'
+protectionStatus: ACTIVE
+

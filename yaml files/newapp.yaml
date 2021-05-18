@@ -1,0 +1,15 @@
+applicationName: My application
+mainDomain: www.test.com
+protocol: BOTH
+region: CANADA_1
+originServers:
+- address: 2.2.2.2
+  addressType: IP
+- address: 3.3.3.3
+  addressType: IP
+generalInfo:
+  ownerName: Christian Shink
+  ownerEmail: christian.shink@radware.com
+  externalID: '123445'
+  description: test
+fingerprint: 87FE361698CB3F47683245984DDAF08E334818D3

@@ -1,0 +1,13 @@
+httpProtocol: null
+httpsProtocol:
+  backEndPort: 8082
+  fingerprint: 3512407708978D5F780362B6F7835015447A5DF0
+  frontEndPort: 443
+  hostName: null
+  interval: 30
+  responseCode: null
+  successCriteria: TCP
+  uri: null
+protocolType: Redirect
+redirectStatusCode: 302
+

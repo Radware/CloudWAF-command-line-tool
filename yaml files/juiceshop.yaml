@@ -1,0 +1,311 @@
+advancedRules:
+  deliveryRules: []
+  index: 100
+  redirectRules: []
+  responseDeliveryRules: []
+  rulesLimit: 3
+  securityRules: []
+advancedRulesEnabled: true
+advancedRulesReportingEnabled: false
+alconAccessLogConfiguration:
+  enabled: false
+  format: $x_rdwr_ip_value - $remote_user [$time_local] $server_addr $server_port
+    "$http_host" "$request" $status $body_bytes_sent "$http_referrer" "$http_user_agent"
+alconMetric: ROUND_ROBIN
+alconPopConfigurationContexts:
+- disabled: false
+  popName: ASH
+- disabled: false
+  popName: CHI
+antibotEnabled: false
+apiProtection:
+  basePaths: []
+  endpoints: []
+  hostname:
+    hostname: ''
+    useDefault: true
+  status: DISABLE
+apiProtectionEnabled: false
+applicationSecuritySettings:
+  cipherSuite:
+    ciphers:
+    - ALL
+    - '!NULL'
+    - '!aNULL'
+    - '!EXPORT'
+    - '!RSA'
+    - '!RC4'
+    - '!DES'
+    - '!3DES'
+    - '!DSS'
+    - '!SRP'
+    - '!PSK'
+    - '!SSLv2'
+    - '@STRENGTH'
+    defaultSet: true
+    name: Compatible
+    systemSet: true
+  securityProtocolSet:
+    defaultSet: true
+    ssl30: true
+    tls10: true
+    tls11: true
+    tls12: true
+    tls13: false
+  useDefaultCipherSuite: true
+  useDefaultProtocolSet: true
+attackersFeed:
+  attackersFeedMode: DISABLE
+  excludedIps: []
+attackersFeedEnabled: false
+awBypassEnabled: false
+azureDdosEnabled: false
+bigFileConfiguration:
+  enabled: false
+  fileSize: 1048576
+certificate: null
+compressionEnabled: true
+creationDate: 1617758940383
+customDeployment: false
+ddosSslApplicationSettings:
+  ddosSslBgpCommunity: null
+  ddosSslEnabled: false
+  ddosSslIp: null
+deploymentStatus: PROTECTING
+featureStates:
+  AccessControlList: true
+  AccessRules: true
+  Protections: true
+featuresData:
+  ddosFeatureData:
+    dpPolicyName: null
+    dpipeAssetId: null
+  wafFeatureData:
+    accessControlList:
+      accessControlListItems: []
+      defaultOperation: PERMIT
+    accessRules:
+      accessRules: []
+    blockPage:
+      url: null
+    dns:
+      dnsRecords:
+      - type: A
+        value: N/A
+      - type: CNAME
+        value: 9d8213f6580f406c9bda618ef9b3896d.v1.radwarecloud.net
+    ipRange:
+    - 66.225.237.201
+    mainDomain:
+      mainDomain: juice-shop.herokuapp.com
+    operationMode:
+      failoverMode: null
+      loadBalanceMode:
+        loadBalanceMetric: ROUND_ROBIN
+        serverAddresses:
+        - address: 54.72.45.84
+          addressType: IP
+      mode: LOAD_BALANCE
+    protectionConfiguration:
+      allowedFileExtensionProtection:
+        allowList:
+          allowListItems:
+          - acceptable: true
+            method: GET
+            uri: '*.png'
+          - acceptable: true
+            method: GET
+            uri: '*.js'
+          - acceptable: true
+            method: GET
+            uri: '*.css'
+          - acceptable: true
+            method: GET
+            uri: '*.jpg'
+          - acceptable: true
+            method: GET
+            uri: '*.gif'
+          - acceptable: true
+            method: GET
+            uri: '*.html'
+          - acceptable: true
+            method: GET
+            uri: '*.pdf'
+          - acceptable: true
+            method: GET
+            uri: '*.ico'
+          - acceptable: true
+            method: GET
+            uri: '*.htm'
+          - acceptable: true
+            method: GET
+            uri: '*.xml'
+          - acceptable: true
+            method: POST
+            uri: '*.xml'
+          - acceptable: true
+            method: GET
+            uri: '*.woff'
+          - acceptable: true
+            method: GET
+            uri: '*.swf'
+          - acceptable: true
+            method: GET
+            uri: '*.ttf'
+          - acceptable: true
+            method: GET
+            uri: '*.eot'
+          - acceptable: true
+            method: GET
+            uri: '*.svg'
+          - acceptable: true
+            method: GET
+            uri: '*.json'
+          - acceptable: true
+            method: POST
+            uri: '*.json'
+          - acceptable: true
+            method: GET
+            uri: '*.mp3'
+          - acceptable: true
+            method: GET
+            uri: '*.zip'
+          - acceptable: true
+            method: GET
+            uri: '*.jpeg'
+          - acceptable: true
+            method: GET
+            uri: '*.xls'
+          - acceptable: true
+            method: GET
+            uri: '*.docx'
+          - acceptable: true
+            method: GET
+            uri: '*.xlsx'
+          - acceptable: true
+            method: GET
+            uri: '*.doc'
+          - acceptable: true
+            method: GET
+            uri: '*.csv'
+          - acceptable: true
+            method: GET
+            uri: '*.mp4'
+          - acceptable: true
+            method: GET
+            uri: '*.pptx'
+          - acceptable: true
+            method: GET
+            uri: '*.tif'
+          - acceptable: true
+            method: GET
+            uri: '*.xsl'
+          - acceptable: true
+            method: GET
+            uri: '*.shtml'
+          - acceptable: true
+            method: GET
+            uri: '*.ppt'
+          - acceptable: true
+            method: GET
+            uri: '*.flv'
+          - acceptable: true
+            method: GET
+            uri: '*.wmv'
+          - acceptable: true
+            method: GET
+            uri: '*.bmp'
+        protectionStatus: PASSIVE
+      antibotProtection:
+        badBotResponse: null
+        customCaptchaPage: null
+        enable: false
+        legitimateBotResponse: null
+        protectionStatus: DISABLE
+        whitelistedIpList: []
+      databaseProtection:
+        databaseProtectionList:
+          databaseProtectionItems: []
+        protectionStatus: PASSIVE
+      ddosProtection:
+        protectionStatus: ACTIVE
+      httpProtocolComplianceProtection:
+        protectionStatus: ACTIVE
+      ipReputationProtection:
+        protectionStatus: DISABLE
+      knownAttackTypesProtection:
+        protectionStatus: PASSIVE
+      vulnerabilityProtection:
+        protectionStatus: PASSIVE
+        vulnerabilityList:
+          vulnerabilityItems: []
+    protocol:
+      httpProtocol:
+        backEndPort: 80
+        frontEndPort: 80
+        hostName: null
+        interval: 30
+        responseCode: null
+        successCriteria: TCP
+        uri: null
+      httpsProtocol: null
+      protocolType: HTTP
+      redirectStatusCode: 302
+    region: US_EAST_1
+    securityPolicy:
+      protectionMode: IMMEDIATE
+      technology: BASIC
+    sourceIpHeader: null
+frontend: alcon
+generalInfo:
+  description: null
+  externalID: null
+  ownerEmail: null
+  ownerName: null
+geoBlocking:
+  countries: []
+  excludedIps: []
+  geoBlockingMode: DISABLE
+geoBlockingEnabled: true
+geoBlockingPolicy: null
+hstsAge: 31536000
+hstsEnabled: false
+http2Enabled: true
+id: 9d8213f6-580f-406c-9bda-618ef9b3896d
+internalConfiguration:
+  ddosInternalConfiguration: null
+  wafInternalConfiguration:
+    tunnelConfiguration:
+      tunnels:
+      - US_Region_PoCs_Juice_Shop_HTTP
+      - US_Region_PoCs_Juice_Shop_HTTPS
+ipPersistencySettings:
+  ipPersistencyEnabled: false
+ipServiceLevel: default
+ipSourceAffinitySettings:
+  ipAffinityEnabled: false
+ipv6Enabled: false
+isCustomDeployment: false
+monitoringStatus: MONITORING_AND_ALERT
+mux: true
+name: Juice Shop
+ntlmEnabled: false
+originLatencyEnabled: false
+rateLimit:
+  rateLimitExcludes: []
+  rateLimitMode: DISABLE
+  rateLimitRules: []
+  rateLimitSiteWide:
+    blockingPeriod: 1
+    durationType: MIN
+    enable: false
+    threshold: 500
+rateLimitEnabled: false
+rateLimitMaxRules: 5
+readOnly: false
+showArecord: false
+showCnameRecord: true
+showOrigins: true
+workflowName: US_Region_PoCs.Juice_Shop
+xrdwripAllowed: false
+
