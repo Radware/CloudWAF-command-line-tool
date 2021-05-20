@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "cwafctl"
-version = "0.1.0"
-description = ""
+version = "0.2.0"
+description = "Radware Cloud WAF command-line tool"
 authors = ["Christian Shink <christian.shink@radware.com>"]
 
 [tool.poetry.dependencies]
