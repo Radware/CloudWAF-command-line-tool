@@ -29,6 +29,8 @@ In order to list applications currently onboarded on your cloud waf account and 
 **cwafctl get applications**
 
 This an example of the CLI output:
+
+
         applications:
         - accountId: 607b9775-a04a-4efa-ba97-228909abc300
           accountName: US Region PoCs
