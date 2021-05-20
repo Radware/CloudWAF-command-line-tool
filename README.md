@@ -7,12 +7,13 @@
 **cwafctl** requires python 3.8 to run and was tested using windows 10.
 
 # How to install
-**pip install cwafctl**
+    pip install cwafctl
 
 In order to configure your user name and password, please use the following command initially:<br>
-**cwafctl utils setUserNameAndPassword --username="username@domain.com" --password="password"**
+**cwafctl utils setUserNameAndPassword --username="username@domain.com" --password="password"** <br>
 
-where username and password are Radware Cloud WAF API credentials.  For instructions on how to create an API user in Cloud WAF, please consult https://portals.radware.com/ProductDocumentation/Cloud_WAF_API_User_Guide/index.html#page/Cloud%20WAF%20API%20User%20Guide/Cloud%20WAF%20API%20Users%20Guide%20v6_AB.1.09.html
+where username and password are Radware Cloud WAF API credentials.<br><br>
+For instructions on how to create an API user in Cloud WAF, please consult https://portals.radware.com/ProductDocumentation/Cloud_WAF_API_User_Guide/index.html#page/Cloud%20WAF%20API%20User%20Guide/Cloud%20WAF%20API%20Users%20Guide%20v6_AB.1.09.html
 
 
 # How to use
@@ -61,22 +62,22 @@ This an example of the CLI output:
 You can dump the content directly to a yaml file by using the following syntax:<br>
 
 **cwafctl get applications > applications.yaml**
-
+<br><br>
 
 In order to list certificates deployed in your account and dump it to a yaml file:
 
  **cwafctl get certificates > certificates.yaml**
-
+<br><br>
 
 In order to get a specific application configuration and dump it to a yaml file:
 
  **cwafctl get application "HacmeBank" > hacmebankapp.yaml**
-
+<br><br>
 
 To get the full list of available commands and objects that are retrievable:
 
  **cwafctl get --help"**
-
+<br><br>
 
  To get help on a specific command, you can use the following syntax:
 
@@ -239,11 +240,11 @@ cert.yaml file content:
         passphrase: test
 
 Please note that the "certificate.yaml" file can either be created manually or be generated using the following command:<br><br>
-**cwafctl utils generate_yaml_cert_file certificate.pem key.pem certchain.pem test**<br><br>
-    where certificate.pem is the file containing the public key<br>
-    where key.pem is the file containing the private key<br>
-    where certchain.pem is the file containing the certificate chain<br>
-    where test is the passphrase that was used to encrypt the certificate<br>
+**cwafctl utils generate_yaml_cert_file certificate.pem key.pem certchain.pem test > certificate.yaml**<br>
+* where certificate.pem is the file containing the public key<br>
+* where key.pem is the file containing the private key<br>
+* where certchain.pem is the file containing the certificate chain<br>
+* where test is the passphrase that was used to encrypt the certificate<br>
 
 **To deploy the certificate:**
 
