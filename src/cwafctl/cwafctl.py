@@ -17,6 +17,8 @@ USER_NAME = ''
 PASSWORD = ''
 
 
+
+
 class CloudWAFAPI(object):
 
   def __init__(self):
@@ -41,7 +43,7 @@ class CloudWAFAPI(object):
 
     response=requests.request("POST","https://radware-public.okta.com/api/v1/authn",headers=headers, data=data)
     if response.status_code != 200:
-      raise Exception("Cannot authenticate to Cloud WAF, invalid credentials")
+      raise Exception("Cannot authenticate to Cloud WAF, invalid credentials. Please set your credentials using the \"cwafctl utils setUserNameAndPassword\" command.")
 
     responsePayload=response.json()
 
@@ -1976,18 +1978,21 @@ class get(object):
         return yaml.dump(searchEngineBots)
 
     def activity_logs(self):
+        """Gets the activity logs in YAML"""
         self.cwaf.login()
         activityLogs=self.cwaf.getActivityLogs()
         self.cwaf.logout()
         return yaml.dump(activityLogs)
 
     def users(self):
+        "Gets a list of users in Cloud WAF"
         self.cwaf.login()
         users=self.cwaf.getUsers()
         self.cwaf.logout()
         return yaml.dump(users)
 
     def user(self,firstName,lastName):
+        "Gets a specific user information by first name and last name"
         self.cwaf.login()
         users = self.cwaf.getUsers()
         for user in users:
@@ -2029,7 +2034,8 @@ class utils(object):
             configFile.close()
 
         except IOError:
-           raise Exception("Cannot find username or password, please set your credentials using the command: cwafctl utils setUserNameAndPassword --username=username --password==password ")
+           pass
+           ##raise Exception("Cannot find username or password, please set your credentials using the command: cwafctl utils setUserNameAndPassword --username=username --password==password ")
 
 
     def get_certificate_fingerprint(self):
@@ -2068,12 +2074,15 @@ class Commands(object):
         self.delete=delete()
         self.create=create()
         self.utils=utils()
-        self.utils.loadUserNameAndPassword()
+
 
 
 def start():
     try:
-        fire.Fire(Commands())
+        cmd=Commands()
+        cmd.utils.loadUserNameAndPassword()
+        fire.Fire(cmd)
+
 
     except Exception as e:
         print(repr(e))
