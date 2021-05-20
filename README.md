@@ -1,6 +1,6 @@
 # cwafctl
 
-**cwafctl** is a commandline utility that allows to manage cloud waf objects from the client. It allows to perform several actions from the cli, such as retrieving objects such as certificates, application configuration, etc. In addition, it allows to update and modify existing protections within a given cloud waf account. The first step before using cwafctl is to update the file settings.py to include api credentials that must be created in your Radware Cloud WAF account prior to using this tool.
+**cwafctl** is a command-line utility that interfaces with Radware Cloud WAF over REST API. It allows to manage Cloud WAF from the CLI.
 
 **cwafctl** works with yaml, it allows you to retrieve information in yaml format, that you can save to a file, modify and later on re-use to update the object. The yaml objects used by cwafctl are mapped directly to the JSON format supported by Cloud WAF for API calls.
 
@@ -15,8 +15,6 @@ In order to configure your user name and password, please use the following comm
 where username and password are Radware Cloud WAF API credentials.  For instructions on how to create an API user in Cloud WAF, please consult https://portals.radware.com/ProductDocumentation/Cloud_WAF_API_User_Guide/index.html#page/Cloud%20WAF%20API%20User%20Guide/Cloud%20WAF%20API%20Users%20Guide%20v6_AB.1.09.html
 
 
-
-
 # How to use
 cwafctl basically implements the commands below:
  * **get** :    Allows to retrieve a configuration
@@ -26,9 +24,41 @@ cwafctl basically implements the commands below:
  * **utils**:   Misc utilities
 
 ## Retrieving objects using the "get" command
-In order to list applications currently onboarded on your cloud waf account and dump it to a yaml file:
+In order to list applications currently onboarded on your cloud waf account and retrieve the information in yaml format:<br>
 
-  **cwafctl get applications > applications.yaml**
+**cwafctl get applications**
+
+This an example of the CLI output:
+    applications:
+    - accountId: 607b9775-a04a-4efa-ba97-228909abc300
+      accountName: US Region PoCs
+      applicationId: 9d8213f6-580f-406c-9bda-618ef9b3896d
+      applicationName: Juice Shop
+      creationDate: 1617758940383
+      customDeployment: false
+      deploymentStatus: PROTECTING
+      frontend: alcon
+      mainDomain: juice-shop.herokuapp.com
+      region: North America (Ashburn)
+    - accountId: 607b9775-a04a-4efa-ba97-228909abc300
+      accountName: US Region PoCs
+      applicationId: db3718bc-de94-40c1-9adf-300a41069e44
+      applicationName: rs_hackazon
+      creationDate: 1598545097301
+      customDeployment: false
+      deploymentStatus: PROTECTING
+      frontend: alcon
+      mainDomain: rsamazon.ddns.net
+      region: North America (Ashburn)
+    ....
+    numberOfElements: 7
+    page: 0
+    totalElements: 7
+    totalPages: 1
+
+You can dump the content directly to a yaml file by using the following syntax:<br>
+
+**cwafctl get applications > applications.yaml**
 
 
 In order to list certificates deployed in your account and dump it to a yaml file:
