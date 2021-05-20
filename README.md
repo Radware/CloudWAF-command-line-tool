@@ -29,32 +29,32 @@ In order to list applications currently onboarded on your cloud waf account and 
 **cwafctl get applications**
 
 This an example of the CLI output:
-    applications:
-    - accountId: 607b9775-a04a-4efa-ba97-228909abc300
-      accountName: US Region PoCs
-      applicationId: 9d8213f6-580f-406c-9bda-618ef9b3896d
-      applicationName: Juice Shop
-      creationDate: 1617758940383
-      customDeployment: false
-      deploymentStatus: PROTECTING
-      frontend: alcon
-      mainDomain: juice-shop.herokuapp.com
-      region: North America (Ashburn)
-    - accountId: 607b9775-a04a-4efa-ba97-228909abc300
-      accountName: US Region PoCs
-      applicationId: db3718bc-de94-40c1-9adf-300a41069e44
-      applicationName: rs_hackazon
-      creationDate: 1598545097301
-      customDeployment: false
-      deploymentStatus: PROTECTING
-      frontend: alcon
-      mainDomain: rsamazon.ddns.net
-      region: North America (Ashburn)
-    ....
-    numberOfElements: 7
-    page: 0
-    totalElements: 7
-    totalPages: 1
+        applications:
+        - accountId: 607b9775-a04a-4efa-ba97-228909abc300
+          accountName: US Region PoCs
+          applicationId: 9d8213f6-580f-406c-9bda-618ef9b3896d
+          applicationName: Juice Shop
+          creationDate: 1617758940383
+          customDeployment: false
+          deploymentStatus: PROTECTING
+          frontend: alcon
+          mainDomain: juice-shop.herokuapp.com
+          region: North America (Ashburn)
+        - accountId: 607b9775-a04a-4efa-ba97-228909abc300
+          accountName: US Region PoCs
+          applicationId: db3718bc-de94-40c1-9adf-300a41069e44
+          applicationName: rs_hackazon
+          creationDate: 1598545097301
+          customDeployment: false
+          deploymentStatus: PROTECTING
+          frontend: alcon
+          mainDomain: rsamazon.ddns.net
+          region: North America (Ashburn)
+        ....
+        numberOfElements: 7
+        page: 0
+        totalElements: 7
+        totalPages: 1
 
 You can dump the content directly to a yaml file by using the following syntax:<br>
 
