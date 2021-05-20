@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "cwafctl"
+version = "0.1.0"
+description = ""
+authors = ["Christian Shink <christian.shink@radware.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.25.1"
+PyYAML = "^5.4.1"
+certifi = "^2020.12.5"
+cffi = "^1.14.5"
+chardet = "^4.0.0"
+cryptography = "^3.4.7"
+fire = "^0.4.0"
+idna = "^2.10"
+lxml = "4.6.3"
+pycparser = "^2.20"
+pyOpenSSL = "^20.0.1"
+six = "^1.16.0"
+termcolor = "^1.1.0"
+urllib3 = "^1.26.4"
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+cwafctl = 'cwafctl.cwafctl:start'
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

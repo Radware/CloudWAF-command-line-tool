@@ -1,4 +1,4 @@
 
 # Variables definition
-USER_NAME = 'enter your user name here'
-PASSWORD = 'enter your password here'
+USER_NAME = 'apiradware@gmail.com'
+PASSWORD = 'RadSE2020!'

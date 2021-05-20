@@ -6,6 +6,10 @@
 
 **cwafctl** requires python 3.8 to run and was tested using windows 10.
 
+# How to install
+pip install cwafctl
+
+
 
 # How to use
 cwafctl basically implements the commands below:
@@ -18,27 +22,27 @@ cwafctl basically implements the commands below:
 ## Retrieving objects using the "get" command
 In order to list applications currently onboarded on your cloud waf account and dump it to a yaml file:
 
-  **python cwafctl.py get applications > applications.yaml**
+  **cwafctl get applications > applications.yaml**
 
 
 In order to list certificates deployed in your account and dump it to a yaml file:
 
- **python cwafctl.py get certificates > certificates.yaml**
+ **cwafctl get certificates > certificates.yaml**
 
 
 In order to get a specific application configuration and dump it to a yaml file:
 
- **python cwafctl.py get application "HacmeBank" > hacmebankapp.yaml**
+ **cwafctl get application "HacmeBank" > hacmebankapp.yaml**
 
 
 To get the full list of available commands and objects that are retrievable:
 
- **python cwafctl.py get --help"**
+ **cwafctl get --help"**
 
 
  To get help on a specific command, you can use the following syntax:
 
- **python cwafctl.py get application --help**
+ **cwafctl get application --help**
 
  CLI Output:
 
@@ -63,19 +67,19 @@ To get the full list of available commands and objects that are retrievable:
 
 ## Deploying objects using the "create" command
 In order to deploy an application:
-  **python cwafctl.py create application < newapp.yaml** [see yaml folder for an example of a yaml file used to onboard an application]
+  **cwafctl create application < newapp.yaml** [see yaml folder for an example of a yaml file used to onboard an application]
 
 In order to deploy a certificate:
-  **python cwafctl.py create certificate < certificate.yaml** [see the yaml folder for an example of how to onboard a certificate]
+  **cwafctl create certificate < certificate.yaml** [see the yaml folder for an example of how to onboard a certificate]
 
 ## Deleting objects using the "delete" command
 To delete a certificate:
-   **python cwafctl.py delete certificate FINGERPRINT**
+   **cwafctl delete certificate FINGERPRINT**
 
 where **FINGERPRINT** can be obtained by listing the certificates using the command **python cwafctl.py get certificates"
 
 To delete an application:
-    **python cwafctl.py delete application APPNAME
+    **cwafctl delete application APPNAME
 
 where **APPNAME** is the application name.
 
@@ -88,7 +92,7 @@ Any "get" command can be used to retrieve an object that can be stored and edite
 
     The following commands retrieve the "general information section of an application" and wil store it to a yaml file
 
-    python cwafctl.py get application_generalinfo "HacmeBank" > generalInfo.yaml
+    cwafctl get application_generalinfo "HacmeBank" > generalInfo.yaml
 
     The content of the yaml file is the following:
     description: null
@@ -132,10 +136,10 @@ newapp.yaml file content:
 
 
 Please note that the "fingerprint" field here can be calculated using the following command:<br>
-    **python cwafctl.py utils get_certificate_fingerprint < ./"yaml files"/certificate.yaml**
+    **cwafctl utils get_certificate_fingerprint < ./"yaml files"/certificate.yaml**
 
 Please note that the available region codes can be obtained from cloud waf using the following commands:<br>
-**python cwafctl.py get available_regions**
+**cwafctl get available_regions**
 
 CLI output:
 
@@ -205,11 +209,11 @@ Please note that the "certificate.yaml" file can either be created manually or b
 
 **To deploy the certificate:**
 
-    python cwafctl.py create certificate < ./"yaml files"/certificate.yaml
+    cwafctl create certificate < ./"yaml files"/certificate.yaml
 
 **To deploy the application:**
 
-    python cwafctl.py create application < ./"yaml files"/newapp.yaml
+    cwafctl create application < ./"yaml files"/newapp.yaml
 
 
 

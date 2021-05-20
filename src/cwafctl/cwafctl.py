@@ -5,10 +5,16 @@ import urllib
 from lxml import html
 import http.client
 import time
-import settings
 import yaml
 import sys
+import os
 from OpenSSL.crypto import load_certificate, FILETYPE_PEM
+from os.path import expanduser
+
+##global variables that will store the username and password for the active session
+
+USER_NAME = ''
+PASSWORD = ''
 
 
 class CloudWAFAPI(object):
@@ -17,12 +23,16 @@ class CloudWAFAPI(object):
     self.tenantID="";
     self.bearerToken="";
     self.oktacookie = None;
-    self.username=settings.USER_NAME;
-    self.password=settings.PASSWORD;
+    self.username=USER_NAME;
+    self.password=PASSWORD;
 
 
   def login(self):
     payload = {"username": "","password": "","options": {"multiOptionalFactorEnroll": True,"warnBeforePasswordExpired": True}}
+
+    self.username=USER_NAME
+    self.password=PASSWORD
+
     payload["username"] = self.username;
     payload["password"] = self.password;
 
@@ -1988,6 +1998,40 @@ class get(object):
 
 class utils(object):
 
+    def setUserNameAndPassword(self,username,password):
+        global USER_NAME
+        global PASSWORD
+
+        credentials={'username':username,"password":password}
+        directory=os.path.join(expanduser("~"),".cwafctl")
+        try:
+            os.mkdir(directory)
+        except FileExistsError:
+            pass
+
+        filePath=os.path.join(expanduser("~"),".cwafctl","config.yaml")
+        configFile=open(filePath, 'w')
+        yaml.dump(credentials,configFile)
+        USER_NAME=username
+        PASSWORD=password
+        configFile.close()
+
+    def loadUserNameAndPassword(self):
+        try:
+            global USER_NAME
+            global PASSWORD
+
+            filePath=os.path.join(expanduser("~"),".cwafctl","config.yaml")
+            configFile=open(filePath, 'r')
+            config=yaml.load(configFile, Loader=yaml.FullLoader)
+            USER_NAME=config['username']
+            PASSWORD=config['password']
+            configFile.close()
+
+        except IOError:
+           raise Exception("Cannot find username or password, please set your credentials using the command: cwafctl utils setUserNameAndPassword --username=username --password==password ")
+
+
     def get_certificate_fingerprint(self):
         '''Returns a local certificate sha1 fingerprint for a cert.yaml file passed to stdin'''
         certs = yaml.load(sys.stdin, Loader=yaml.FullLoader)
@@ -2015,8 +2059,7 @@ class utils(object):
         yaml.dump(cert)
 
 
-
-
+## Commands exposed through the Fire module
 class Commands(object):
 
     def __init__(self):
@@ -2025,10 +2068,15 @@ class Commands(object):
         self.delete=delete()
         self.create=create()
         self.utils=utils()
+        self.utils.loadUserNameAndPassword()
+
 
 def start():
-    fire.Fire(Commands())
+    try:
+        fire.Fire(Commands())
 
+    except Exception as e:
+        print(repr(e))
 
 
 if __name__ == '__main__':
