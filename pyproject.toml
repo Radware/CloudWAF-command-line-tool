@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "cwafctl"
-version = "0.2.0"
+version = "0.3.0"
 description = "Radware Cloud WAF command-line tool"
 authors = ["Christian Shink <christian.shink@radware.com>"]
+readme = 'README.md'
+repository = "https://github.com/Radware/CloudWAF-command-line-tool"
+homepage = "https://github.com/Radware/CloudWAF-command-line-tool"
 
 [tool.poetry.dependencies]
 python = "^3.8"
