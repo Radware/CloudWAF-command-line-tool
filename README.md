@@ -76,10 +76,10 @@ In order to deploy a certificate:
 To delete a certificate:
    **cwafctl delete certificate FINGERPRINT**
 
-where **FINGERPRINT** can be obtained by listing the certificates using the command **python cwafctl.py get certificates"
+where **FINGERPRINT** can be obtained by listing the certificates using the command **cwafctl.py get certificates**"
 
 To delete an application:
-    **cwafctl delete application APPNAME
+    **cwafctl delete application APPNAME**
 
 where **APPNAME** is the application name.
 
@@ -107,7 +107,7 @@ Any "get" command can be used to retrieve an object that can be stored and edite
     ownerName: Christian Shink
 
     once the field has been edited, the new General Info for the application "HacmeBank" can be set using the following command:
-    **python cwafctl.py set application_generalinfo "HacmeBank" < generalInfo.yaml
+    **cwafctl set application_generalinfo "HacmeBank" < generalInfo.yaml
 
 
 ## Deploying a new application using cwafctl
@@ -201,7 +201,7 @@ cert.yaml file content:
         passphrase: test
 
 Please note that the "certificate.yaml" file can either be created manually or be generated using the following command:<br><br>
-**python cwafctl.py utils generate_yaml_cert_file certificate.pem key.pem certchain.pem test**<br><br>
+**cwafctl utils generate_yaml_cert_file certificate.pem key.pem certchain.pem test**<br><br>
     where certificate.pem is the file containing the public key<br>
     where key.pem is the file containing the private key<br>
     where certchain.pem is the file containing the certificate chain<br>
