@@ -136,11 +136,12 @@ Any "get" command can be used to retrieve an object that can be stored and edite
 
  For example:
 
-    The following commands retrieve the "general information section of an application" and wil store it to a yaml file
+The following commands retrieve the "general information section of an application" and wil store it to a yaml file
 
     cwafctl get application_generalinfo "HacmeBank" > generalInfo.yaml
 
-    The content of the yaml file is the following:
+The content of the yaml file is the following:
+
     description: null
     externalID: null
     ownerEmail: null
@@ -152,8 +153,9 @@ Any "get" command can be used to retrieve an object that can be stored and edite
     ownerEmail: null
     ownerName: Christian Shink
 
-    once the field has been edited, the new General Info for the application "HacmeBank" can be set using the following command:
-    **cwafctl set application_generalinfo "HacmeBank" < generalInfo.yaml
+once the field has been edited, the new General Info for the application "HacmeBank" can be set using the following command:
+
+    cwafctl set application_generalinfo "HacmeBank" < generalInfo.yaml
 
 
 ## Deploying a new application using cwafctl
@@ -181,11 +183,13 @@ newapp.yaml file content:
         fingerprint: 87FE361698CB3F47683245984DDAF08E334818D3
 
 
-Please note that the "fingerprint" field here can be calculated using the following command:<br>
-    **cwafctl utils get_certificate_fingerprint < ./"yaml files"/certificate.yaml**
+Please note that the "fingerprint" field here can be calculated using the following command:
 
-Please note that the available region codes can be obtained from cloud waf using the following commands:<br>
-**cwafctl get available_regions**
+    cwafctl utils get_certificate_fingerprint < ./"yaml files"/certificate.yaml
+
+Please note that the available region codes can be obtained from cloud waf using the following commands:
+
+    cwafctl get available_regions
 
 CLI output:
 
@@ -246,8 +250,10 @@ cert.yaml file content:
          -----END RSA PRIVATE KEY-----
         passphrase: test
 
-Please note that the "certificate.yaml" file can either be created manually or be generated using the following command:<br><br>
-**cwafctl utils generate_yaml_cert_file certificate.pem key.pem certchain.pem test > certificate.yaml**<br>
+Please note that the "certificate.yaml" file can either be created manually or be generated using the following command:
+
+    cwafctl utils generate_yaml_cert_file certificate.pem key.pem certchain.pem test > certificate.yaml
+    
 * where certificate.pem is the file containing the public key<br>
 * where key.pem is the file containing the private key<br>
 * where certchain.pem is the file containing the certificate chain<br>
