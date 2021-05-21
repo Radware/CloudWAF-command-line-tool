@@ -221,40 +221,40 @@ Please note that the "certificate.yaml" file can either be created manually usin
 
 
 ## Retrieving security events from Radware Cloud WAF
-
+<br><br>
 You can retrieve waf events from Cloud WAF by using the following command:
 
     cwafctl get events_waf
 
 It will retrieve the top 10000 events ordered by date. You can in addition scope the search to a specific source IP or protected application by using the --sourceIP and --applicationName parameters.
-
-You can retrieve ddos events from Radware Cloud
+<br><br><br><br>
+You can retrieve ddos events from Radware Cloud WAF using the following command:
 
     cwafctl get events_ddos
 
 It will retrieve the top 10000 events ordered by date. You can in addition scope the search to a specific source IP or destination IP or application by using the flags --sourceIP, --destinationIP and --applicationName.
-<br>
+<br><br><br><br>
 
 For customers using the Radware BOT manager integrated in Cloud WAF. You can retrieve the current list of bad bots using the following command:
 
     cwafctl get bad_bots "appName"
 
 where "appName" is the name of the application protected by Cloud WAF.
-<br>
+<br><br><br><br>
 
 For customers using the Radware BOT manager integrated in Cloud WAF. You can retrieve the list of legitimate bots using the following command:
 
     cwafctl get legitimate_bots "appName"
 
 where "appName" is the name of the application protected by Cloud WAF.
-<br>
+<br><br><br><br>
 
 For customers using the Radware BOT manager integrated in Cloud WAF. You can retrieve the list of search engines using the following command:
 
     cwafctl get search_engine_bots "appName"
 
 where "appName" is the name of the application protected by Cloud WAF.
-<br>
+<br><br><br><br>
 
 
 
