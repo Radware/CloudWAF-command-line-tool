@@ -117,13 +117,14 @@ In order to deploy a certificate:
     cwafctl create certificate < certificate.yaml  [see the yaml folder for an example of how to onboard a certificate]
 
 ## Deleting objects using the "delete" command
-To delete a certificate:
+
+**To delete a certificate:**
 
     cwafctl delete certificate FINGERPRINT
 
-where **FINGERPRINT** can be obtained by listing the certificates using the command **cwafctl.py get certificates**"
-
-To delete an application:
+where **FINGERPRINT** is the SHA1 fingerprint of the public key. Certificate fingerprints can be extracted from Cloud WAF using the command: **cwafctl get certificates**"
+<br><br><br>
+**To delete an application:**
 
     cwafctl delete application APPNAME
 
@@ -147,7 +148,8 @@ The content of the yaml file is the following:
     ownerEmail: null
     ownerName: Christian Shink
 
-    The field "description" can be modified and edited  and the content becomes the folowing :
+The field "description" can be modified and edited  and the content becomes the folowing :
+
     description: HacmeBank application
     externalID: null
     ownerEmail: null
@@ -183,7 +185,7 @@ newapp.yaml file content:
         fingerprint: 87FE361698CB3F47683245984DDAF08E334818D3
 
 
-Please note that the "fingerprint" field here can be calculated using the following command:
+Please note that the sha1 "fingerprint" field above can be calculated before the deployment using the following command:
 
     cwafctl utils get_certificate_fingerprint < ./"yaml files"/certificate.yaml
 
@@ -253,7 +255,7 @@ cert.yaml file content:
 Please note that the "certificate.yaml" file can either be created manually or be generated using the following command:
 
     cwafctl utils generate_yaml_cert_file certificate.pem key.pem certchain.pem test > certificate.yaml
-    
+
 * where certificate.pem is the file containing the public key<br>
 * where key.pem is the file containing the private key<br>
 * where certchain.pem is the file containing the certificate chain<br>
