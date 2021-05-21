@@ -221,7 +221,7 @@ Please note that the "certificate.yaml" file can either be created manually usin
 
 
 ## Retrieving security events from Radware Cloud WAF
-<br><br>
+<br>
 You can retrieve waf events from Cloud WAF by using the following command:
 
     cwafctl get events_waf
