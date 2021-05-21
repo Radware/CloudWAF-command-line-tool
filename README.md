@@ -15,7 +15,8 @@ In order to configure your user name and password, please use the following comm
 
     cwafctl utils setUserNameAndPassword --username="username@domain.com" --password="password"
 
-where username and password are Radware Cloud WAF API credentials.<br><br>
+where username and password are Radware Cloud WAF API credentials. It will store those credentials in the user home folder. <br><br>
+
 For instructions on how to create an API user in Cloud WAF, please consult https://portals.radware.com/ProductDocumentation/Cloud_WAF_API_User_Guide/index.html#page/Cloud%20WAF%20API%20User%20Guide/Cloud%20WAF%20API%20Users%20Guide%20v6_AB.1.09.html
 
 
