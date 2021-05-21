@@ -2004,6 +2004,7 @@ class get(object):
 class utils(object):
 
     def setUserNameAndPassword(self,username,password):
+        '''Sets the user name and password and stores it locally in the user home directory (.cwafctl folder). Ex.: cwafctl setUsernameAndPassword --username="apiuser@radware.com" --password="password"'''
         global USER_NAME
         global PASSWORD
 
@@ -2022,6 +2023,7 @@ class utils(object):
         configFile.close()
 
     def loadUserNameAndPassword(self):
+        '''For internal use.'''
         try:
             global USER_NAME
             global PASSWORD
@@ -2039,7 +2041,7 @@ class utils(object):
 
 
     def get_certificate_fingerprint(self):
-        '''Returns a local certificate sha1 fingerprint for a cert.yaml file passed to stdin'''
+        '''Returns a local certificate sha1 fingerprint for a cert.yaml file passed to stdin. Ex.: cwafctl utils get_certificate_fingerprint < certificate.pem'''
         certs = yaml.load(sys.stdin, Loader=yaml.FullLoader)
         cert = load_certificate(FILETYPE_PEM, certs["certificate"])
         sha1_fingerprint = cert.digest("sha1")
@@ -2047,6 +2049,8 @@ class utils(object):
 
 
     def generate_yaml_cert_file(self,publicKeyFilePath,privateKeyFilePath,certChainFilePath="",passphase=""):
+        '''Generates a cerficate yaml file required to deploy a Cloud WAF application.
+        Ex.: cwafctl generate_yaml_cert_file --publicKeyFilePath="cert.pem" --privateKeyFilePath="key.pem" --certChainFilepath="certchain.pem" --passphrase="test" '''
         cert={'cert':'','chain':'','key':'','passphase':passphase}
 
         publicKeyFile=open(publicKeyFilePath,'r')

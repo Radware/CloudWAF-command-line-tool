@@ -4,13 +4,16 @@
 
 **cwafctl** works with yaml, it allows you to retrieve information in yaml format, that you can save to a file, modify and later on re-use to update the object. The yaml objects used by cwafctl are mapped directly to the JSON format supported by Cloud WAF for API calls.
 
-**cwafctl** requires python 3.8 to run and was tested using windows 10.
+**cwafctl** requires **python 3.8** to run and was tested using windows 10.
 
 # How to install
+You can use the python package installer "pip" to deploy cwafctl:
+
     pip install cwafctl
 
-In order to configure your user name and password, please use the following command initially:<br>
-**cwafctl utils setUserNameAndPassword --username="username@domain.com" --password="password"** <br>
+In order to configure your user name and password, please use the following command initially:
+
+    cwafctl utils setUserNameAndPassword --username="username@domain.com" --password="password"
 
 where username and password are Radware Cloud WAF API credentials.<br><br>
 For instructions on how to create an API user in Cloud WAF, please consult https://portals.radware.com/ProductDocumentation/Cloud_WAF_API_User_Guide/index.html#page/Cloud%20WAF%20API%20User%20Guide/Cloud%20WAF%20API%20Users%20Guide%20v6_AB.1.09.html
@@ -25,9 +28,9 @@ cwafctl basically implements the commands below:
  * **utils**:   Misc utilities
 
 ## Retrieving objects using the "get" command
-In order to list applications currently onboarded on your cloud waf account and retrieve the information in yaml format:<br>
+In order to list applications currently onboarded on your cloud waf account and retrieve the information in yaml format:
 
-**cwafctl get applications**
+    cwafctl get applications
 
 This an example of the CLI output:
 
@@ -61,38 +64,38 @@ This an example of the CLI output:
 
 You can dump the content directly to a yaml file by using the following syntax:<br>
 
-**cwafctl get applications > applications.yaml**
-<br><br>
+    cwafctl get applications > applications.yaml
+
 
 In order to list certificates deployed in your account and dump it to a yaml file:
 
- **cwafctl get certificates > certificates.yaml**
-<br><br>
+    cwafctl get certificates > certificates.yaml
+
 
 In order to get a specific application configuration and dump it to a yaml file:
 
- **cwafctl get application "HacmeBank" > hacmebankapp.yaml**
-<br><br>
+    cwafctl get application "HacmeBank" > hacmebankapp.yaml
+
 
 To get the full list of available commands and objects that are retrievable:
 
- **cwafctl get --help"**
-<br><br>
+    cwafctl get --help
+
 
  To get help on a specific command, you can use the following syntax:
 
- **cwafctl get application --help**
+    cwafctl get application --help
 
  CLI Output:
 
-    python cwafctl.py get application --help
-    INFO: Showing help with the command 'cwafctl.py get application -- --help'.
+    python cwafctl get application --help
+    INFO: Showing help with the command 'cwafctl get application -- --help'.
 
     NAME
-        cwafctl.py get application - Gets an application configuration by name in YAML
+        cwafctl get application - Gets an application configuration by name in YAML
 
     SYNOPSIS
-        cwafctl.py get application NAME
+        cwafctl get application NAME
 
     DESCRIPTION
         Gets an application configuration by name in YAML
@@ -106,19 +109,23 @@ To get the full list of available commands and objects that are retrievable:
 
 ## Deploying objects using the "create" command
 In order to deploy an application:
-  **cwafctl create application < newapp.yaml** [see yaml folder for an example of a yaml file used to onboard an application]
+
+    cwafctl create application < newapp.yaml  [see yaml folder for an example of a yaml file used to onboard an application]
 
 In order to deploy a certificate:
-  **cwafctl create certificate < certificate.yaml** [see the yaml folder for an example of how to onboard a certificate]
+
+    cwafctl create certificate < certificate.yaml  [see the yaml folder for an example of how to onboard a certificate]
 
 ## Deleting objects using the "delete" command
 To delete a certificate:
-   **cwafctl delete certificate FINGERPRINT**
+
+    cwafctl delete certificate FINGERPRINT
 
 where **FINGERPRINT** can be obtained by listing the certificates using the command **cwafctl.py get certificates**"
 
 To delete an application:
-    **cwafctl delete application APPNAME**
+
+    cwafctl delete application APPNAME
 
 where **APPNAME** is the application name.
 
