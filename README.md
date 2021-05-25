@@ -29,6 +29,53 @@ cwafctl basically implements the commands below:
  * **utils**:   Misc utilities
 
 ## Retrieving objects using the "get" command
+
+cwafctl currently allows to retrieve the following objects from Radware Cloud WAF:
+
+| Object        | Description                                      |
+| :--------------| :------------------------------------------------ |
+| activity_logs  | Gets the activity logs in YAML                   |
+| application    | Gets an application configuration by name in YAML|
+| application_access_rules | Gets the application's access rules settings in YAML |
+| application_acl | Gets an application ACL by name in YAML  |
+| application_dns_records |                    Gets the application's dns diversion records in YAML|
+| application_domain |                          Gets an application main domain name in YAML|
+| application_generalinfo  |                   Gets an application general info by name in YAML|
+| application_ip_persistency     |             Gets the application's persistency settings in YAML|
+| application_origin_servers      |            Gets the application's origin servers settings in YAML|
+| application_protection_allowed_urls     |    Gets the application's allowed URLs protection settings in YAML|
+| application_protection_anonymous_proxy   |   Gets the application's Anonymous proxy blocking protection settings in YAML|
+| application_protection_anti_bot        |     Gets the application's anti-bot protection settings in YAML|
+| application_protection_api              |    Gets the application's API protection settings in YAML|
+| application_protection_database         |    Gets the application's database protection settings in YAML|
+| application_protection_ddos               |  Gets the application's ddos protection settings in YAML|
+| application_protection_ert_attackers_feed  | Gets the application's ert attackers feed settings in YAML|
+| application_protection_http_compliance  |    Gets the application's HTTP compliance protection settings in YAML|
+| application_protection_vulnerabilities    |  Gets the application's vulnerability protection settings in YAML|
+| application_protocol_security             |  Gets an application protocol security info (ex.:TLS settings) in YAML|
+| application_protocols_and_health_checks   |  Gets an application protocol and health checks in YAML|
+| application_security_bypass             |    Gets the application's security bypass settings in YAML|
+| application_security_page              |     Gets the application's blocking page settings in YAML|
+| application_true_client_ip            |      Gets the application's true client ip settings in YAML|
+| application_v2                        |      Gets an application v2 configuration by name in YAML|
+| applications                          |      Gets the current list of applications in YAML format|
+| available_regions                    |       Gets a list of the available regions for this customer account. Useful to get the right region codes before deploying an app.|
+| bad_bots                             |       Gets the list of observed bad bots for the application name provided|
+| certificates                        |        Gets the list of certificates deployed in CWAF in YAML format|
+| customer_info                       |        Gets the customer information for the current account.|
+| events_ddos                         |        Retrieves DDoS events from Cloud WAF|
+| events_waf                         |         Retrieves WAF events from Cloud WAF|
+| legitimate_bots                    |         Gets the list of observed legitimate bots for the application name provided|
+| policy_distribution                 |        Get policy distribution settings in YAML|
+| search_engine_bots                  |        Gets the list of search engine bots observed for the application name provided|
+| templates_geo_blocking             |         Gets geoblocking policies templates in YAML|
+| templates_ip_groups                |         Get IP group templates in YAML|
+| templates_security_policies        |         Get security policies templates in YAML|
+| user                               |         Gets a specific user information by first name and last name|
+| users                             |          Gets a list of users in Cloud WAF|
+
+<br><br>
+
 In order to list applications currently onboarded on your cloud waf account and retrieve the information in yaml format:
 
     cwafctl get applications
@@ -108,60 +155,19 @@ To get the full list of available commands and objects that are retrievable:
         You can also use flags syntax for POSITIONAL ARGUMENTS
 
 
-## Deploying objects using the "create" command
-In order to deploy an application:
 
-    cwafctl create application < newapp.yaml  [see yaml folder for an example of a yaml file used to onboard an application]
-
-In order to deploy a certificate:
-
-    cwafctl create certificate < certificate.yaml  [see the yaml folder for an example of how to onboard a certificate]
-
-## Deleting objects using the "delete" command
-
-**To delete a certificate:**
-
-    cwafctl delete certificate FINGERPRINT
-
-where **FINGERPRINT** is the SHA1 fingerprint of the public key. Certificate fingerprints can be extracted from Cloud WAF using the command: **cwafctl get certificates**"
-<br><br><br>
-**To delete an application:**
-
-    cwafctl delete application APPNAME
-
-where **APPNAME** is the application name.
+## Deploying a new application in Cloud WAF using cwafctl and the create command
 
 
-## Modifying existing configuration using the "get" and "set" command
+cwafctl currently allows to create (deploy) the following objects:
 
-Any "get" command can be used to retrieve an object that can be stored and edited locally and later pushed using the "set" command.
+| Object        | Description                                           |
+| :--------------| :------------------------------------------------    |
+| application    | Deploys an application using a configuration stored in a yaml file ex.: python cwafctl create application < neapp.yaml . See the /yaml files/newapp.yaml for an example.|
+| certificate    | Deploys an certificate using a configuration stored in a yaml file. ex.: python cwafctl.py create certificate < certificate.yaml . See the /yaml files/certificate.yaml for an example. |                                                     |
 
- For example:
+<br><br>
 
-The following commands retrieve the "general information section of an application" and wil store it to a yaml file
-
-    cwafctl get application_generalinfo "HacmeBank" > generalInfo.yaml
-
-The content of the yaml file is the following:
-
-    description: null
-    externalID: null
-    ownerEmail: null
-    ownerName: Christian Shink
-
-The field "description" can be modified and edited  and the content becomes the folowing :
-
-    description: HacmeBank application
-    externalID: null
-    ownerEmail: null
-    ownerName: Christian Shink
-
-once the field has been edited, the new General Info for the application "HacmeBank" can be set using the following command:
-
-    cwafctl set application_generalinfo "HacmeBank" < generalInfo.yaml
-
-
-## Deploying a new application using cwafctl
 
 **To deploy the certificate:**
 
@@ -218,6 +224,74 @@ Please note that the "certificate.yaml" file can either be created manually usin
 * where key.pem is the file containing the private key<br>
 * where certchain.pem is the file containing the certificate chain<br>
 * where test is the passphrase that was used to encrypt the certificate<br>
+
+
+## Modifying existing configuration using the "set" command
+
+The following objects can be updated in Radware Cloud WAF using cwafctl **set** command:
+
+| Object                                    |  Description |
+|:---------                                 |:---------
+|application_access_rules                   | Updates an application's access rules settings section via YAML|
+|application_domain                         | Updates an application domain name section via YAML|
+|application_generalinfo                    | Updates an application general information section via YAML|
+|application_ip_persistency                 | Updates an application's ip persistency settings section via YAML|
+|application_origin_servers                 | Updates an application's origin server settings section via YAML|
+|application_protection_allowed_urls        | Updates an application's allowed urls protection section via YAML|
+|application_protection_anonymous_proxy     | Updates an application's anonymous proxy protection section via YAML|
+|application_protection_database            | Updates an application's database protection section via YAML|
+|application_protection_vulnerabilities     | Updates an application's vulnerabilities protection section via YAML|
+|application_protocol_security              | Updates an application' protocols security configuration  section via YAML|
+|application_protocols_and_health_checks    | Updates an application protocol and health checks in YAML|
+|application_security_bypass                | Updates an application's security bypass settings section via YAML|
+|application_security_page                  | Updates an application's security page via YAML|
+|application_true_client_ip                 | Updates an application' True Client IP settings section via YAML|
+
+<br><br>
+
+Any "get" command for the corresponding objects can be used to retrieve an object that can be stored and edited locally and later pushed using the "set" command.
+
+ For example:
+
+The following commands retrieve the "general information section of an application" and wil store it to a yaml file
+
+    cwafctl get application_generalinfo "HacmeBank" > generalInfo.yaml
+
+The content of the yaml file is the following:
+
+    description: null
+    externalID: null
+    ownerEmail: null
+    ownerName: Christian Shink
+
+The field "description" can be modified and edited  and the content becomes the folowing :
+
+    description: HacmeBank application
+    externalID: null
+    ownerEmail: null
+    ownerName: Christian Shink
+
+once the field has been edited, the new General Info for the application "HacmeBank" can be set using the following command:
+
+    cwafctl set application_generalinfo "HacmeBank" < generalInfo.yaml
+
+
+
+## Deleting objects using the "delete" command
+
+cwafctl currently supports deleting applications and certificates from Radware Cloud WAF. The 2 examples below illustrate how to use the commands.
+
+**To delete a certificate:**
+
+    cwafctl delete certificate FINGERPRINT
+
+where **FINGERPRINT** is the SHA1 fingerprint of the public key. Certificate fingerprints can be extracted from Cloud WAF using the command: **cwafctl get certificates**"
+<br><br><br>
+**To delete an application:**
+
+    cwafctl delete application APPNAME
+
+where **APPNAME** is the application name.
 
 
 ## Retrieving security events from Radware Cloud WAF
