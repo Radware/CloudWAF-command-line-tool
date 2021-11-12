@@ -2051,22 +2051,22 @@ class utils(object):
     def generate_yaml_cert_file(self,publicKeyFilePath,privateKeyFilePath,certChainFilePath="",passphase=""):
         '''Generates a cerficate yaml file required to deploy a Cloud WAF application.
         Ex.: cwafctl utils generate_yaml_cert_file --publicKeyFilePath="cert.pem" --privateKeyFilePath="key.pem" --certChainFilePath="certchain.pem" --passphrase="test" '''
-        cert={'cert':'','chain':'','key':'','passphase':passphase}
+        cert={'certificate':'','chain':'','key':'','passphase':passphase}
 
         publicKeyFile=open(publicKeyFilePath,'r')
         publicKey=publicKeyFile.read()
-        cert['cert'] = publicKey
+        cert['certificate'] = '|-\n' + publicKey
 
         privateKeyFile=open(privateKeyFilePath,'r')
         privateKey=privateKeyFile.read()
-        cert['key']=privateKey
+        cert['key'] = '|-\n' + privateKey
 
         if certChainFilePath != "":
             certChainFile = open(certChainFilePath, 'r')
             certChain = certChainFile.read()
-            cert['chain'] = certChain
-
-        yaml.dump(cert)
+            cert['chain'] = '|-\n' + certChain
+        dump = yaml.dump(cert).replace('\n\n','\n')
+        yaml.dump(dump.replace("\'",''))
 
 
 ## Commands exposed through the Fire module
