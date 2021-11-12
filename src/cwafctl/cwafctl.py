@@ -2065,6 +2065,7 @@ class utils(object):
             certChainFile = open(certChainFilePath, 'r')
             certChain = certChainFile.read()
             cert['chain'] = '|-\n' + certChain
+            
         dump = yaml.dump(cert).replace('\n\n','\n')
         yaml.dump(dump.replace("\'",''))
 
