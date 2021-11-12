@@ -2050,7 +2050,7 @@ class utils(object):
 
     def generate_yaml_cert_file(self,publicKeyFilePath,privateKeyFilePath,certChainFilePath="",passphase=""):
         '''Generates a cerficate yaml file required to deploy a Cloud WAF application.
-        Ex.: cwafctl generate_yaml_cert_file --publicKeyFilePath="cert.pem" --privateKeyFilePath="key.pem" --certChainFilepath="certchain.pem" --passphrase="test" '''
+        Ex.: cwafctl utils generate_yaml_cert_file --publicKeyFilePath="cert.pem" --privateKeyFilePath="key.pem" --certChainFilePath="certchain.pem" --passphrase="test" '''
         cert={'cert':'','chain':'','key':'','passphase':passphase}
 
         publicKeyFile=open(publicKeyFilePath,'r')
