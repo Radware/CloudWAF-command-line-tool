@@ -1112,14 +1112,12 @@ class create(object):
         ##return yaml.dump(cert)
         return cert['fingerprint']
 
-    def application(self,certFingerprint=""):
+    def application(self):
         """deploy an application using a configuration stored in a yaml file ex.: python cwafctl.py create application < file.yaml. The certFingerprint parameter allows to override the fingerprint included in the yaml file"""
 
         self.cwaf.login()
 
         app = yaml.load(sys.stdin,Loader=yaml.FullLoader)
-        if certFingerPrint!="":
-            app['fingerprint']=certFingerprint
 
         app=self.cwaf.createApplication(app)
         self.cwaf.logout()
@@ -2048,25 +2046,36 @@ class utils(object):
         return sha1_fingerprint.decode("utf-8").replace(':','')
 
 
+
     def generate_yaml_cert_file(self,publicKeyFilePath,privateKeyFilePath,certChainFilePath="",passphase=""):
         '''Generates a cerficate yaml file required to deploy a Cloud WAF application.
         Ex.: cwafctl generate_yaml_cert_file --publicKeyFilePath="cert.pem" --privateKeyFilePath="key.pem" --certChainFilepath="certchain.pem" --passphrase="test" '''
-        cert={'cert':'','chain':'','key':'','passphase':passphase}
+        cert={'certificate':'','chain':'','key':'','passphase':passphase}
+
+        ##YAML trick to allow yaml to format the cert as a text block properly
+        class literal(str):
+            pass
+
+        def literal_presenter(dumper, data):
+            return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
+
+        yaml.add_representer(literal, literal_presenter)
+        ## end of the YAML trick
 
         publicKeyFile=open(publicKeyFilePath,'r')
         publicKey=publicKeyFile.read()
-        cert['cert'] = publicKey
+        cert['certificate'] = literal(publicKey)
 
         privateKeyFile=open(privateKeyFilePath,'r')
         privateKey=privateKeyFile.read()
-        cert['key']=privateKey
+        cert['key'] = literal(privateKey)
 
         if certChainFilePath != "":
             certChainFile = open(certChainFilePath, 'r')
             certChain = certChainFile.read()
-            cert['chain'] = certChain
+            cert['chain'] = literal(certChain)
 
-        yaml.dump(cert)
+        return yaml.dump(cert)
 
 
 ## Commands exposed through the Fire module
