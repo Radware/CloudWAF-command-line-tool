@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cwafctl"
-version = "0.7.0"
+version = "0.8.0"
 description = "Radware Cloud WAF command-line tool"
 authors = ["Christian Shink <christian.shink@radware.com>"]
 readme = 'README.md'
@@ -17,7 +17,7 @@ chardet = "^4.0.0"
 cryptography = "^3.4.7"
 fire = "^0.4.0"
 idna = "^2.10"
-lxml = "4.6.3"
+lxml = "4.6.5"
 pycparser = "^2.20"
 pyOpenSSL = "^20.0.1"
 six = "^1.16.0"

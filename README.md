@@ -39,8 +39,9 @@ cwafctl currently allows to retrieve the following objects from Radware Cloud WA
 | application_access_rules | Gets the application's access rules settings in YAML |
 | application_acl | Gets an application ACL by name in YAML  |
 | application_dns_records |                    Gets the application's dns diversion records in YAML|
-| application_domain |                          Gets an application main domain name in YAML|
-| application_generalinfo  |                   Gets an application general info by name in YAML|
+| application_domain |                          Gets an application's main domain name in YAML|
+| application_generalinfo  |                   Gets an application's general info by name in YAML|
+| application_network_configuration |          Gets an application's  service settings such as services, certificate and health checks|
 | application_ip_persistency     |             Gets the application's persistency settings in YAML|
 | application_origin_servers      |            Gets the application's origin servers settings in YAML|
 | application_protection_allowed_urls     |    Gets the application's allowed URLs protection settings in YAML|
@@ -57,6 +58,7 @@ cwafctl currently allows to retrieve the following objects from Radware Cloud WA
 | application_security_bypass             |    Gets the application's security bypass settings in YAML|
 | application_security_page              |     Gets the application's blocking page settings in YAML|
 | application_true_client_ip            |      Gets the application's true client ip settings in YAML|
+| application_certificate_fingerprint   |      Gets an application's associated certificate fingerprint |
 | application_v2                        |      Gets an application v2 configuration by name in YAML|
 | applications                          |      Gets the current list of applications in YAML format|
 | available_regions                    |       Gets a list of the available regions for this customer account. Useful to get the right region codes before deploying an app.|
@@ -163,8 +165,8 @@ cwafctl currently allows to create (deploy) the following objects:
 
 | Object        | Description                                           |
 | :--------------| :------------------------------------------------    |
-| application    | Deploys an application using a configuration stored in a yaml file ex.: python cwafctl create application < neapp.yaml . See the /yaml files/newapp.yaml for an example.|
-| certificate    | Deploys an certificate using a configuration stored in a yaml file. ex.: python cwafctl.py create certificate < certificate.yaml . See the /yaml files/certificate.yaml for an example. |                                                     |
+| application    | Deploys an application using a configuration stored in a yaml file ex.: cwafctl create application < newapp.yaml . See the /yaml files/newapp.yaml for an example.|
+| certificate    | Deploys an certificate using a configuration stored in a yaml file. ex.: cwafctl.py create certificate < certificate.yaml . See the /yaml files/certificate.yaml for an example. |                                                     |
 
 <br><br>
 
@@ -233,8 +235,9 @@ The following objects can be updated in Radware Cloud WAF using cwafctl **set** 
 | Object                                    |  Description |
 |:---------                                 |:---------
 |application_access_rules                   | Updates an application's access rules settings section via YAML|
-|application_domain                         | Updates an application domain name section via YAML|
-|application_generalinfo                    | Updates an application general information section via YAML|
+|application_domain                         | Updates an application's domain name section via YAML|
+|application_generalinfo                    | Updates an application's general information section via YAML|
+|application_network_configuration          | Updates an application's network configuration, including services (HTTP,HTTPS), certificate and health checks via YAML|
 |application_ip_persistency                 | Updates an application's ip persistency settings section via YAML|
 |application_origin_servers                 | Updates an application's origin server settings section via YAML|
 |application_protection_allowed_urls        | Updates an application's allowed urls protection section via YAML|
@@ -246,7 +249,7 @@ The following objects can be updated in Radware Cloud WAF using cwafctl **set** 
 |application_security_bypass                | Updates an application's security bypass settings section via YAML|
 |application_security_page                  | Updates an application's security page via YAML|
 |application_true_client_ip                 | Updates an application' True Client IP settings section via YAML|
-
+|application_certificate_by_fingerprint     | Updates the certificate in use by an application using a certificate fingerprint of an already uploaded certificate.|
 <br><br>
 
 Any "get" command for the corresponding objects can be used to retrieve an object that can be stored and edited locally and later pushed using the "set" command.
@@ -329,6 +332,21 @@ For customers using the Radware BOT manager integrated in Cloud WAF. You can ret
 
 where "appName" is the name of the application protected by Cloud WAF.
 <br><br><br><br>
+
+## Renewing a certificate for an application deployed in Cloud WAF
+<br>
+cwafctl includes a utility that allows to easily upload a new certificate to Cloud WAF and to delete the old one :
+
+    cwafctl utils updateCertificate --publicKeyFilePath='certificate2.pem' --privateKeyFilePath='key2.pem' --certChainFilePath="chain.pem" --appName='TestDotCom' --passphrase='pass'
+
+where **publicKeyFilePath** is  the path to a pem file containing the certificate.<br>
+where **privateKeyFilePath** is the path to a pem file containing the key.<br>
+where **certChainFilePath** is the path to a pem file containing the certificate chain.<br>
+where **passphrase** is the passphrase used to encrypt the key.<br>
+where **appName** is the application name as deployed in Cloud WAF.<br><br>
+**certChainFilePath** and **passphrase** are optional parameters.<br>
+
+
 
 
 

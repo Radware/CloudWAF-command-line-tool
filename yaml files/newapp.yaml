@@ -1,7 +1,7 @@
 applicationName: My application
-mainDomain: www.test.com
+mainDomain: app1.test.com
 protocol: BOTH
-region: CANADA_1
+region: US_CENTRAL_1
 originServers:
 - address: 2.2.2.2
   addressType: IP
@@ -13,3 +13,4 @@ generalInfo:
   externalID: '123445'
   description: test
 fingerprint: 87FE361698CB3F47683245984DDAF08E334818D3
+

@@ -80,8 +80,8 @@ class CloudWAFAPI(object):
 
     self.tenantID=responsePayload["tenantEntityId"]
 
-    ##print("tenantID="+self.tenantID)
-    ##print("bearerToken="+self.bearerToken)
+    #print("tenantID="+self.tenantID)
+    #print("bearerToken="+self.bearerToken)
     ##print("login successful")
 
   ## Example of a result returned by CWAF
@@ -111,6 +111,31 @@ class CloudWAFAPI(object):
 
 
       return appdata
+
+
+
+  def getApplicationNetworkConfiguration(self, AppId):
+      self.login()
+      headers = {
+            'Authorization': 'Bearer ' + self.bearerToken,
+            'requestEntityids': self.tenantID,
+            'Cookie': 'Authorization=' + self.bearerToken,
+        }
+
+
+      conn = http.client.HTTPSConnection("portal.radwarecloud.com")
+      conn.request("GET", "/v1/configuration/applications/"+AppId+"/networkConfiguration",  headers=headers)
+      res = conn.getresponse()
+      if res.status != 200:
+            raise Exception("Error retrieving network configuration from Cloud WAF")
+
+      appdata = json.loads(res.read().decode())
+      self.logout()
+
+      return appdata
+
+
+
 
   def getApplicationsACLs(self):
       acls={'acls':[]}
@@ -559,11 +584,13 @@ class CloudWAFAPI(object):
       conn.request("DELETE", "/v1/gms/applications/" + AppID, headers=headers)
       res = conn.getresponse()
       if res.code != 200:
+          appdata=res.read()
+          print(appdata)
           raise Exception("Error: Cannot delete application from Cloud WAF")
 
       appdata = res.read()
       self.logout()
-
+      print("Application "+AppID+" was successfully deleted from Cloud WAF")
       return
 
 
@@ -671,6 +698,7 @@ class CloudWAFAPI(object):
 
   def deleteCertificate(self,fingerprint):
       self.login()
+      returnMessage={}
 
       conn = http.client.HTTPSConnection("portal.radwarecloud.com")
 
@@ -682,12 +710,13 @@ class CloudWAFAPI(object):
       conn.request("DELETE", "/v1/configuration/sslcertificates/" + fingerprint, headers=headers)
       res = conn.getresponse()
       if res.code != 200:
-          raise Exception("Error: Cannot delete application from Cloud WAF")
+          appdata=res.read()
+          return json.loads(appdata)['message']
 
       appdata = res.read()
       self.logout()
       print("Certificate was successfully deleted from CloudWAF\n")
-      return
+      return ""
 
 
   def getCertificates(self):
@@ -809,6 +838,25 @@ class CloudWAFAPI(object):
         domainName=""
 
     return domainName;
+
+  def updateNetworkInformation(self, AppId,networkInfo):
+      conn = http.client.HTTPSConnection("portal.radwarecloud.com")
+
+      headers = {
+          'Authorization': 'Bearer ' + self.bearerToken,
+          'requestEntityids': self.tenantID,
+          'Cookie': 'Authorization=' + self.bearerToken,
+          'Content-Length': len(json.dumps(networkInfo)),
+          'Content-Type': 'application/json;charset=UTF-8'
+      }
+      conn.request("PUT", "/v1/configuration/applications/" + AppId +"/networkConfiguration", json.dumps(networkInfo), headers=headers)
+      res = conn.getresponse()
+      if res.code != 200:
+          raise Exception("Error: Cannot update network info object from Cloud WAF")
+
+      appdata = res.read()
+      return appdata
+
 
   def updateGeneralInfo(self,AppId,GeneralInfo):
       conn = http.client.HTTPSConnection("portal.radwarecloud.com")
@@ -1103,21 +1151,29 @@ class create(object):
         self.certId=0;
         return
 
-    def certificate(self):
+    def certificate(self,certobject=""):
         """deploy an certificate using a configuration stored in a yaml file. ex.: python cwafctl.py create certificate < file.yaml"""
         self.cwaf.login()
-        certificate = yaml.load(sys.stdin, Loader=yaml.FullLoader)
+        if certobject=="":
+            certificate = yaml.load(sys.stdin, Loader=yaml.FullLoader)
+        else:
+            certificate = certobject
+
         cert=self.cwaf.uploadCertificate(certificate)
         self.cwaf.logout()
-        ##return yaml.dump(cert)
+
         return cert['fingerprint']
 
-    def application(self):
-        """deploy an application using a configuration stored in a yaml file ex.: python cwafctl.py create application < file.yaml. The certFingerprint parameter allows to override the fingerprint included in the yaml file"""
+    def application(self,certificateFingerprint=""):
+        """deploy an application using a configuration stored in a yaml file ex.: python cwafctl.py create application < file.yaml. The certificateFingerprint parameter allows to override the fingerprint included in the yaml file"""
 
         self.cwaf.login()
 
         app = yaml.load(sys.stdin,Loader=yaml.FullLoader)
+
+        ##override fingerprint if specified as a parameter
+        if certificateFingerprint!="":
+            app['fingerprint']=certificateFingerprint
 
         app=self.cwaf.createApplication(app)
         self.cwaf.logout()
@@ -1134,18 +1190,32 @@ class delete(object):
     def __init__(self):
         return
 
-    def application(self,id):
-        """Deletes an certificate by id"""
+    def application(self,name):
+        """Deletes an application by name"""
         self.cwaf.login()
+
+        apps = self.cwaf.getApplications();
+        id = ''
+        for app in apps['applications']:
+            if app['applicationName'] == name:
+                id = app['applicationId']
+                break
+        if id == '':
+            print("Error: application: " + name + " could not be found")
+            return
+
         self.cwaf.deleteApplication(id)
+
         self.cwaf.logout()
+        return
+
 
     def certificate(self,fingerprint):
         """Deletes a certificate by fingerprint"""
         self.cwaf.login()
-        self.cwaf.deleteCertificate(fingerprint)
+        message=self.cwaf.deleteCertificate(fingerprint)
         self.cwaf.logout()
-
+        return message
 
 
 
@@ -1173,6 +1243,63 @@ class set(object):
         self.cwaf.updateGeneralInfo(id,generalInfo)
         self.cwaf.logout()
 
+    def application_network_configuration(self,name):
+        """Retrieves a Network configuration for an application, which includes, origin server settings, certificate and health check settings"""
+        self.cwaf.login()
+        apps = self.cwaf.getApplications()
+        id = ''
+        for app in apps['applications']:
+            if app['applicationName'] == name:
+                id = app['applicationId']
+                break
+        if id == '':
+            print("Error: application: " + name + " could not be found")
+            return
+
+        networkInfo = yaml.load(sys.stdin, Loader=yaml.FullLoader)
+
+        self.cwaf.updateNetworkInformation(id,networkInfo)
+
+        self.cwaf.logout()
+
+
+    def application_certificate_by_fingerprint(self,name,fingerprint):
+        """Binds a certificate to an application YAML. """
+        self.cwaf.login()
+        apps = self.cwaf.getApplications();
+        id = ''
+        cert_id=''
+        for app in apps['applications']:
+            if app['applicationName'] == name:
+                id = app['applicationId']
+                break
+        if id == '':
+            print("Error: application: " + name + " could not be found")
+            return
+
+        ##find the certificate identifier by fingerprint
+        certificates = self.cwaf.getCertificates()
+
+        for cert in certificates:
+            if cert['fingerprint'] == fingerprint :
+                cert_id = cert['id']
+
+        ##in case the cert wasn't found, warn the user
+        if cert['id'] == '' :
+            print("Couldn't find a certificate matching with fingerprint: "+fingerprint+ ". Cannot update the certificate for app: "+name )
+            return
+
+        ##retrieve current network information
+        app1 = self.cwaf.getApplication_v2(id)
+        networkConfiguration = {
+            'applicationServices': app1['applicationServices'],
+            'certificateId': cert_id,
+            'healthChecks': app1['healthChecks']
+        }
+
+        ##update network information
+        self.cwaf.updateNetworkInformation(id, networkConfiguration)
+        self.cwaf.logout()
 
     def application_domain(self,name):
         """Updates an application domain name section via YAML"""
@@ -1518,6 +1645,58 @@ class get(object):
         self.cwaf.logout()
 
         return self.application_by_id_v2(id)
+
+    def application_certificate_fingerprint(self,name):
+        """Gets an application configuration by name in YAML"""
+        self.cwaf.login()
+        apps=self.cwaf.getApplications();
+        id=''
+        for app in apps['applications']:
+             if app['applicationName'] == name:
+                id=app['applicationId']
+                break
+        if id=='':
+            print("Error: application: "+name+" could not be found")
+            return
+
+        app = self.cwaf.getApplication(id)
+        self.cwaf.logout()
+
+        return app['certificate']['fingerprint']
+
+
+
+
+    def application_network_configuration(self,name):
+        """Retrieves the nework configuration object for an app, which includes origin servers, health checks and certificate"""
+        id=''
+
+        self.cwaf.login();
+        apps = self.cwaf.getApplications();
+
+        for app in apps['applications']:
+             if app['applicationName'] == name:
+                id=app['applicationId']
+                break
+        if id=='':
+            print("Error: application: "+name+" could not be found")
+            return
+
+
+        app1=self.cwaf.getApplication_v2(id)
+        self.cwaf.logout()
+
+        networkConfiguration={
+            'applicationServices':app1['applicationServices'],
+            'certificateId':app1['certificate']['id'],
+            'healthChecks': app1['healthChecks']
+        }
+
+
+        return yaml.dump(networkConfiguration)
+
+
+
 
     def application_acl(self,name):
         """Gets an application ACL by name in YAML"""
@@ -2039,7 +2218,7 @@ class utils(object):
 
 
     def get_certificate_fingerprint(self):
-        '''Returns a local certificate sha1 fingerprint for a cert.yaml file passed to stdin. Ex.: cwafctl utils get_certificate_fingerprint < certificate.pem'''
+        '''Returns a local certificate sha1 fingerprint for a cert.yaml file passed to stdin. Ex.: cwafctl utils get_certificate_fingerprint < certificate.yaml'''
         certs = yaml.load(sys.stdin, Loader=yaml.FullLoader)
         cert = load_certificate(FILETYPE_PEM, certs["certificate"])
         sha1_fingerprint = cert.digest("sha1")
@@ -2047,10 +2226,12 @@ class utils(object):
 
 
 
-    def generate_yaml_cert_file(self,publicKeyFilePath,privateKeyFilePath,certChainFilePath="",passphase=""):
+
+
+    def generate_yaml_cert_file(self,publicKeyFilePath,privateKeyFilePath,certChainFilePath="",passphrase=""):
         '''Generates a cerficate yaml file required to deploy a Cloud WAF application.
         Ex.: cwafctl generate_yaml_cert_file --publicKeyFilePath="cert.pem" --privateKeyFilePath="key.pem" --certChainFilepath="certchain.pem" --passphrase="test" '''
-        cert={'certificate':'','chain':'','key':'','passphase':passphase}
+        cert={'certificate':'','chain':'','key':'','passphrase':passphrase}
 
         ##YAML trick to allow yaml to format the cert as a text block properly
         class literal(str):
@@ -2076,6 +2257,64 @@ class utils(object):
             cert['chain'] = literal(certChain)
 
         return yaml.dump(cert)
+
+    def updateCertificate(self,appName,publicKeyFilePath,privateKeyFilePath,certChainFilePath="",passphrase="",deleteOldCertificate=True):
+        '''Deploys a new certificate to Cloud WAF and associates that certificates with the application name.It also deletes the old certificate from Cloud WAF.
+        Ex.: cwafctl updateCertificate --publicKeyFilePath="cert.pem" --privateKeyFilePath="key.pem" --certChainFilepath="certchain.pem" --passphrase="test"
+        certChainFilePath, passphrase and deleteOldCertificate parameters are optional.'''
+
+
+
+        ##initialize the objects to get access to Cloud WAF API
+        Get=get()
+        Set=set()
+        Create=create()
+
+
+        ## get the current app fingerprint
+        print("Getting current certificate fingerprint")
+        oldFingerprint=Get.application_certificate_fingerprint(appName)
+        print("Current certificate fingerprint is :"+oldFingerprint)
+
+        ##generate yaml file
+        yamlCert = self.generate_yaml_cert_file(publicKeyFilePath,privateKeyFilePath,certChainFilePath,passphrase)
+
+        ## create the certificate from a JSON object
+        print("Uploading new certificate")
+        newCert=yaml.safe_load(yamlCert)
+        newFingerprint=Create.certificate(newCert)
+        print("Certificate uploaded successfully. New certificate fingerprint is: "+newFingerprint)
+
+        ## bind the new certificate with the app
+        print("Binding new certificate with the application")
+        Set.application_certificate_by_fingerprint(appName,newFingerprint)
+        print("New certificate "+newFingerprint+ " was associated successfully with app: "+appName)
+
+        message=""
+        ##delete the old certificate
+        if deleteOldCertificate == True :
+
+            while True:
+                ## attempt to delete the certificate every 30 secs until successful
+                print("Sleeping for 30 secs")
+                time.sleep(30)
+                print("Attempting to delete the old certificate: " + oldFingerprint)
+                DeleteObject = delete()
+                message=DeleteObject.certificate(oldFingerprint)
+                if "busy" in message:
+                    print("System currently busy.")
+                    continue;
+                else:
+                    print("Certificate "+oldFingerprint+" deleted successfully.")
+                    break;
+
+            print("Certificate deleted successfully")
+
+
+        return
+
+
+
 
 
 ## Commands exposed through the Fire module
